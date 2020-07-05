@@ -16,9 +16,9 @@ local token = io.read()
 if token ~= '' then
 local url , res = https.request('https://api.telegram.org/bot'..token..'/getMe')
 if res ~= 200 then
-io.write('\n\27[1;31m🔄┇Token Is Communication Error\n التوكن غلط جرب مره اخره \n\27[0;39;49m')
+io.write('\n\27[1;31m🔄┇Token Is Communication Error\n التوكن غلط جرب مره اخرى \n\27[0;39;49m')
 else
-io.write('\n\27[1;31m☑┇Done Save Token : تم حفظ التوكن \n\27[0;39;49m')
+io.write('\n\27[1;31m✅┇Done Save Token : تم حفظ التوكن \n\27[0;39;49m')
 redis:set(Server_DevHadaf.."Token_DevHadaf",token)
 end 
 else
@@ -42,10 +42,10 @@ io.write('\n\27[1;31m🔄┇Is Spam For Url : لقد قمت بالتكرار ف�
 os.execute('lua Hadaf.lua')
 end
 if User_Info.Info == 'Channel' then
-io.write('\n\27[1;31m🔄┇The UserName Is Channel : عذرا هاذا معرف قناة وليس حساب \n\27[0;39;49m')
+io.write('\n\27[1;31m🔄┇The UserName Is Channel : عذرًا هذا معرف قناة وليس حساب \n\27[0;39;49m')
 os.execute('lua Hadaf.lua')
 end
-io.write('\n\27[1;31m☑┇The UserNamr Is Saved : تم حفظ معرف المطور واستخراج ايدي المطور\n\27[0;39;49m')
+io.write('\n\27[1;31m✅┇The UserNamr Is Saved : تم حفظ معرف المطور واستخراج ايدي المطور\n\27[0;39;49m')
 redis:set(Server_DevHadaf.."User_DevHadaf1",User_Info.Info.Username)
 redis:set(Server_DevHadaf.."Id_DevHadaf",User_Info.Info.Id)
 else
@@ -111,7 +111,7 @@ UserName_Dev = sudos.UserName_Hadaf
 bot_id = token:match("(%d+)")  
 Id_Dev = sudos.Id_DevHadaf
 Ids_Dev = {sudos.Id_DevHadaf,373906612}
-Name_Bot = (redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "سكر")
+Name_Bot = (redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "هدف")
 ------------------------------------------------------------------------------------------------------------
 function var(value)  
 print(serpent.block(value, {comment=false}))   
@@ -470,35 +470,35 @@ for gmatch in string.gmatch(data.first_name_, "[^%s]+") do
 data.first_name_ = gmatch
 end
 if status == "Close_Status" then
-send(msg.chat_id_, msg.id_,"📮┇بواسطه ← ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text.."")
+send(msg.chat_id_, msg.id_,"👨🏻‍✈️┇بواسطه ← ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text.."")
 return false
 end
 if status == "Close_Status_Ktm" then
-send(msg.chat_id_, msg.id_,"📮┇بواسطه ← ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text.."\n〽┇خاصية ← الكتم\n")
+send(msg.chat_id_, msg.id_,"👨🏻‍✈️┇بواسطه ← ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text.."\n⚠️️┇خاصية ← الكتم\n")
 return false
 end
 if status == "Close_Status_Kick" then
-send(msg.chat_id_, msg.id_,"📮┇بواسطه ← ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text.."\n〽┇خاصية ← الطرد\n")
+send(msg.chat_id_, msg.id_,"👨🏻‍✈️┇بواسطه ← ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text.."\n⚠️️┇خاصية ← الطرد\n")
 return false
 end
 if status == "Close_Status_Kid" then
-send(msg.chat_id_, msg.id_,"📮┇بواسطه ← ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text.."\n〽┇خاصية ← التقييد\n")
+send(msg.chat_id_, msg.id_,"👨🏻‍✈️┇بواسطه ← ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text.."\n⚠️️┇خاصية ← التقييد\n")
 return false
 end
 if status == "Open_Status" then
-send(msg.chat_id_, msg.id_,"📮┇بواسطه ← ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text)
+send(msg.chat_id_, msg.id_,"👨🏻‍✈️┇بواسطه ← ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text)
 return false
 end
 if status == "reply" then
-send(msg.chat_id_, msg.id_,"📮┇المستخدم ← ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text)
+send(msg.chat_id_, msg.id_,"👨🏻‍✈️┇المستخدم ← ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text)
 return false
 end
 if status == "reply_Add" then
-send(msg.chat_id_, msg.id_,"📮┇بواسطه ← ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text)
+send(msg.chat_id_, msg.id_,"👨🏻‍✈️┇بواسطه ← ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text)
 return false
 end
 else
-send(msg.chat_id_, msg.id_,"⚠┇ لا يمكن الوصول لمعلومات الشخص")
+send(msg.chat_id_, msg.id_,"⚠️┇ لا يمكن الوصول لمعلومات الشخص")
 end
 end,nil)   
 end
@@ -510,11 +510,11 @@ for gmatch in string.gmatch(data.first_name_, "[^%s]+") do
 data.first_name_ = gmatch
 end
 if status == "reply_Pv" then
-send(chat,idmsg,"📮┇المستخدم ← ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text)
+send(chat,idmsg,"👨🏻‍✈️┇المستخدم ← ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text)
 return false
 end
 else
-send(chat,idmsg,"⚠┇ لا يمكن الوصول لمعلومات الشخص")
+send(chat,idmsg,"⚠️┇ لا يمكن الوصول لمعلومات الشخص")
 end
 end,nil)   
 end
@@ -522,31 +522,31 @@ end
 function Total_message(Message)  
 local MsgText = ''  
 if tonumber(Message) < 100 then 
-MsgText = 'تفاعل محلو 😤' 
+MsgText = 'تفاعلك ضعيف جدًا 🌸' 
 elseif tonumber(Message) < 200 then 
-MsgText = 'تفاعلك ضعيف ليش'
+MsgText = 'تفاعلك ضعيف 🌼'
 elseif tonumber(Message) < 400 then 
-MsgText = 'عفيه اتفاعل 😽' 
+MsgText = 'تفاعل متوسط 🦋' 
 elseif tonumber(Message) < 700 then 
-MsgText = 'شكد تحجي😒' 
+MsgText = 'تفاعلك ممتاز ☁️' 
 elseif tonumber(Message) < 1200 then 
-MsgText = 'ملك التفاعل 😼' 
+MsgText = 'لانتخلى عن تفاعلك ✨' 
 elseif tonumber(Message) < 2000 then 
-MsgText = 'موش تفاعل غنبله' 
+MsgText = 'قمة التفاعل 💠' 
 elseif tonumber(Message) < 3500 then 
-MsgText = 'اساس لتفاعل ياب'  
+MsgText = 'عطاء جيد ⛄ ️'  
 elseif tonumber(Message) < 4000 then 
-MsgText = 'عوف لجواهر وتفاعل بزودك' 
+MsgText = 'عطاء ممتاز 🌿' 
 elseif tonumber(Message) < 4500 then 
-MsgText = 'قمة التفاعل' 
+MsgText = 'عطاءك رائع 🧡' 
 elseif tonumber(Message) < 5500 then 
-MsgText = 'شهلتفاعل استمر يكيك' 
+MsgText = 'قمة العطاء ☁️' 
 elseif tonumber(Message) < 7000 then 
-MsgText = 'غنبله وربي 🌟' 
+MsgText = 'تفاعلك بالقمة 🍀' 
 elseif tonumber(Message) < 9500 then 
-MsgText = 'حلغوم مال تفاعل' 
+MsgText = 'بتفاعلك نسمو 🌟' 
 elseif tonumber(Message) < 10000000000 then 
-MsgText = 'تفاعل نار وشرار'  
+MsgText = 'عطاءك لاينتهي 🔥'  
 end 
 return MsgText 
 end
@@ -570,7 +570,7 @@ end
 ------------------------------------------------------------------------------------------------------------
 function NotSpam(msg,Type)
 if Type == "kick" then 
-Send_Options(msg,msg.sender_user_id_,"reply","〽┇قام بالتكرار هنا وتم طرده")  
+Send_Options(msg,msg.sender_user_id_,"reply","⚠️️┇قام بالتكرار هنا وتم طرده")  
 KickGroup(msg.chat_id_,msg.sender_user_id_) 
 return false  
 end 
@@ -581,11 +581,11 @@ end
 if Type == "keed" then
 https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" ..msg.chat_id_.. "&user_id=" ..msg.sender_user_id_.."") 
 redis:sadd(bot_id.."Hadaf:Silence:User:Group"..msg.chat_id_,msg.sender_user_id_) 
-Send_Options(msg,msg.sender_user_id_,"reply","〽┇قام بالتكرار هنا وتم تقييده")  
+Send_Options(msg,msg.sender_user_id_,"reply","⚠️️┇قام بالتكرار هنا وتم تقييده")  
 return false  
 end  
 if Type == "mute" then
-Send_Options(msg,msg.sender_user_id_,"reply","〽┇قام بالتكرار هنا وتم كتمه")  
+Send_Options(msg,msg.sender_user_id_,"reply","⚠️️┇قام بالتكرار هنا وتم كتمه")  
 redis:sadd(bot_id.."Hadaf:Silence:User:Group"..msg.chat_id_,msg.sender_user_id_) 
 return false  
 end
@@ -594,16 +594,16 @@ end
 
 function SetFile_Groups(msg,chat,File_id,JsonFile)
 if JsonFile and not JsonFile:match('.json') then
-send(chat,msg.id_,"*⚠┇عذرا الملف ليس بصيغة ال : Json*")
+send(chat,msg.id_,"*⚠️┇عذرًا الملف ليس بصيغة ال : Json*")
 return false
 end
 if tonumber(JsonFile:match('(%d+)')) ~= tonumber(bot_id) then 
-send(chat,msg.id_,"⚠┇الملف لا يتوافق مع البوت يرجى رفع ملف نسخة الكروبات الحقيفي")   
+send(chat,msg.id_,"⚠️┇الملف لا يتوافق مع البوت يرجى رفع ملف نسخة القروبات الحقيفي")   
 return false 
 end      
 local File = json:decode(https.request('https://api.telegram.org/bot'..token..'/getfile?file_id='..File_id) ) 
 download_to_file('https://api.telegram.org/file/bot'..token..'/'..File.result.file_path,''..JsonFile) 
-send(chat,msg.id_,"〽┇جاري بدء رفع الكروبات وتحويل الخزن ...")   
+send(chat,msg.id_,"⚠️️┇جاري بدء رفع القروبات وتحويل الخزن ...")   
 local Get_Info = io.open('./'..bot_id..'Hadaf:.json', "r"):read('*a')
 local JsonInfo = JSON.decode(Get_Info)
 var(JsonInfo)  
@@ -685,7 +685,7 @@ redis:set(bot_id.."Hadaf:link:set:Group"..Id_Group,Info_Group.LinkGroup)
 end
 end
 end
-send(chat,msg.id_,"☑┇تم رفع ملف الخزن بنجاح\n〽┇تم استرجاع جميع الكروبات ورفع المنشئين والمدراء في البوت")   
+send(chat,msg.id_,"✅┇تم رفع ملف الخزن بنجاح\n⚠️┇تم استرجاع جميع القروبات ورفع المنشئين والمدراء في البوت")   
 end
 function Dev_Hadaf(msg)  
 local Dev_Hadaf = false  
@@ -1252,7 +1252,7 @@ local GetWelcomeGroup = redis:get(bot_id.."Hadaf:Get:Welcome:Group"..msg.chat_id
 if GetWelcomeGroup then 
 t = GetWelcomeGroup
 else  
-t = "\n• نورت حبي \n•  name \n• user" 
+t = "\n• نورت \n•  name \n• user" 
 end 
 t = t:gsub("name",result.first_name_) 
 t = t:gsub("user",("@"..result.username_ or "لا يوجد")) 
@@ -1304,11 +1304,11 @@ photo_id = msg.content_.photo_.sizes_[0].photo_.persistent_id_
 end 
 tdcli_function ({ID = "ChangeChatPhoto",chat_id_ = msg.chat_id_,photo_ = getInputFile(photo_id) }, function(arg,data)   
 if data.code_ == 3 then
-send(msg.chat_id_, msg.id_,"⚠┇عذرا البوت ليس ادمن يرجى ترقيتي والمحاوله لاحقا") 
+send(msg.chat_id_, msg.id_,"⚠️┇عذرًا البوت ليس مشرف يرجى وضعه مشرف بالقروب والمحاوله لاحقًا") 
 redis:del(bot_id.."Hadaf:Set:Chat:Photo"..msg.chat_id_..":"..msg.sender_user_id_) 
 return false  end
 if data.message_ == "CHAT_ADMIN_REQUIRED" then 
-send(msg.chat_id_, msg.id_,"⚠┇ليس لدي صلاحية تغيير معلومات المجموعه يرجى المحاوله لاحقا") 
+send(msg.chat_id_, msg.id_,"⚠️┇ليس لدي صلاحية تغيير معلومات المجموعه يرجى المحاوله لاحقًا") 
 redis:del(bot_id.."Hadaf:Set:Chat:Photo"..msg.chat_id_..":"..msg.sender_user_id_) 
 else
 send(msg.chat_id_, msg.id_,"🎇┇تم تغيير صورة المجموعه") 
@@ -1321,12 +1321,12 @@ end
 if redis:get(bot_id.."Hadaf:Broadcasting:Groups:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 print(text)
 if text == "الغاء" or text == "الغاء ✖" then   
-send(msg.chat_id_,msg.id_, "\n〽┇تم الغاء الاذاعه للمجموعات") 
+send(msg.chat_id_,msg.id_, "\n⚠️️┇تم الغاء الاذاعه للمجموعات") 
 redis:del(bot_id.."Hadaf:Broadcasting:Groups:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
 end 
 local list = redis:smembers(bot_id.."Hadaf:ChekBotAdd") 
-send(msg.chat_id_, msg.id_,"☑┇تمت الاذاعه الى *- "..#list.." * مجموعه في البوت ")     
+send(msg.chat_id_, msg.id_,"✅┇تمت الاذاعه الى *- "..#list.." * مجموعه في البوت ")     
 if msg.content_.text_ then
 for k,v in pairs(list) do 
 send(v, 0,"["..msg.content_.text_.."]")  
@@ -1359,12 +1359,12 @@ end
 ------------------------------------------------------------------------------------------------------------
 if redis:get(bot_id.."Hadaf:Broadcasting:Users" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == "الغاء" or text == "الغاء ✖" then   
-send(msg.chat_id_,msg.id_, "\n〽┇تم الغاء الاذاعه خاص") 
+send(msg.chat_id_,msg.id_, "\n⚠️️┇تم الغاء الاذاعه خاص") 
 redis:del(bot_id.."Hadaf:Broadcasting:Users" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
 end 
 local list = redis:smembers(bot_id..'Hadaf:Num:User:Pv')  
-send(msg.chat_id_, msg.id_,"☑┇تمت الاذاعه الى *- "..#list.." * مشترك في البوت ")     
+send(msg.chat_id_, msg.id_,"✅┇تمت الاذاعه الى *- "..#list.." * مشترك في البوت ")     
 if msg.content_.text_ then
 for k,v in pairs(list) do 
 send(v, 0,"["..msg.content_.text_.."]")  
@@ -1393,12 +1393,12 @@ end
 ------------------------------------------------------------------------------------------------------------
 if redis:get(bot_id.."Hadaf:Broadcasting:Groups" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == "الغاء" or text == "الغاء ✖" then   
-send(msg.chat_id_,msg.id_, "\n〽┇تم الغاء الاذاعه للمجموعات") 
+send(msg.chat_id_,msg.id_, "\n⚠️️┇تم الغاء الاذاعه للمجموعات") 
 redis:del(bot_id.."Hadaf:Broadcasting:Groups" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
 end 
 local list = redis:smembers(bot_id.."Hadaf:ChekBotAdd") 
-send(msg.chat_id_, msg.id_,"☑┇تمت الاذاعه الى *- "..#list.." * مجموعه في البوت ")     
+send(msg.chat_id_, msg.id_,"✅┇تمت الاذاعه الى *- "..#list.." * مجموعه في البوت ")     
 if msg.content_.text_ then
 for k,v in pairs(list) do 
 send(v, 0,"["..msg.content_.text_.."]")  
@@ -1427,13 +1427,13 @@ end
 ------------------------------------------------------------------------------------------------------------
 if redis:get(bot_id.."Hadaf:Broadcasting:Groups:Fwd" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == "الغاء" or text == "الغاء ✖" then   
-send(msg.chat_id_,msg.id_, "\n〽┇تم الغاء الاذاعه بالتوجيه للمجموعات") 
+send(msg.chat_id_,msg.id_, "\n⚠️️┇تم الغاء الاذاعه بالتوجيه للمجموعات") 
 redis:del(bot_id.."Hadaf:Broadcasting:Groups:Fwd" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false  
 end 
 if msg.forward_info_ then 
 local list = redis:smembers(bot_id.."Hadaf:ChekBotAdd")   
-send(msg.chat_id_, msg.id_,"☑┇تم التوجيه الى *- "..#list.." * مجموعه في البوت ")     
+send(msg.chat_id_, msg.id_,"✅┇تم التوجيه الى *- "..#list.." * مجموعه في البوت ")     
 for k,v in pairs(list) do  
 tdcli_function({ID="ForwardMessages",
 chat_id_ = v,
@@ -1449,13 +1449,13 @@ end
 ------------------------------------------------------------------------------------------------------------
 if redis:get(bot_id.."Hadaf:Broadcasting:Users:Fwd" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == "الغاء" or text == "الغاء ✖" then   
-send(msg.chat_id_,msg.id_, "\n〽┇تم الغاء الاذاعه بالترجيه خاص") 
+send(msg.chat_id_,msg.id_, "\n⚠️️┇تم الغاء الاذاعه بالترجيه خاص") 
 redis:del(bot_id.."Hadaf:Broadcasting:Users:Fwd" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false  
 end 
 if msg.forward_info_ then 
 local list = redis:smembers(bot_id.."Hadaf:Num:User:Pv")   
-send(msg.chat_id_, msg.id_,"☑┇تم التوجيه الى *- "..#list.." * مجموعه في البوت ")     
+send(msg.chat_id_, msg.id_,"✅┇تم التوجيه الى *- "..#list.." * مجموعه في البوت ")     
 for k,v in pairs(list) do  
 tdcli_function({ID="ForwardMessages",
 chat_id_ = v,
@@ -1471,38 +1471,38 @@ end
 ------------------------------------------------------------------------------------------------------------
 if redis:get(bot_id.."Hadaf:Change:Description" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then  
 if text == "الغاء" then 
-send(msg.chat_id_,msg.id_, "\n〽┇تم الغاء امر تغير وصف المجموعه") 
+send(msg.chat_id_,msg.id_, "\n⚠️️┇تم الغاء امر تغيير وصف المجموعه") 
 redis:del(bot_id.."Hadaf:Change:Description" .. msg.chat_id_ .. "" .. msg.sender_user_id_)
 return false  
 end 
 redis:del(bot_id.."Hadaf:Change:Description" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
 https.request("https://api.telegram.org/bot"..token.."/setChatDescription?chat_id="..msg.chat_id_.."&description="..text) 
-send(msg.chat_id_, msg.id_,"☑┇تم تغيير وصف المجموعه")   
+send(msg.chat_id_, msg.id_,"✅┇تم تغيير وصف المجموعه")   
 return false  
 end 
 --------------------------------------------------------------------------------------------------------------
 if redis:get(bot_id.."Hadaf:Welcome:Group" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then 
 if text == "الغاء" then 
-send(msg.chat_id_,msg.id_, "\n〽┇تم الغاء امر حفظ الترحيب") 
+send(msg.chat_id_,msg.id_, "\n⚠️️┇تم الغاء امر حفظ الترحيب") 
 redis:del(bot_id.."Hadaf:Welcome:Group" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 return false  
 end 
 redis:del(bot_id.."Hadaf:Welcome:Group" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 redis:set(bot_id.."Hadaf:Get:Welcome:Group"..msg.chat_id_,text) 
-send(msg.chat_id_, msg.id_,"☑┇تم حفظ ترحيب المجموعه")   
+send(msg.chat_id_, msg.id_,"✅┇تم حفظ ترحيب المجموعه")   
 return false   
 end
 --------------------------------------------------------------------------------------------------------------
 if redis:get(bot_id.."Hadaf:link:set"..msg.chat_id_..""..msg.sender_user_id_) then
 if text == "الغاء" then
-send(msg.chat_id_,msg.id_, "\n〽┇تم الغاء امر حفظ الرابط") 
+send(msg.chat_id_,msg.id_, "\n⚠️️┇تم الغاء امر حفظ الرابط") 
 redis:del(bot_id.."Hadaf:link:set"..msg.chat_id_..""..msg.sender_user_id_) 
 return false
 end
 if text and text:match("(https://telegram.me/joinchat/%S+)") or text and text:match("(https://t.me/joinchat/%S+)") then     
 local Link = text:match("(https://telegram.me/joinchat/%S+)") or text:match("(https://t.me/joinchat/%S+)")   
 redis:set(bot_id.."Hadaf:link:set:Group"..msg.chat_id_,Link)
-send(msg.chat_id_,msg.id_,"☑┇تم حفظ الرابط بنجاح")       
+send(msg.chat_id_,msg.id_,"✅┇تم حفظ الرابط بنجاح")       
 redis:del(bot_id.."Hadaf:link:set"..msg.chat_id_..""..msg.sender_user_id_) 
 return false 
 end
@@ -1519,19 +1519,19 @@ end
 ------------------------------------------------------------------------------------------------------------
 if redis:get(bot_id.."Hadaf:Change:Name:Bot"..msg.sender_user_id_) then 
 if text == "الغاء" or text == "الغاء ✖" then   
-send(msg.chat_id_,msg.id_, "\n〽┇تم الغاء امر تغير اسم البوت") 
+send(msg.chat_id_,msg.id_, "\n⚠️️┇تم الغاء امر تغيير اسم البوت") 
 redis:del(bot_id.."Hadaf:Change:Name:Bot"..msg.sender_user_id_) 
 return false  
 end 
 redis:del(bot_id.."Hadaf:Change:Name:Bot"..msg.sender_user_id_) 
 redis:set(bot_id.."Hadaf:Redis:Name:Bot",text) 
-send(msg.chat_id_, msg.id_, "☑┇ تم تغير اسم البوت الى - "..text)  
+send(msg.chat_id_, msg.id_, "✅┇ تم تغيير اسم البوت الى - "..text)  
 return false
 end 
 ------------------------------------------------------------------------------------------------------------
 if redis:get(bot_id.."Hadaf:Redis:Validity:Group"..msg.chat_id_..""..msg.sender_user_id_) then 
 if text and text:match("^الغاء$") then 
-send(msg.chat_id_,msg.id_, "\n〽┇تم الغاء امر اضافة صلاحيه") 
+send(msg.chat_id_,msg.id_, "\n⚠️️┇تم الغاء امر اضافة صلاحيه") 
 local CmdDel = redis:get(bot_id.."Hadaf:Add:Validity:Group:Rt:New"..msg.chat_id_..msg.sender_user_id_)  
 redis:del(bot_id.."Hadaf:Add:Validity:Group:Rt"..CmdDel..msg.chat_id_)
 redis:srem(bot_id.."Hadaf:Validitys:Group"..msg.chat_id_,CmdDel)  
@@ -1540,19 +1540,19 @@ return false
 end 
 if text == "مدير" then
 if not Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n💢┇الاستخدام خطا رتبتك اقل من منشئ \n〽┇تستطيع اضافة صلاحيات الاتيه فقط ← { عضو ، مميز  ، ادمن }") 
+send(msg.chat_id_, msg.id_,"\n💢┇الاستخدام خطا رتبتك اقل من منشئ \n⚠️️┇تستطيع اضافة صلاحيات الاتيه فقط ← { عضو ، مميز  ، ادمن }") 
 return false
 end
 end
 if text == "ادمن" then
 if not Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n💢┇الاستخدام خطا رتبتك اقل من مدير \n〽┇تستطيع اضافة صلاحيات الاتيه فقط ← { عضو ، مميز }") 
+send(msg.chat_id_, msg.id_,"\n💢┇الاستخدام خطا رتبتك اقل من مدير \n⚠️️┇تستطيع اضافة صلاحيات الاتيه فقط ← { عضو ، مميز }") 
 return false
 end
 end
 if text == "مميز" then
 if not Admin(msg) then
-send(msg.chat_id_, msg.id_,"\n💢┇الاستخدام خطا رتبتك اقل من ادمن \n〽┇تستطيع اضافة صلاحيات الاتيه فقط ← { عضو }") 
+send(msg.chat_id_, msg.id_,"\n💢┇الاستخدام خطا رتبتك اقل من ادمن \n⚠️️┇تستطيع اضافة صلاحيات الاتيه فقط ← { عضو }") 
 return false
 end
 end
@@ -1567,18 +1567,18 @@ end
 ------------------------------------------------------------------------------------------------------------
 if redis:get(bot_id.."Hadaf:Redis:Id:Group"..msg.chat_id_..""..msg.sender_user_id_) then 
 if text == 'الغاء' then 
-send(msg.chat_id_,msg.id_, "\n〽┇تم الغاء امر تعين الايدي") 
+send(msg.chat_id_,msg.id_, "\n⚠️️┇تم الغاء امر تعيين الايدي") 
 redis:del(bot_id.."Hadaf:Redis:Id:Group"..msg.chat_id_..""..msg.sender_user_id_) 
 return false  
 end 
 redis:del(bot_id.."Hadaf:Redis:Id:Group"..msg.chat_id_..""..msg.sender_user_id_) 
 redis:set(bot_id.."Hadaf:Set:Id:Group"..msg.chat_id_,text:match("(.*)"))
-send(msg.chat_id_, msg.id_,'☑┇تم تعين الايدي الجديد')    
+send(msg.chat_id_, msg.id_,'✅┇تم تعيين الايدي الجديد')    
 end
 ------------------------------------------------------------------------------------------------------------
 if text == ""..(redis:get(bot_id.."Hadaf:Random:Sm"..msg.chat_id_) or "").."" and not redis:get(bot_id.."Hadaf:Set:Sma"..msg.chat_id_) then
 if not redis:get(bot_id.."Hadaf:Set:Sma"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,"\n🎉┇لقد فزت في اللعبه \n📬┇اللعب مره اخره وارسل - سمايل او سمايلات")
+send(msg.chat_id_, msg.id_,"\n🎉┇لقد فزت في اللعبه \n📬┇اذا كنت تريد اللعب مره اخرى ارسل - سمايل او سمايلات")
 redis:incrby(bot_id.."Hadaf:Num:Add:Games"..msg.chat_id_..msg.sender_user_id_, 1)  
 end
 redis:set(bot_id.."Hadaf:Set:Sma"..msg.chat_id_,true)
@@ -1587,7 +1587,7 @@ end
 ------------------------------------------------------------------------------------------------------------
 if text == ""..(redis:get(bot_id.."Hadaf:Klam:Speed"..msg.chat_id_) or "").."" and not redis:get(bot_id.."Hadaf:Speed:Tr"..msg.chat_id_) then
 if not redis:get(bot_id.."Hadaf:Speed:Tr"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,"\n🎉┇لقد فزت في اللعبه \n📬┇اللعب مره اخره وارسل - الاسرع او ترتيب")
+send(msg.chat_id_, msg.id_,"\n🎉┇لقد فزت في اللعبه \n📬┇اذا كنت تريد اللعب مره اخرى ارسل - الاسرع")
 redis:incrby(bot_id.."Hadaf:Num:Add:Games"..msg.chat_id_..msg.sender_user_id_, 1)  
 end
 redis:set(bot_id.."Hadaf:Speed:Tr"..msg.chat_id_,true)
@@ -1595,7 +1595,7 @@ end
 ------------------------------------------------------------------------------------------------------------
 if text == ""..(redis:get(bot_id.."Hadaf:Klam:Hzor"..msg.chat_id_) or "").."" and not redis:get(bot_id.."Hadaf:Set:Hzora"..msg.chat_id_) then
 if not redis:get(bot_id.."Hadaf:Set:Hzora"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,"\n🎉┇لقد فزت في اللعبه \n📬┇اللعب مره اخره وارسل - حزوره")
+send(msg.chat_id_, msg.id_,"\n🎉┇لقد فزت في اللعبه \n📬┇اذا كنت تريد اللعب مره اخرى ارسل - حزوره")
 redis:incrby(bot_id.."Hadaf:Num:Add:Games"..msg.chat_id_..msg.sender_user_id_, 1)  
 end
 redis:set(bot_id.."Hadaf:Set:Hzora"..msg.chat_id_,true)
@@ -1603,7 +1603,7 @@ end
 ------------------------------------------------------------------------------------------------------------
 if text == ""..(redis:get(bot_id.."Hadaf:Maany"..msg.chat_id_) or "").."" and not redis:get(bot_id.."Hadaf:Set:Maany"..msg.chat_id_) then
 if not redis:get(bot_id.."Hadaf:Set:Maany"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,"\n🎉┇لقد فزت في اللعبه \n📬┇اللعب مره اخره وارسل - معاني")
+send(msg.chat_id_, msg.id_,"\n🎉┇لقد فزت في اللعبه \n📬┇اذا كنت تريد اللعب مره اخرى ارسل - معاني")
 redis:incrby(bot_id.."Hadaf:Num:Add:Games"..msg.chat_id_..msg.sender_user_id_, 1)  
 end
 redis:set(bot_id.."Hadaf:Set:Maany"..msg.chat_id_,true)
@@ -1611,7 +1611,7 @@ end
 ------------------------------------------------------------------------------------------------------------
 if text == ""..(redis:get(bot_id.."Hadaf:Set:Aks:Game"..msg.chat_id_) or "").."" and not redis:get(bot_id.."Hadaf:Set:Aks"..msg.chat_id_) then
 if not redis:get(bot_id.."Hadaf:Set:Aks"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,"\n🎉┇لقد فزت في اللعبه \n📬┇اللعب مره اخره وارسل - العكس")
+send(msg.chat_id_, msg.id_,"\n🎉┇لقد فزت في اللعبه \n📬┇اذا كنت تريد اللعب مره اخرى ارسل - العكس")
 redis:incrby(bot_id.."Hadaf:Num:Add:Games"..msg.chat_id_..msg.sender_user_id_, 1)  
 end
 redis:set(bot_id.."Hadaf:Set:Aks"..msg.chat_id_,true)
@@ -1621,22 +1621,22 @@ if redis:get(bot_id.."Hadaf:GAME:TKMEN" .. msg.chat_id_ .. "" .. msg.sender_user
 if text and text:match("^(%d+)$") then
 local NUM = text:match("^(%d+)$")
 if tonumber(NUM) > 20 then
-send(msg.chat_id_, msg.id_,"📬┇عذرآ لا يمكنك تخمين عدد اكبر من ال { 20 } خمن رقم ما بين ال{ 1 و 20 }\n")
+send(msg.chat_id_, msg.id_,"📬┇عذرًا لا يمكنك تخمين عدد اكبر من ال { 20 } خمن رقم ما بين ال{ 1 و 20 }\n")
 return false  end 
 local GETNUM = redis:get(bot_id.."Hadaf:GAMES:NUM"..msg.chat_id_)
 if tonumber(NUM) == tonumber(GETNUM) then
 redis:del(bot_id.."Hadaf:SADD:NUM"..msg.chat_id_..msg.sender_user_id_)
 redis:del(bot_id.."Hadaf:GAME:TKMEN" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
 redis:incrby(bot_id.."Hadaf:Num:Add:Games"..msg.chat_id_..msg.sender_user_id_,5)  
-send(msg.chat_id_, msg.id_,"🔖┇مبروك فزت ويانه وخمنت الرقم الصحيح\n🚸┇تم اضافة { 5 } من النقاط \n")
+send(msg.chat_id_, msg.id_,"🔖┇مبروك فزت معنا وخمنت الرقم الصحيح\n🚸┇تم اضافة { 5 } من النقاط \n")
 elseif tonumber(NUM) ~= tonumber(GETNUM) then
 redis:incrby(bot_id.."Hadaf:SADD:NUM"..msg.chat_id_..msg.sender_user_id_,1)
 if tonumber(redis:get(bot_id.."Hadaf:SADD:NUM"..msg.chat_id_..msg.sender_user_id_)) >= 3 then
 redis:del(bot_id.."Hadaf:SADD:NUM"..msg.chat_id_..msg.sender_user_id_)
 redis:del(bot_id.."Hadaf:GAME:TKMEN" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
-send(msg.chat_id_, msg.id_,"📮┇اوبس لقد خسرت في اللعبه \n📬┇حظآ اوفر في المره القادمه \n🔰┇كان الرقم الذي تم تخمينه { "..GETNUM.." }")
+send(msg.chat_id_, msg.id_,"📮┇لقد خسرت في اللعبه \n📬┇حظًا اوفر في المره القادمه \n🔰┇كان الرقم الذي تم تخمينه { "..GETNUM.." }")
 else
-send(msg.chat_id_, msg.id_,"📛┇اوبس تخمينك غلط \n📌┇ارسل رقم تخمنه مره اخرى ")
+send(msg.chat_id_, msg.id_,"📛┇تخمينك غير صحيح \n📌┇ارسل رقم تخمين مره اخرى ")
 end
 end
 end
@@ -1646,16 +1646,16 @@ if redis:get(bot_id.."Hadaf:SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_i
 if text and text:match("^(%d+)$") then
 local NUM = text:match("^(%d+)$")
 if tonumber(NUM) > 6 then
-send(msg.chat_id_, msg.id_,"📬┇عذرا لا يوجد سواء { 6 } اختيارات فقط ارسل اختيارك مره اخرى\n")
+send(msg.chat_id_, msg.id_,"📬┇عذرًا لا يوجد سوى { 6 } اختيارات فقط ارسل اختيارك مره اخرى\n")
 return false  end 
 local GETNUM = redis:get(bot_id.."Hadaf:Games:Bat"..msg.chat_id_)
 if tonumber(NUM) == tonumber(GETNUM) then
 redis:del(bot_id.."Hadaf:SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
-send(msg.chat_id_, msg.id_,"📮┇مبروك فزت وطلعت المحيبس بل ايد رقم { "..NUM.." }\n🎊┇لقد حصلت على { 3 }من نقاط يمكنك استبدالهن برسائل ")
+send(msg.chat_id_, msg.id_,"📮┇مبروك فزت وطلعت المحيبس باليد رقم { "..NUM.." }\n🎊┇لقد حصلت على { 3 }من النقاط")
 redis:incrby(bot_id.."Hadaf:Num:Add:Games"..msg.chat_id_..msg.sender_user_id_,3)  
 elseif tonumber(NUM) ~= tonumber(GETNUM) then
 redis:del(bot_id.."Hadaf:SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
-send(msg.chat_id_, msg.id_,"📮┇للاسف لقد خسرت \n📬┇المحيبس بل ايد رقم { "..GETNUM.." }\n💥┇حاول مره اخرى للعثور على المحيبس")
+send(msg.chat_id_, msg.id_,"📮┇للاسف لقد خسرت \n📬┇المحيبس باليد رقم { "..GETNUM.." }\n💥┇حاول مره اخرى للعثور على المحيبس")
 end
 end
 end
@@ -1663,7 +1663,7 @@ end
 if text == ""..(redis:get(bot_id.."Hadaf::Set:Moktlf"..msg.chat_id_) or "").."" then 
 if not redis:get(bot_id.."Hadaf:Set:Moktlf:Bot"..msg.chat_id_) then 
 redis:del(bot_id.."Hadaf::Set:Moktlf"..msg.chat_id_)
-send(msg.chat_id_, msg.id_,"\n🎉┇لقد فزت في اللعبه \n📬┇اللعب مره اخره وارسل - المختلف")
+send(msg.chat_id_, msg.id_,"\n🎉┇لقد فزت في اللعبه \n📬┇اذا كنت تريد اللعب مره اخرى ارسل - المختلف")
 redis:incrby(bot_id.."Hadaf:Num:Add:Games"..msg.chat_id_..msg.sender_user_id_, 1)  
 end
 redis:set(bot_id.."Hadaf:Set:Moktlf:Bot"..msg.chat_id_,true)
@@ -1672,7 +1672,7 @@ end
 if text == ""..(redis:get(bot_id.."Hadaf:Set:Amth"..msg.chat_id_) or "").."" then 
 if not redis:get(bot_id.."Hadaf:Set:Amth:Bot"..msg.chat_id_) then 
 redis:del(bot_id.."Hadaf:Set:Amth"..msg.chat_id_)
-send(msg.chat_id_, msg.id_,"\n🎉┇لقد فزت في اللعبه \n📬┇اللعب مره اخره وارسل - امثله")
+send(msg.chat_id_, msg.id_,"\n🎉┇لقد فزت في اللعبه \n📬┇اذا كنت تريد اللعب مره اخرى ارسل - امثله")
 redis:incrby(bot_id.."Hadaf:Num:Add:Games"..msg.chat_id_..msg.sender_user_id_, 1)  
 end
 redis:set(bot_id.."Hadaf:Set:Amth:Bot"..msg.chat_id_,true)
@@ -1681,7 +1681,7 @@ end
 if redis:get(bot_id.."Hadaf:Add:msg:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then 
 if text and text:match("^الغاء$") then 
 redis:del(bot_id.."Hadaf:id:user"..msg.chat_id_)  
-send(msg.chat_id_,msg.id_, "\n〽┇تم الغاء امر اضافة رسائل") 
+send(msg.chat_id_,msg.id_, "\n⚠️️┇تم الغاء امر اضافة رسائل") 
 redis:del(bot_id.."Hadaf:Add:msg:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 return false  
 end 
@@ -1696,7 +1696,7 @@ end
 if redis:get(bot_id.."Hadaf:games:add" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then 
 if text and text:match("^الغاء$") then 
 redis:del(bot_id.."Hadaf:idgem:user"..msg.chat_id_)  
-send(msg.chat_id_,msg.id_, "\n〽┇تم الغاء امر اضافة جواهر") 
+send(msg.chat_id_,msg.id_, "\n⚠️️┇تم الغاء امر اضافة نقاط") 
 redis:del(bot_id.."Hadaf:games:add" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 return false  
 end 
@@ -1704,12 +1704,12 @@ redis:del(bot_id.."Hadaf:games:add" .. msg.chat_id_ .. "" .. msg.sender_user_id_
 local numadded = string.match(text, "(%d+)") 
 local iduserr = redis:get(bot_id.."Hadaf:idgem:user"..msg.chat_id_)  
 redis:incrby(bot_id.."Hadaf:Num:Add:Games"..msg.chat_id_..iduserr,numadded)  
-send(msg.chat_id_,msg.id_,"\n💎┇تم اضافة له - "..numadded.." مجوهرات")  
+send(msg.chat_id_,msg.id_,"\n💎┇تم اضافة له - "..numadded.." نقاط")  
 end
 ------------------------------------------------------------------------------------------------------------
 if redis:get(bot_id.."Hadaf:Redis:Rules:" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == "الغاء" then 
-send(msg.chat_id_, msg.id_, "〽┇تم الغاء حفظ القوانين") 
+send(msg.chat_id_, msg.id_, "⚠️️┇تم الغاء حفظ القوانين") 
 redis:del(bot_id.."Hadaf:Redis:Rules:" .. msg.chat_id_ .. ":" .. msg.sender_user_id_)
 return false  
 end 
@@ -1721,7 +1721,7 @@ end
 if text then 
 local DelFilter = redis:get(bot_id.."Hadaf:Filter:Reply1"..msg.sender_user_id_..msg.chat_id_)  
 if DelFilter and DelFilter == "DelFilter" then   
-send(msg.chat_id_, msg.id_,"📮┇تم الغاء منعها ")  
+send(msg.chat_id_, msg.id_,"📮┇تم الغاء منعها")  
 redis:del(bot_id.."Hadaf:Filter:Reply1"..msg.sender_user_id_..msg.chat_id_)  
 redis:del(bot_id.."Hadaf:Filter:Reply2"..text..msg.chat_id_)  
 redis:srem(bot_id.."Hadaf:List:Filter"..msg.chat_id_,text)  
@@ -1755,12 +1755,12 @@ end
 if text and redis:get(bot_id..'Hadaf:GetTexting:DevHadaf'..msg.chat_id_..':'..msg.sender_user_id_) then
 if text == 'الغاء' or text == 'الغاء ✖' then 
 redis:del(bot_id..'Hadaf:GetTexting:DevHadaf'..msg.chat_id_..':'..msg.sender_user_id_)
-send(msg.chat_id_,msg.id_,'〽┇تم الغاء حفظ كليشة المطور')
+send(msg.chat_id_,msg.id_,'⚠️️┇تم الغاء حفظ كليشة المطور')
 return false
 end
 redis:set(bot_id..'Hadaf:Texting:DevHadaf',text)
 redis:del(bot_id..'Hadaf:GetTexting:DevHadaf'..msg.chat_id_..':'..msg.sender_user_id_)
-send(msg.chat_id_,msg.id_,'☑┇تم حفظ كليشة المطور')
+send(msg.chat_id_,msg.id_,'✅┇تم حفظ كليشة المطور')
 send(msg.chat_id_,msg.id_,text)
 return false
 end
@@ -1809,14 +1809,14 @@ photo_in_group = msg.content_.photo_.sizes_[3].photo_.persistent_id_
 end
 redis:set(bot_id.."Hadaf:Add:Rd:Manager:Photo"..test..msg.chat_id_, photo_in_group)  
 end
-send(msg.chat_id_, msg.id_,"📌┇تم حفظ رد للمدير بنجاح \n〽┇ارسل ( "..test.." ) لرئية الرد")
+send(msg.chat_id_, msg.id_,"📌┇تم حفظ الرد بنجاح \n⚠️️┇ارسل ( "..test.." ) لرؤية الرد")
 return false  
 end  
 end
 ------------------------------------------------------------------------------------------------------------
 if text and text:match("^(.*)$") then
 if redis:get(bot_id.."Hadaf:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_) == "true" then
-send(msg.chat_id_, msg.id_, '\n〽┇ارسل لي الرد لاضافته\n🔖┇تستطيع اضافة ← { ملف ، فديو ، نص ، ملصق ، بصمه ، متحركه }\n📬┇تستطيع ايضا اضافة :\n👤┇`#username` » معرف المستخدم \n📨┇`#msgs` » عدد الرسائل\n👤┇`#name` » اسم المستخدم\n🚸┇`#id` » ايدي المستخدم\n📮┇`#stast` » موقع المستخدم \n📝┇`#edit` » عدد السحكات ')
+send(msg.chat_id_, msg.id_, '\n⚠️️┇ارسل لي الرد لاضافته\n🔖┇تستطيع اضافة ← { ملف ، فديو ، نص ، ملصق ، بصمه ، متحركه }\n📬┇تستطيع ايضا اضافة :\n👤┇`#username` » معرف المستخدم \n📨┇`#msgs` » عدد الرسائل\n👤┇`#name` » اسم المستخدم\n🚸┇`#id` » ايدي المستخدم\n📮┇`#stast` » موقع المستخدم \n📝┇`#edit` » عدد التعديلات ')
 redis:set(bot_id.."Hadaf:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_,"true1")
 redis:set(bot_id.."Hadaf:Text:Manager"..msg.sender_user_id_..":"..msg.chat_id_, text)
 redis:del(bot_id.."Hadaf:Add:Rd:Manager:Gif"..text..msg.chat_id_)   
@@ -1833,7 +1833,7 @@ end
 ------------------------------------------------------------------------------------------------------------
 if text and text:match("^(.*)$") then
 if redis:get(bot_id.."Hadaf:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_.."") == "true2" then
-send(msg.chat_id_, msg.id_,"☑┇تم حذف الرد من ردود المدير ")
+send(msg.chat_id_, msg.id_,"✅┇تم حذف الرد من الردود")
 redis:del(bot_id.."Hadaf:Add:Rd:Manager:Gif"..text..msg.chat_id_)   
 redis:del(bot_id.."Hadaf:Add:Rd:Manager:Vico"..text..msg.chat_id_)   
 redis:del(bot_id.."Hadaf:Add:Rd:Manager:Stekrs"..text..msg.chat_id_)     
@@ -1949,14 +1949,14 @@ photo_in_group = msg.content_.photo_.sizes_[3].photo_.persistent_id_
 end
 redis:set(bot_id.."Hadaf:Add:Rd:Sudo:Photo"..test, photo_in_group)  
 end
-send(msg.chat_id_, msg.id_,"📌┇تم حفظ رد للمطور \n〽┇ارسل ( "..test.." ) لرئية الرد")
+send(msg.chat_id_, msg.id_,"📌┇تم حفظ رد عام \n⚠️️┇ارسل ( "..test.." ) لرؤية الرد")
 return false  
 end  
 end
 ------------------------------------------------------------------------------------------------------------
 if text and text:match("^(.*)$") then
 if redis:get(bot_id.."Hadaf:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_) == "true" then
-send(msg.chat_id_, msg.id_, '\n〽┇ارسل لي الكلمه الان \n🔖┇تستطيع اضافة ← { ملف ، فديو ، نص ، ملصق ، بصمه ، متحركه }\n📬┇تستطيع ايضا اضافة :\n👤┇`#username` » معرف المستخدم \n📨┇`#msgs` » عدد الرسائل\n👤┇`#name` » اسم المستخدم\n🚸┇`#id` » ايدي المستخدم\n📮┇`#stast` » موقع المستخدم \n📝┇`#edit` » عدد السحكات ')
+send(msg.chat_id_, msg.id_, '\n⚠️️┇ارسل لي الكلمه الان \n🔖┇تستطيع اضافة ← { ملف ، فديو ، نص ، ملصق ، بصمه ، متحركه }\n📬┇تستطيع ايضا اضافة :\n👤┇`#username` » معرف المستخدم \n📨┇`#msgs` » عدد الرسائل\n👤┇`#name` » اسم المستخدم\n🚸┇`#id` » ايدي المستخدم\n📮┇`#stast` » موقع المستخدم \n📝┇`#edit` » عدد التعديلات ')
 redis:set(bot_id.."Hadaf:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_, "true1")
 redis:set(bot_id.."Hadaf:Text:Sudo:Bot"..msg.sender_user_id_..":"..msg.chat_id_, text)
 redis:sadd(bot_id.."Hadaf:List:Rd:Sudo", text)
@@ -1965,7 +1965,7 @@ end
 ------------------------------------------------------------------------------------------------------------
 if text and text:match("^(.*)$") then
 if redis:get(bot_id.."Hadaf:Set:On"..msg.sender_user_id_..":"..msg.chat_id_) == "true" then
-send(msg.chat_id_, msg.id_,"☑┇تم حذف الرد من ردود المطور")
+send(msg.chat_id_, msg.id_,"✅┇تم حذف الرد من ردود العام")
 list = {"Add:Rd:Sudo:Audio","Add:Rd:Sudo:File","Add:Rd:Sudo:Video","Add:Rd:Sudo:Photo","Add:Rd:Sudo:Text","Add:Rd:Sudo:stekr","Add:Rd:Sudo:vico","Add:Rd:Sudo:Gif"}
 for k,v in pairs(list) do
 redis:del(bot_id..'Hadaf:'..v..text)
@@ -1976,12 +1976,12 @@ return false
 end
 end
 if Dev_Hadaf(msg) then
-if text == "تحديث الملفات 🔁" then
+if text == "تحديث الملفات ♻️" then
 dofile("Hadaf.lua")  
-send(msg.chat_id_, msg.id_, "🔂┇تم تحديث ملفات البوت")
+send(msg.chat_id_, msg.id_, "♻️┇تم تحديث ملفات البوت")
 elseif text == "تحديث" then
 dofile("Hadaf.lua")  
-send(msg.chat_id_, msg.id_, "🔂┇تم تحديث ملفات البوت")
+send(msg.chat_id_, msg.id_, "♻️┇تم تحديث ملفات البوت")
 elseif text == 'تحديث السورس 🔂' then
 download_to_file('https://raw.githubusercontent.com/Hadafsource/Hadaf/master/Hadaf.lua','Hadaf.lua') 
 send(msg.chat_id_, msg.id_, "🔂┇تم تحديث السورس وتنزيل اخر تحديث للملفات")
@@ -2049,12 +2049,12 @@ end
 ------------------------------------------------------------------------------------------------------------
 if text and redis:get(bot_id..'Hadaf:Set:Cmd:Start:Bots') then
 if text == 'الغاء ✖' then   
-send(msg.chat_id_, msg.id_,"⚠┇تم الغاء حفظ كليشه امر /start") 
+send(msg.chat_id_, msg.id_,"⚠️┇تم الغاء حفظ كليشه امر /start") 
 redis:del(bot_id..'Hadaf:Set:Cmd:Start:Bots') 
 return false
 end
 redis:set(bot_id.."Hadaf:Set:Cmd:Start:Bot",text)  
-send(msg.chat_id_, msg.id_,'☑┇تم حفظ كليشه امر /start في البوت') 
+send(msg.chat_id_, msg.id_,'✅┇تم حفظ كليشه امر /start في البوت') 
 redis:del(bot_id..'Hadaf:Set:Cmd:Start:Bots') 
 return false
 end
@@ -2064,16 +2064,16 @@ end
 if text == 'تفعيل' and DeveloperBot(msg) then
  
 if TypeForChat ~= 'ForSuppur' then
-send(msg.chat_id_, msg.id_,'⚠┇المجموعه عاديه وليست خارقه لا تستطيع تفعيلي يرجى ان تضع سجل رسائل المجموعه ضاهر وليس مخفي ومن بعدها يمكنك رفعي ادمن ثم تفعيلي') 
+send(msg.chat_id_, msg.id_,'⚠️┇المجموعه عاديه وليست خارقه لا تستطيع تفعيلي يرجى ان تضع سجل رسائل المجموعه ظاهر وليس مخفي ومن بعدها يمكنك رفعي ادمن ثم تفعيلي') 
 return false
 end
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,'🚸┇البوت ليس ادمن يرجى ترقيتي !') 
+send(msg.chat_id_, msg.id_,'🚸┇أنا لست ادمن يرجى ترقيتي !') 
 return false  
 end
 tdcli_function ({ ID = "GetChannelFull", channel_id_ = msg.chat_id_:gsub("-100","")}, function(arg,data)  
 if tonumber(data.member_count_) < tonumber(redis:get(bot_id..'Hadaf:Num:Add:Bot') or 0) and not Dev_Hadaf(msg) then
-send(msg.chat_id_, msg.id_,'⚠┇لا تستطيع تفعيل المجموعه بسبب قلة عدد اعضاء المجموعه يجب ان يكون اكثر من *:'..(redis:get(bot_id..'Hadaf:Num:Add:Bot') or 0)..'* عضو')
+send(msg.chat_id_, msg.id_,'⚠️┇لا تستطيع تفعيل المجموعه بسبب قلة عدد اعضاء المجموعه يجب ان يكون اكثر من *:'..(redis:get(bot_id..'Hadaf:Num:Add:Bot') or 0)..'* عضو')
 return false
 end
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
@@ -2081,7 +2081,7 @@ tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,chat)
 if redis:sismember(bot_id..'Hadaf:ChekBotAdd',msg.chat_id_) then
 send(msg.chat_id_, msg.id_,'⚡┇تم تفعيل المجموعه مسبقا')
 else
-Send_Options(msg,result.id_,'reply_Add','〽┇تم تفعيل مجموعه '..chat.title_..'')
+Send_Options(msg,result.id_,'reply_Add','⚠️️┇تم تفعيل مجموعه '..chat.title_..'')
 redis:sadd(bot_id..'Hadaf:ChekBotAdd',msg.chat_id_)
 local Name1 = result.first_name_
 local Name1 = Name1:gsub('"',"") 
@@ -2107,7 +2107,7 @@ else
 LinkGp = 'لا يوجد'
 end
 if not Dev_Hadaf(msg) then
-sendText(Id_Dev,'☑┇تم تفعيل مجموعه جديده\n'..'\n💢┇بواسطة : '..Name..''..'\n🔖┇ايدي المجموعه : `'..IdChat..'`'..'\n👥┇عدد اعضاء المجموعه *: '..NumMember..'*'..'\n📛┇اسم المجموعه : ['..NameChat..']'..'\n〽┇الرابط : ['..LinkGp..']',0,'md')
+sendText(Id_Dev,'✅┇تم تفعيل مجموعه جديده\n'..'\n💢┇بواسطة : '..Name..''..'\n🔖┇ايدي المجموعه : `'..IdChat..'`'..'\n👥┇عدد اعضاء المجموعه *: '..NumMember..'*'..'\n📛┇اسم المجموعه : ['..NameChat..']'..'\n⚠️️┇الرابط : ['..LinkGp..']',0,'md')
 end
 end
 end,nil) 
@@ -2122,7 +2122,7 @@ tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,chat)
 if not redis:sismember(bot_id..'Hadaf:ChekBotAdd',msg.chat_id_) then
 send(msg.chat_id_, msg.id_,'⚡┇المجموعه بالتاكيد معطله')
 else
-Send_Options(msg,result.id_,'reply_Add','〽┇تم تعطيل مجموعه '..chat.title_..'')
+Send_Options(msg,result.id_,'reply_Add','⚠️️┇تم تعطيل مجموعه '..chat.title_..'')
 redis:srem(bot_id..'Hadaf:ChekBotAdd',msg.chat_id_)  
 local Name1 = result.first_name_
 local Name1 = Name1:gsub('"',"") 
@@ -2147,7 +2147,7 @@ else
 LinkGp = 'لا يوجد'
 end
 if not Dev_Hadaf(msg) then
-sendText(Id_Dev,'☑┇تم تعطيل مجموعه جديده\n'..'\n💢┇بواسطة : '..Name..''..'\n🔖┇ايدي المجموعه : `'..IdChat..'`\n📛┇اسم المجموعه : ['..NameChat..']',0,'md')
+sendText(Id_Dev,'✅┇تم تعطيل مجموعه جديده\n'..'\n💢┇بواسطة : '..Name..''..'\n🔖┇ايدي المجموعه : `'..IdChat..'`\n📛┇اسم المجموعه : ['..NameChat..']',0,'md')
 end
 end
 end,nil) 
@@ -2157,11 +2157,11 @@ end
 if text == 'تفعيل' and not DeveloperBot(msg) and not redis:get(bot_id..'Hadaf:Free:Bot') then
  
 if TypeForChat ~= 'ForSuppur' then
-send(msg.chat_id_, msg.id_,'⚠┇المجموعه عاديه وليست خارقه لا تستطيع تفعيلي يرجى ان تضع سجل رسائل المجموعه ضاهر وليس مخفي ومن بعدها يمكنك رفعي ادمن ثم تفعيلي') 
+send(msg.chat_id_, msg.id_,'⚠️┇المجموعه عاديه وليست خارقه لا تستطيع تفعيلي يرجى ان تضع سجل رسائل المجموعه ظاهر وليس مخفي ومن بعدها يمكنك رفعي ادمن ثم تفعيلي') 
 return false
 end
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,'⚠┇البوت ليس ادمن يرجى ترقيتي') 
+send(msg.chat_id_, msg.id_,'⚠️┇البوت ليس ادمن يرجى ترقيتي') 
 return false  
 end
 tdcli_function ({ ID = "GetChannelFull", channel_id_ = msg.chat_id_:gsub("-100","")}, function(arg,data)  
@@ -2182,10 +2182,10 @@ send(msg.chat_id_, msg.id_,'⚡┇تم تفعيل المجموعه مسبقا')
 return false
 end
 if tonumber(data.member_count_) < tonumber(redis:get(bot_id..'Hadaf:Num:Add:Bot') or 0) and not Dev_Hadaf(msg) then
-send(msg.chat_id_, msg.id_,'⚠┇لا تستطيع تفعيل المجموعه بسبب قلة عدد اعضاء المجموعه يجب ان يكون اكثر من *:'..(redis:get(bot_id..'Hadaf:Num:Add:Bot') or 0)..'* عضو')
+send(msg.chat_id_, msg.id_,'⚠️┇لا تستطيع تفعيل المجموعه بسبب قلة عدد اعضاء المجموعه يجب ان يكون اكثر من *:'..(redis:get(bot_id..'Hadaf:Num:Add:Bot') or 0)..'* عضو')
 return false
 end
-Send_Options(msg,msg.sender_user_id_,'reply_Add','〽┇تم تفعيل مجموعه '..chat.title_..'')
+Send_Options(msg,msg.sender_user_id_,'reply_Add','⚠️️┇تم تفعيل مجموعه '..chat.title_..'')
 redis:sadd(bot_id..'Hadaf:ChekBotAdd',msg.chat_id_)  
 redis:sadd(bot_id..'Hadaf:President:Group'..msg.chat_id_, msg.sender_user_id_)
 local LinkApi = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_))
@@ -2211,7 +2211,7 @@ local NameChat = NameChat:gsub("*","")
 local NameChat = NameChat:gsub("{","") 
 local NameChat = NameChat:gsub("}","") 
 if not Dev_Hadaf(msg) then
-sendText(Id_Dev,'☑┇تم تفعيل مجموعه جديده\n💢┇بواسطة : '..Name..'\n🚸┇موقعه في المجموعه : '..Status_Rt..'\n🔖┇ايدي المجموعه : `'..msg.chat_id_..'`\n👥┇عدد اعضاء المجموعه *: '..NumMember..'*\n📛┇اسم المجموعه : ['..NameChat..']\n〽┇الرابط : ['..LinkChat..']',0,'md')
+sendText(Id_Dev,'✅┇تم تفعيل مجموعه جديده\n💢┇بواسطة : '..Name..'\n🚸┇موقعه في المجموعه : '..Status_Rt..'\n🔖┇ايدي المجموعه : `'..msg.chat_id_..'`\n👥┇عدد اعضاء المجموعه *: '..NumMember..'*\n📛┇اسم المجموعه : ['..NameChat..']\n⚠️️┇الرابط : ['..LinkChat..']',0,'md')
 end
 end
 end
@@ -2226,24 +2226,24 @@ if TypeForChat == ("ForUser") then
 if text == '/start' then  
 
 if Dev_Hadaf(msg) then
-local Text_keyboard = '〽┇اهلا بك في اوامر الكيبورد الجاهزه'
+local Text_keyboard = '⚠️️┇اهلا بك في اوامر الكيبورد الجاهزه'
 local List_keyboard = {
 {'تفعيل تواصل البوت 🔔','تعطيل تواصل البوت 🔕'},
 {'اذاعه خاص 👤','اذاعه للمجموعات 👥'},
 {'اذاعه خاص بالتوجيه 👤','اذاعه بالتوجيه 👥'},
 {'اذاعه بالتثبيت 📌'},
 {'احصائيات البوت 📑'},
-{'تفعيل مغادرة البوت ✔','تعطيل مغادرة البوت ❌'},
+{'تفعيل مغادرة البوت ✅','تعطيل مغادرة البوت ❌'},
 {'تفعيل اذاعه المطورين 🔓','تعطيل اذاعه المطورين 🔏'},
 {'تفعيل الوضع الخدمي 🔖','تعطيل الوضع الخدمي 〽'},
 {'تنظيف المجموعات 🔄','تنظيف المشتركين 🚯'},
 {'مسح قائمه العام 💯','مسح قائمه المطورين 🚫'},
-{'ازالة كليشه ستارت 🔗','تغير كليشه ستارت 🆕'},
+{'ازالة كليشه ستارت 🔗','تغيير كليشه ستارت 🦋'},
 {'قائمه العام 📝','قائمه المطورين 📝'},
-{'تغير اسم البوت 🔄'},
-{'تغير كليشة المطور 🆕','ازالة كليشة المطور 🆗'},
-{'تحديث الملفات 🔁','تحديث السورس 🔂'},
-{'جلب نسخة خزن الكروبات 📦'},
+{'تغيير اسم البوت 🔄'},
+{'تغيير كليشة المطور 🆕','ازالة كليشة المطور 🆗'},
+{'تحديث الملفات ♻️','تحديث السورس 🔂'},
+{'جلب نسخة خزن القروبات 📦'},
 {'الغاء ✖'}
 }
 send_inline_keyboard(msg.chat_id_,Text_keyboard,List_keyboard)
@@ -2251,9 +2251,9 @@ else
 if not redis:get(bot_id..'Hadaf:Ban:Cmd:Start'..msg.sender_user_id_) then
 local GetCmdStart = redis:get(bot_id.."Hadaf:Set:Cmd:Start:Bot")  
 if not GetCmdStart then 
-CmdStart = '\n🙋┇أهلآ بك في بوت '..(redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "سكر")..''..
-'\n〽┇اختصاص البوت حماية المجموعات'..
-'\n☑┇لتفعيل البوت عليك اتباع مايلي ...'..
+CmdStart = '\n🙋┇أهلًا بك في بوت '..(redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "هدف")..''..
+'\n⚠️️┇اختصاص البوت حماية المجموعات'..
+'\n✅┇لتفعيل البوت عليك اتباع مايلي ...'..
 '\n👥┇اضف البوت الى مجموعتك'..
 '\n⚡┇ارفعه ادمن {مشرف}'..
 '\n⛔┇ارسل كلمة { تفعيل } ليتم تفعيل المجموعه'..
@@ -2277,7 +2277,7 @@ end
 tdcli_function({ID="ForwardMessages",chat_id_=Id_Dev,from_chat_id_= msg.sender_user_id_,message_ids_={[0]=msg.id_},disable_notification_=1,from_background_=1},function(arg,data) 
 if data and data.messages_ and data.messages_[0] ~= false and data.ID ~= "Error" then
 if data and data.messages_ and data.messages_[0].content_.sticker_ then
-Send_Optionspv(Id_Dev,0,msg.sender_user_id_,"reply_Pv","〽┇قام بارسال الملصق")  
+Send_Optionspv(Id_Dev,0,msg.sender_user_id_,"reply_Pv","⚠️️┇قام بارسال الملصق")  
 return false
 end
 end
@@ -2290,18 +2290,18 @@ if result.forward_info_.sender_user_id_ then
 UserForward = result.forward_info_.sender_user_id_    
 end     
 if text == 'حظر' then
-Send_Optionspv(Id_Dev,msg.id_,UserForward,"reply_Pv","〽┇تم حظره من تواصل البوت")  
+Send_Optionspv(Id_Dev,msg.id_,UserForward,"reply_Pv","⚠️️┇تم حظره من تواصل البوت")  
 redis:sadd(bot_id..'Hadaf:User:Ban:Pv',data.id_)  
 return false  
 elseif text =='الغاء الحظر' then
-Send_Optionspv(Id_Dev,msg.id_,UserForward,"reply_Pv","〽┇تم الغاء حظره من تواصل البوت")  
+Send_Optionspv(Id_Dev,msg.id_,UserForward,"reply_Pv","⚠️️┇تم الغاء حظره من تواصل البوت")  
 redis:srem(bot_id..'Hadaf:User:Ban:Pv',data.id_)  
 return false  
 end 
 tdcli_function({ID='GetChat',chat_id_=UserForward},function(a,s) end,nil)
 tdcli_function({ID="SendChatAction",chat_id_=UserForward,action_={ID="SendMessageTypingAction",progress_=100}},function(arg,Get_Status) 
 if (Get_Status.code_) == (400) or (Get_Status.code_) == (5) then
-Send_Optionspv(Id_Dev,msg.id_,UserForward,"reply_Pv","⚠┇قام بحظر البوت لا تستطيع ارسال له رسائل")  
+Send_Optionspv(Id_Dev,msg.id_,UserForward,"reply_Pv","⚠️┇قام بحظر البوت لا تستطيع ارسال له رسائل")  
 return false  
 end 
 if text then    
@@ -2315,60 +2315,60 @@ sendDocument(UserForward, msg.id_, msg.content_.animation_.animation_.persistent
 elseif msg.content_.ID == 'MessageVoice' then    
 sendVoice(UserForward, msg.id_, msg.content_.voice_.voice_.persistent_id_)    
 end     
-Send_Optionspv(Id_Dev,msg.id_,UserForward,"reply_Pv","☑┇تم ارسال رسالتك اليه بنجاح")  
+Send_Optionspv(Id_Dev,msg.id_,UserForward,"reply_Pv","✅┇تم ارسال رسالتك اليه بنجاح")  
 end,nil)end,nil)
 end
-if text == 'تغير كليشه ستارت 🆕' then
+if text == 'تغيير كليشه ستارت 🦋' then
 redis:set(bot_id..'Hadaf:Set:Cmd:Start:Bots',true) 
-send(msg.chat_id_, msg.id_,'〽┇ارسل الان الكليشه ليتم وضعها') 
+send(msg.chat_id_, msg.id_,'⚠️️┇ارسل الان الكليشه ليتم وضعها') 
 elseif text == 'ازالة كليشه ستارت 🔗' then
 redis:del(bot_id..'Hadaf:Set:Cmd:Start:Bot') 
-send(msg.chat_id_, msg.id_,'☑┇تم حذف كليشه ستارت') 
-elseif text == "تفعيل مغادرة البوت ✔" then   
+send(msg.chat_id_, msg.id_,'✅┇تم حذف كليشه ستارت') 
+elseif text == "تفعيل مغادرة البوت ✅" then   
 redis:del(bot_id.."Hadaf:Lock:Left"..msg.chat_id_)  
-send(msg.chat_id_, msg.id_,"☑┇تم تفعيل مغادرة البوت") 
+send(msg.chat_id_, msg.id_,"✅┇تم تفعيل مغادرة البوت") 
 elseif text == "تعطيل مغادرة البوت ❌" then  
 redis:set(bot_id.."Hadaf:Lock:Left"..msg.chat_id_,true)   
-send(msg.chat_id_, msg.id_, "☑┇تم تعطيل مغادرة البوت") 
+send(msg.chat_id_, msg.id_, "✅┇تم تعطيل مغادرة البوت") 
 elseif text == "تفعيل اذاعه المطورين 🔓" then  
 redis:del(bot_id.."Hadaf:Broadcasting:Bot") 
-send(msg.chat_id_, msg.id_,"☑┇تم تفعيل الاذاعه \n〽┇الان يمكن للمطورين الاذاعه" ) 
+send(msg.chat_id_, msg.id_,"✅┇تم تفعيل الاذاعه \n⚠️️┇الان يمكن للمطورين الاذاعه" ) 
 elseif text == "تعطيل اذاعه المطورين 🔏" then  
 redis:set(bot_id.."Hadaf:Broadcasting:Bot",true) 
-send(msg.chat_id_, msg.id_,"☑┇تم تعطيل الاذاعه") 
+send(msg.chat_id_, msg.id_,"✅┇تم تعطيل الاذاعه") 
 elseif text == 'تفعيل الوضع الخدمي 🔖' then  
 redis:del(bot_id..'Hadaf:Free:Bot') 
-send(msg.chat_id_, msg.id_,'☑┇تم تفعيل البوت الخدمي \n⚡┇الان يمكن الجميع تفعيله') 
+send(msg.chat_id_, msg.id_,'✅┇تم تفعيل البوت الخدمي \n⚡┇الان يمكن الجميع تفعيله') 
 elseif text == 'تعطيل الوضع الخدمي 〽' then  
 redis:set(bot_id..'Hadaf:Free:Bot',true) 
-send(msg.chat_id_, msg.id_,'☑┇تم تعطيل البوت الخدمي') 
-elseif text == 'تغير كليشة المطور 🆕' then
+send(msg.chat_id_, msg.id_,'✅┇تم تعطيل البوت الخدمي') 
+elseif text == 'تغيير كليشة المطور 🆕' then
 redis:set(bot_id..'Hadaf:GetTexting:DevHadaf'..msg.chat_id_..':'..msg.sender_user_id_,true)
 send(msg.chat_id_,msg.id_,'📮┇ ارسل لي الكليشه الان')
 elseif text=="اذاعه خاص 👤" then 
 redis:setex(bot_id.."Hadaf:Broadcasting:Users" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"🔘┇ارسل لي المنشور الان\n〽┇يمكنك ارسال -{ صوره - ملصق - متحركه - رساله }\n⚠┇لالغاء الاذاعه ارسل : الغاء") 
+send(msg.chat_id_, msg.id_,"🔘┇ارسل لي المنشور الان\n⚠️️┇يمكنك ارسال -{ صوره - ملصق - متحركه - رساله }\n⚠️┇لالغاء الاذاعه ارسل : الغاء") 
 return false
 elseif text=="اذاعه للمجموعات 👥" then 
 redis:setex(bot_id.."Hadaf:Broadcasting:Groups" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"🔘┇ارسل لي المنشور الان\n〽┇يمكنك ارسال -{ صوره - ملصق - متحركه - رساله }\n⚠┇لالغاء الاذاعه ارسل : الغاء") 
+send(msg.chat_id_, msg.id_,"🔘┇ارسل لي المنشور الان\n⚠️️┇يمكنك ارسال -{ صوره - ملصق - متحركه - رساله }\n⚠️┇لالغاء الاذاعه ارسل : الغاء") 
 return false
 elseif text=="اذاعه بالتثبيت 📌" and DeveloperBot(msg) then 
 redis:setex(bot_id.."Hadaf:Broadcasting:Groups:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"🔘┇ارسل لي المنشور الان\n〽┇يمكنك ارسال -{ صوره - ملصق - متحركه - رساله }\n⚠┇لالغاء الاذاعه ارسل : الغاء") 
+send(msg.chat_id_, msg.id_,"🔘┇ارسل لي المنشور الان\n⚠️️┇يمكنك ارسال -{ صوره - ملصق - متحركه - رساله }\n⚠️┇لالغاء الاذاعه ارسل : الغاء") 
 return false
 elseif text=="اذاعه بالتوجيه 👥" and DeveloperBot(msg) then 
 redis:setex(bot_id.."Hadaf:Broadcasting:Groups:Fwd" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"〽┇ارسل لي التوجيه الان\n☑┇ليتم نشره في المجموعات") 
+send(msg.chat_id_, msg.id_,"⚠️️┇ارسل لي التوجيه الان\n✅┇ليتم نشره في المجموعات") 
 return false
 elseif text=="اذاعه خاص بالتوجيه 👤" and DeveloperBot(msg) then 
 redis:setex(bot_id.."Hadaf:Broadcasting:Users:Fwd" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"〽┇ارسل لي التوجيه الان\n☑┇ليتم نشره الى المشتركين") 
+send(msg.chat_id_, msg.id_,"⚠️️┇ارسل لي التوجيه الان\n✅┇ليتم نشره الى المشتركين") 
 return false
 elseif text == 'ازالة كليشة المطور 🆗' then
 redis:del(bot_id..'Hadaf:Texting:DevHadaf')
-send(msg.chat_id_, msg.id_,'☑┇ تم حذف كليشه المطور')
-elseif text == "تغير اسم البوت 🔄" then 
+send(msg.chat_id_, msg.id_,'✅┇ تم حذف كليشه المطور')
+elseif text == "تغيير اسم البوت 🔄" then 
 redis:setex(bot_id.."Hadaf:Change:Name:Bot"..msg.sender_user_id_,300,true) 
 send(msg.chat_id_, msg.id_,"📫┇ ارسل لي الاسم الان ")  
 return false
@@ -2390,12 +2390,12 @@ Gban = Gban..""..k.."~ : `"..v.."`\n"
 end
 end
 if #list == 0 then
-Gban = "⚠┇لا يوجد محظورين عام"
+Gban = "⚠️┇لا يوجد محظورين عام"
 end
 send(msg.chat_id_, msg.id_, Gban)
 elseif text == ("قائمه المطورين 📝") then
 local list = redis:smembers(bot_id.."Hadaf:Developer:Bot")
-Sudos = "\n📄┇قائمة مطورين في البوت \n━━━━━━━━━━━━━\n"
+Sudos = "\n📄┇قائمة المطورين في البوت \n━━━━━━━━━━━━━\n"
 for k,v in pairs(list) do
 local username = redis:get(bot_id.."Hadaf:Save:Username" .. v)
 if username then
@@ -2405,26 +2405,26 @@ Sudos = Sudos..""..k.."~ : `"..v.."`\n"
 end
 end
 if #list == 0 then
-Sudos = "⚠┇لا يوجد مطورين"
+Sudos = "⚠️┇لا يوجد مطورين"
 end
 send(msg.chat_id_, msg.id_, Sudos)
 elseif text and text:match("^حظر عام @(.*)$") then
 function FunctionStatus(arg, result)
 if (result.id_) then
 if result and result.type_ and result.type_.ID == ("ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"⚠┇عذرا هاذا معرف قناة")   
+send(msg.chat_id_,msg.id_,"⚠️┇عذرًا هذا معرف قناة")   
 return false 
 end      
 if tonumber(result.id_) == tonumber(bot_id) then  
-send(msg.chat_id_, msg.id_, "⚠┇لا تسطيع حظر البوت عام")
+send(msg.chat_id_, msg.id_, "⚠️┇لا تسطيع حظر البوت عام")
 return false 
 end
 if Dev_Hadaf_User(result.id_) == true then
-send(msg.chat_id_, msg.id_, "⚠┇لا تستطيع حظر المطور الاساسي عام")
+send(msg.chat_id_, msg.id_, "⚠️┇لا تستطيع حظر المطور الاساسي عام")
 return false 
 end
 redis:sadd(bot_id.."Hadaf:Removal:User:Groups", result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم حظره عام من المجموعات")  
+Send_Options(msg,result.id_,"reply","✅┇تم حظره عام من المجموعات")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
@@ -2433,7 +2433,7 @@ tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^حظر عام 
 elseif text and text:match("^الغاء العام @(.*)$") then
 function FunctionStatus(arg, result)
 if (result.id_) then
-Send_Options(msg,result.id_,"reply","☑┇تم الغاء حظره عام من المجموعات")  
+Send_Options(msg,result.id_,"reply","✅┇تم الغاء حظره عام من المجموعات")  
 redis:srem(bot_id.."Hadaf:Removal:User:Groups", result.id_)
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
@@ -2444,11 +2444,11 @@ elseif text and text:match("^اضف مطور @(.*)$") then
 function FunctionStatus(arg, result)
 if (result.id_) then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"⚠┇عذرا هاذا معرف قناة")   
+send(msg.chat_id_,msg.id_,"⚠️┇عذرًا هذا معرف قناة")   
 return false 
 end      
 redis:sadd(bot_id.."Hadaf:Developer:Bot", result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم ترقيته مطور في البوت")  
+Send_Options(msg,result.id_,"reply","✅┇تم ترقيته مطور في البوت")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
@@ -2458,7 +2458,7 @@ elseif text and text:match("^حذف مطور @(.*)$") then
 function FunctionStatus(arg, result)
 if (result.id_) then
 redis:srem(bot_id.."Hadaf:Developer:Bot", result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم تنزيله من المطورين")  
+Send_Options(msg,result.id_,"reply","✅┇تم تنزيله من المطورين")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
@@ -2466,12 +2466,12 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^حذف مطور @(.*)$")}, FunctionStatus, nil)
 elseif text =='احصائيات البوت 📑' then 
 send(msg.chat_id_, msg.id_,'*📋┇عدد احصائيات البوت الكامله \n━━━━━━━━━━━━━\n📮┇عدد المجموعات : '..(redis:scard(bot_id..'Hadaf:ChekBotAdd') or 0)..'\n👤┇عدد المشتركين : '..(redis:scard(bot_id..'Hadaf:Num:User:Pv') or 0)..'*')
-elseif text and text:match("^تعين عدد الاعضاء (%d+)$") then
-redis:set(bot_id..'Hadaf:Num:Add:Bot',text:match("تعين عدد الاعضاء (%d+)$") ) 
-send(msg.chat_id_, msg.id_,'*☑┇ تم تعيين عدد اعضاء تفعيل البوت اكثر من : '..text:match("تعين عدد الاعضاء (%d+)$")..' عضو *')
+elseif text and text:match("^تعيين عدد الاعضاء (%d+)$") then
+redis:set(bot_id..'Hadaf:Num:Add:Bot',text:match("تعيين عدد الاعضاء (%d+)$") ) 
+send(msg.chat_id_, msg.id_,'*✅┇ تم تعيين عدد اعضاء تفعيل البوت اكثر من : '..text:match("تعيين عدد الاعضاء (%d+)$")..' عضو *')
 elseif text == 'حذف كليشه المطور' then
 redis:del(bot_id..'Hadaf:Texting:DevHadaf')
-send(msg.chat_id_, msg.id_,'☑┇ تم حذف كليشه المطور')
+send(msg.chat_id_, msg.id_,'✅┇ تم حذف كليشه المطور')
 elseif text == "تنظيف المشتركين 🚯" then
 local pv = redis:smembers(bot_id..'Hadaf:Num:User:Pv')  
 local sendok = 0
@@ -2488,7 +2488,7 @@ if sendok == 0 then
 send(msg.chat_id_, msg.id_,'👤┇لا يوجد مشتركين وهميين')   
 else
 local ok = #pv - sendok
-send(msg.chat_id_, msg.id_,'*👥┇عدد المشتركين الان ←{ '..#pv..' }\n⚠┇تم العثور على ←{ '..sendok..' } مشترك قام بحظر البوت\n☑┇اصبح عدد المشتركين الان ←{ '..ok..' } مشترك *')   
+send(msg.chat_id_, msg.id_,'*👥┇عدد المشتركين الان ←{ '..#pv..' }\n⚠️┇تم العثور على ←{ '..sendok..' } مشترك قام بحظر البوت\n✅┇اصبح عدد المشتركين الان ←{ '..ok..' } مشترك *')   
 end
 end
 end,nil)
@@ -2540,7 +2540,7 @@ end
 end,nil)
 end
 return false
-elseif text == 'جلب نسخة خزن الكروبات 📦' then
+elseif text == 'جلب نسخة خزن القروبات 📦' then
 local Groups = redis:smembers(bot_id..'Hadaf:ChekBotAdd')  
 local Get_Json = '{"IdBot": '..bot_id..'Hadaf:,"Groups":{'  
 for k,v in pairs(Groups) do   
@@ -2648,7 +2648,7 @@ Get_Json = Get_Json..'}}'
 local File = io.open('./lib/'..bot_id..'.json', "w")
 File:write(Get_Json)
 File:close()
-sendDocument(msg.chat_id_, msg.id_,'./lib/'..bot_id..'.json', '\n☑┇تم جلب نسخه خاصه بالكروبات\n〽┇يحتوي الملف على {'..#Groups..'} مجموعه')
+sendDocument(msg.chat_id_, msg.id_,'./lib/'..bot_id..'.json', '\n✅┇تم جلب نسخه خاصه بالقروبات\n⚠️️┇يحتوي الملف على {'..#Groups..'} مجموعه')
 elseif text == 'تفعيل تواصل البوت 🔔' then  
 redis:del(bot_id..'Hadaf:Lock:Twasl') 
 send(msg.chat_id_, msg.id_,'🔘┇ تم تفعيل التواصل ') 
@@ -2659,15 +2659,15 @@ end
 end 
 end
 if TypeForChat == ("ForSuppur") then
-if text ==  ""..(redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "سكر")..' شنو رئيك بهاذا' and tonumber(msg.reply_to_message_id_) > 0 and not redis:get(bot_id.."Hadaf:Fun:Bots"..msg.chat_id_) then     
+if text ==  ""..(redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "هدف")..' وش رايك بهذا' and tonumber(msg.reply_to_message_id_) > 0 and not redis:get(bot_id.."Hadaf:Fun:Bots"..msg.chat_id_) then     
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, function(Arg,Data) 
-local Text_Fun = {'لوكي وزاحف من ساع زحفلي وحضرته 😒','خوش ولد و ورده مال الله 🙄','يلعب ع البنات 🙄', 'ولد زايعته الكاع 😶🙊','صاك يخبل ومعضل ','محلو وشواربه جنها مكناسه 😂🤷🏼‍♀️','اموت عليه 🌝','هوه غير الحب مال اني ❤️','مو خوش ولد صراحه ☹️','ادبسز وميحترم البنات  ', 'فد واحد قذر 🙄😒','ماطيقه كل ما اكمشه ريحته جنها بخاخ بف باف مال حشرات 😂🤷‍♀️','مو خوش ولد 🤓' } 
+local Text_Fun = {'محبوب ⭐️','جميل 🧡','اخلاقه تُدرس 🌸', 'متكبر 🔥','كريم 🌿','سحبه ✨','غيمه ☁️','لحد يتكلم معه ❌','قلبه ابيض 🤍','غثيث 💜'} 
 send(msg.chat_id_, Data.id_,''..Text_Fun[math.random(#Text_Fun)]..'')   
 end,nil)
 return false
-elseif text == ""..(redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "سكر")..' شنو رئيك بهاي' and tonumber(msg.reply_to_message_id_) > 0 and not redis:get(bot_id.."Hadaf:Fun:Bots"..msg.chat_id_) then    
+elseif text == ""..(redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "هدف")..' وش رايك بهذي' and tonumber(msg.reply_to_message_id_) > 0 and not redis:get(bot_id.."Hadaf:Fun:Bots"..msg.chat_id_) then    
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)},function(Arg, Data) 
-local Text_Fun = {'الكبد مال اني هيه ','ختولي ماحبها ','خانتني ويه صديقي 😔','بس لو الكفها اله اعضها 💔','خوش بنيه بس عده مكسرات زايده وناقصه منا ومنا وهيه تدري بنفسها 😒','جذابه ومنافقه سوتلي مشكله ويه الحب مالتي ','ئووووووووف اموت ع ربها ','ديرو بالكم منها تلعب ع الولد 😶 ضحكت ع واحد قطته ايفون 7 ','صديقتي وختي وروحي وحياتي ','فد وحده منحرفه 😥','ساكنه بالعلاوي ونته حدد بعد لسانها لسان دلاله 🙄🤐','ام سحوره سحرت اخويا وعلكته 6 سنوات 🤕','ماحبها 🙁','بله هاي جهره تسئل عليها ؟ ','بربك ئنته والله فارغ وبطران وماعدك شي تسوي جاي تسئل ع بنات العالم ولي يله 🏼','ياخي بنيه حبوبه بس لبعرك معمي عليها تشرب هواي 😹' } 
+local Text_Fun = {'محبوبه ⭐️','جميله 🧡','اخلاقها تُدرس 🌸', 'متكبره 🔥','كريمه 🌿','سحبه ✨','غيمه ☁️','لحد يتكلم معها ❌','قلبها ابيض 🤍','غثيثه 💜'} 
 send(msg.chat_id_,Data.id_,''..Text_Fun[math.random(#Text_Fun)]..'') 
 end,nil)
 return false
@@ -2679,7 +2679,7 @@ SetFile_Groups(msg,msg.chat_id_,Data.content_.document_.document_.persistent_id_
 end;end,nil)
 end
 
-if text == 'جلب نسخه احتياطيه' and Dev_Hadaf(msg) or text == 'جلب نسخه الكروبات' and Dev_Hadaf(msg) then
+if text == 'جلب نسخه احتياطيه' and Dev_Hadaf(msg) or text == 'جلب نسخه القروبات' and Dev_Hadaf(msg) then
 
 local Groups = redis:smembers(bot_id..'Hadaf:ChekBotAdd')  
 local Get_Json = '{"IdBot": '..bot_id..'Hadaf:,"Groups":{'  
@@ -2788,7 +2788,7 @@ Get_Json = Get_Json..'}}'
 local File = io.open('./lib/'..bot_id..'.json', "w")
 File:write(Get_Json)
 File:close()
-sendDocument(msg.chat_id_, msg.id_,'./lib/'..bot_id..'.json', '\n☑┇تم جلب نسخه خاصه بالكروبات\n〽┇يحتوي الملف على {'..#Groups..'} مجموعه')
+sendDocument(msg.chat_id_, msg.id_,'./lib/'..bot_id..'.json', '\n✅┇تم جلب نسخه خاصه بالقروبات\n⚠️️┇يحتوي الملف على {'..#Groups..'} مجموعه')
 end
 if text == ("مسح قائمه العام") and Dev_Hadaf(msg) or text == ("مسح المحظورين عام") and Dev_Hadaf(msg) then
 
@@ -2841,12 +2841,12 @@ for k,v in pairs(list) do
 redis:del(bot_id.."Hadaf:Get:Reides:Commands:Group"..msg.chat_id_..":"..v)
 redis:del(bot_id.."Hadaf:Command:List:Group"..msg.chat_id_)
 end
-send(msg.chat_id_, msg.id_,"☑┇تم مسح جميع الاوامر التي تم اضافتها")  
+send(msg.chat_id_, msg.id_,"✅┇تم مسح جميع الاوامر التي تم اضافتها")  
 elseif text == "مسح الصلاحيات" and Constructor(msg) then
 
 local list = redis:smembers(bot_id.."Hadaf:Validitys:Group"..msg.chat_id_)
 for k,v in pairs(list) do;redis:del(bot_id.."Hadaf:Add:Validity:Group:Rt"..v..msg.chat_id_);redis:del(bot_id.."Hadaf:Validitys:Group"..msg.chat_id_);end
-send(msg.chat_id_, msg.id_,"☑┇تم مسح صلاحيات المجموعه")
+send(msg.chat_id_, msg.id_,"✅┇تم مسح صلاحيات المجموعه")
 elseif text == ("قائمه العام") and Dev_Hadaf(msg) or text == ("المحظورين عام") and Dev_Hadaf(msg) then
 
 local list = redis:smembers(bot_id.."Hadaf:Removal:User:Groups")
@@ -2860,7 +2860,7 @@ Gban = Gban..""..k.."~ : `"..v.."`\n"
 end
 end
 if #list == 0 then
-Gban = "⚠┇لا يوجد محظورين عام"
+Gban = "⚠️┇لا يوجد محظورين عام"
 end
 send(msg.chat_id_, msg.id_, Gban)
 elseif text == ("المطورين") and Dev_Hadaf(msg) then
@@ -2876,10 +2876,10 @@ Sudos = Sudos..""..k.."~ : `"..v.."`\n"
 end
 end
 if #list == 0 then
-Sudos = "⚠┇لا يوجد مطورين"
+Sudos = "⚠️┇لا يوجد مطورين"
 end
 send(msg.chat_id_, msg.id_, Sudos)
-elseif text == "المنشئين الاساسين" and DeveloperBot(msg) or text == "الاساسين" and DeveloperBot(msg) then
+elseif text == "المنشئين الاساسيين" and DeveloperBot(msg) or text == "الاساسيين" and DeveloperBot(msg) then
 
 local list = redis:smembers(bot_id.."Hadaf:President:Group"..msg.chat_id_)
 Asase = "\n📄┇قائمة المنشئين الاساسين في المجموعه\n━━━━━━━━━━━━━\n"
@@ -2892,10 +2892,10 @@ Asase = Asase..""..k.."~ : `"..v.."`\n"
 end
 end
 if #list == 0 then
-Asase = "⚠┇لا يوجد منشئين اساسيين"
+Asase = "⚠️┇لا يوجد منشئين اساسيين"
 end
 send(msg.chat_id_, msg.id_, Asase)
-elseif text == "المنشئين الاساسين" or text == "الاساسين" then
+elseif text == "المنشئين الاساسيين" or text == "الاساسيين" then
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
 
@@ -2910,7 +2910,7 @@ Asase = Asase..""..k.."~ : `"..v.."`\n"
 end
 end
 if #list == 0 then
-Asase = "⚠┇لا يوجد منشئين اساسيين"
+Asase = "⚠️┇لا يوجد منشئين اساسيين"
 end
 send(msg.chat_id_, msg.id_, Asase)
 end
@@ -2928,7 +2928,7 @@ Monsh = Monsh..""..k.."~ : `"..v.."`\n"
 end
 end
 if #list == 0 then
-Monsh = "⚠┇لا يوجد منشئين"
+Monsh = "⚠️┇لا يوجد منشئين"
 end
 send(msg.chat_id_, msg.id_, Monsh)
 elseif text == ("المدراء") and Constructor(msg) then
@@ -2944,7 +2944,7 @@ Moder = Moder..""..k.."~ : `"..v.."`\n"
 end
 end
 if #list == 0 then
-Moder = "⚠┇لا يوجد مدراء"
+Moder = "⚠️┇لا يوجد مدراء"
 end
 send(msg.chat_id_, msg.id_, Moder)
 elseif text == ("الادمنيه") and Owner(msg) then
@@ -2960,7 +2960,7 @@ Admin = Admin..""..k.."~ : `"..v.."`\n"
 end
 end
 if #list == 0 then
-Admin = "⚠┇لا يوجد ادمنيه"
+Admin = "⚠️┇لا يوجد ادمنيه"
 end
 send(msg.chat_id_, msg.id_, Admin)
 elseif text == ("المميزين") and Admin(msg) then
@@ -2975,7 +2975,7 @@ Vips = Vips..""..k.."~ : `"..v.."`\n"
 end
 end
 if #list == 0 then
-Vips = "⚠┇لا يوجد مميزين"
+Vips = "⚠️┇لا يوجد مميزين"
 end
 send(msg.chat_id_, msg.id_, Vips)
 elseif text == ("المكتومين") and Admin(msg) then
@@ -2990,7 +2990,7 @@ Muted = Muted..""..k.."~ : `"..v.."`\n"
 end
 end
 if #list == 0 then
-Muted = "⚠┇لا يوجد مكتومين"
+Muted = "⚠️┇لا يوجد مكتومين"
 end
 send(msg.chat_id_, msg.id_, Muted)
 elseif text == ("المحظورين") and Admin(msg) then
@@ -3005,13 +3005,13 @@ Bans = Bans..""..k.."~ : `"..v.."`\n"
 end
 end
 if #list == 0 then
-Bans = "⚠┇لا يوجد محظورين"
+Bans = "⚠️┇لا يوجد محظورين"
 end
 send(msg.chat_id_, msg.id_, Bans)
 elseif text == "الصلاحيات" and Admin(msg) then 
 local list = redis:smembers(bot_id.."Hadaf:Validitys:Group"..msg.chat_id_)
 if #list == 0 then
-send(msg.chat_id_, msg.id_,"⚠┇لا توجد صلاحيات مضافه هنا")
+send(msg.chat_id_, msg.id_,"⚠️┇لا توجد صلاحيات مضافه هنا")
 return false
 end
 Validity = "\n⛔┇قائمة الصلاحيات المضافه \n━━━━━━━━━━━━━\n"
@@ -3039,7 +3039,7 @@ if #list == 0 then
 Command = "🔰┇لا توجد اوامر اضافيه"
 end
 send(msg.chat_id_, msg.id_,"["..Command.."]")
-elseif text == "تاك للكل" and Admin(msg) then
+elseif text == "نداء للكل" and Admin(msg) then
 tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""), offset_ = 0,limit_ = 200},function(ta,taha)
 local t = "\n⛔┇ قائمة الاعضاء \n━━━━━━━━━━━━━\n"
 x = 0
@@ -3058,14 +3058,14 @@ elseif text == ("حظر عام") and tonumber(msg.reply_to_message_id_) ~= 0 and
 
 function FunctionStatus(arg, result)
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
-send(msg.chat_id_, msg.id_, "⚠┇لا تسطيع حظر البوت عام")
+send(msg.chat_id_, msg.id_, "⚠️┇لا تسطيع حظر البوت عام")
 return false 
 end
 if Dev_Hadaf_User(result.sender_user_id_) == true then
-send(msg.chat_id_, msg.id_, "⚠┇لا تستطيع حظر المطور الاساسي عام")
+send(msg.chat_id_, msg.id_, "⚠️┇لا تستطيع حظر المطور الاساسي عام")
 return false 
 end
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم حظره عام من المجموعات")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم حظره عام من المجموعات")  
 redis:sadd(bot_id.."Hadaf:Removal:User:Groups", result.sender_user_id_)
 KickGroup(result.chat_id_, result.sender_user_id_)
 end
@@ -3074,35 +3074,35 @@ elseif text == ("الغاء العام") and tonumber(msg.reply_to_message_id_) 
 
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Hadaf:Removal:User:Groups", result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم الغاء حظره عام من المجموعات")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم الغاء حظره عام من المجموعات")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("اضف مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_Hadaf(msg) then
 
 function FunctionStatus(arg, result)
 redis:sadd(bot_id.."Hadaf:Developer:Bot", result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم ترقيته مطور في البوت")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم ترقيته مطور في البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("حذف مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_Hadaf(msg) then
 
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Hadaf:Developer:Bot", result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم تنزيله من المطورين")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم تنزيله من المطورين")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DeveloperBot(msg) then
  
 function FunctionStatus(arg, result)
 redis:sadd(bot_id.."Hadaf:President:Group"..msg.chat_id_, result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم ترقيته منشئ اساسي")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم ترقيته منشئ اساسي")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DeveloperBot(msg) then
  
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Hadaf:President:Group"..msg.chat_id_, result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم تنزيله من المنشئين")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم تنزيله من المنشئين")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 then
@@ -3111,7 +3111,7 @@ tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sen
 if da.status_.ID == "ChatMemberStatusCreator" then
 function FunctionStatus(arg, result)
 redis:sadd(bot_id.."Hadaf:President:Group"..msg.chat_id_, result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم ترقيته منشئ اساسي")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم ترقيته منشئ اساسي")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 end
@@ -3122,7 +3122,7 @@ if da.status_.ID == "ChatMemberStatusCreator" then
 
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Hadaf:President:Group"..msg.chat_id_, result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم تنزيله من المنشئين")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم تنزيله من المنشئين")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 end
@@ -3131,151 +3131,151 @@ elseif text == "رفع منشئ" and tonumber(msg.reply_to_message_id_) ~= 0 and
  
 function FunctionStatus(arg, result)
 redis:sadd(bot_id.."Hadaf:Constructor:Group"..msg.chat_id_, result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم ترقيته منشئ في المجموعه")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم ترقيته منشئ في المجموعه")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text and text:match("^تنزيل منشئ$") and tonumber(msg.reply_to_message_id_) ~= 0 and PresidentGroup(msg) then
 
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Hadaf:Constructor:Group"..msg.chat_id_, result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم تنزيله من المنشئين")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم تنزيله من المنشئين")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("رفع مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then
  
 function FunctionStatus(arg, result)
 redis:sadd(bot_id.."Hadaf:Manager:Group"..msg.chat_id_, result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم ترقيته مدير المجموعه")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم ترقيته مدير المجموعه")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("تنزيل مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then
  
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Hadaf:Manager:Group"..msg.chat_id_, result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم تنزيله من المدراء")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم تنزيله من المدراء")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("رفع ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then
  
 if not Constructor(msg) and redis:get(bot_id.."Hadaf:Cheking:Seted"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذلك لانه تم تعطيل الرفع من قبل المنشئين')
 return false
 end
 function FunctionStatus(arg, result)
 redis:sadd(bot_id.."Hadaf:Admin:Group"..msg.chat_id_, result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم ترقيته ادمن للمجموعه")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم ترقيته ادمن للمجموعه")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("تنزيل ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then
  
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Hadaf:Admin:Group"..msg.chat_id_, result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم تنزيله من ادمنيه المجموعه")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم تنزيله من ادمنيه المجموعه")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("رفع مميز") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
  
 if not Constructor(msg) and redis:get(bot_id.."Hadaf:Cheking:Seted"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذلك لانه تم تعطيل الرفع من قبل المنشئين')
 return false
 end
 function FunctionStatus(arg, result)
 redis:sadd(bot_id.."Hadaf:Vip:Group"..msg.chat_id_, result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم ترقيته مميز للمجموعه")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم ترقيته مميز للمجموعه")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("تنزيل مميز") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
  
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Hadaf:Vip:Group"..msg.chat_id_, result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم تنزيله من المميزين")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم تنزيله من المميزين")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("حظر") and msg.reply_to_message_id_ ~= 0 and Admin(msg) then
 
 if not Constructor(msg) and redis:get(bot_id.."Hadaf:Lock:Ban:Group"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'☑┇لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'✅┇لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
 return false
 end
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,"⚠┇عذرآ البوت ليس ادمن") 
+send(msg.chat_id_, msg.id_,"⚠️️┇عذرًا البوت ليس ادمن") 
 return false  
 end
 function FunctionStatus(arg, result)
 if Rank_Checking(result.sender_user_id_, msg.chat_id_) == true then
-send(msg.chat_id_, msg.id_, "\n⚠┇لا تستطيع -( حظر , طرد , كتم , تقيد ) : "..Get_Rank(result.sender_user_id_,msg.chat_id_).." ")
+send(msg.chat_id_, msg.id_, "\n⚠️️┇لا تستطيع -( حظر , طرد , كتم , تقييد ) : "..Get_Rank(result.sender_user_id_,msg.chat_id_).." ")
 else
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.sender_user_id_, status_ = { ID = "ChatMemberStatusKicked" },},function(arg,data) 
 if (data and data.code_ and data.code_ == 400 and data.message_ == "CHAT_ADMIN_REQUIRED") then 
-send(msg.chat_id_, msg.id_,"⚠┇لا توجد لدي صلاحية حظر المستخدمين") 
+send(msg.chat_id_, msg.id_,"⚠️️┇لا توجد لدي صلاحية حظر المستخدمين") 
 return false  
 end
 redis:sadd(bot_id.."Hadaf:Removal:User:Group"..msg.chat_id_, result.sender_user_id_)
 KickGroup(result.chat_id_, result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم حظره من المجموعه")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم حظره من المجموعه")  
 end,nil)   
 end
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
-elseif text == ("الغاء حظر") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
+elseif text == ("الغاء الحظر") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
 
 function FunctionStatus(arg, result)
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then
-send(msg.chat_id_, msg.id_, "☑️┇لا يمكنك عمل هاذا الامر على البوت") 
+send(msg.chat_id_, msg.id_, "✅┇لا يمكنك عمل هذا الامر على البوت") 
 return false 
 end
 redis:srem(bot_id.."Hadaf:Removal:User:Group"..msg.chat_id_, result.sender_user_id_)
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.sender_user_id_, status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم الغاء حظره من هنا")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم الغاء حظره من هنا")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("كتم") and msg.reply_to_message_id_ ~= 0 and Admin(msg) then
 
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,"⚠┇عذرآ البوت ليس ادمن") 
+send(msg.chat_id_, msg.id_,"⚠️┇عذرًا البوت ليس ادمن") 
 return false  
 end
 function FunctionStatus(arg, result)
 if Rank_Checking(result.sender_user_id_, msg.chat_id_) == true then
-send(msg.chat_id_, msg.id_, "\n⚠┇لا تستطيع -( حظر , طرد , كتم , تقيد ) : "..Get_Rank(result.sender_user_id_,msg.chat_id_).."")
+send(msg.chat_id_, msg.id_, "\n⚠️┇لا تستطيع -( حظر , طرد , كتم , تقييد ) : "..Get_Rank(result.sender_user_id_,msg.chat_id_).."")
 return false 
 end     
 redis:sadd(bot_id.."Hadaf:Silence:User:Group"..msg.chat_id_, result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم كتمه من هنا")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم كتمه من هنا")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
-elseif text == ("الغاء كتم") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
+elseif text == ("الغاء الكتم") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
 
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Hadaf:Silence:User:Group"..msg.chat_id_, result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم الغاء كتمه من هنا")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم الغاء كتمه من هنا")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
-elseif text == ("الغاء تقيد") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
+elseif text == ("الغاء التقييد") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
 
 function FunctionStatus(arg, result)
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,"⚠┇عذرآ البوت ليس ادمن") 
+send(msg.chat_id_, msg.id_,"⚠️┇عذرًا البوت ليس ادمن") 
 return false  
 end
 https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. result.sender_user_id_ .. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم الغاء تقييده")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم الغاء تقييده")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 
-elseif text == ("تقيد") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
+elseif text == ("تقييد") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
 
 function FunctionStatus(arg, result)
 if Rank_Checking(result.sender_user_id_, msg.chat_id_) then
-send(msg.chat_id_, msg.id_, "\n⚠┇لا تستطيع -( حظر , طرد , كتم , تقيد ) : "..Get_Rank(result.id_,msg.chat_id_).."")
+send(msg.chat_id_, msg.id_, "\n⚠️┇لا تستطيع -( حظر , طرد , كتم , تقييد ) : "..Get_Rank(result.id_,msg.chat_id_).."")
 return false 
 end      
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,"⚠┇عذرآ البوت ليس ادمن") 
+send(msg.chat_id_, msg.id_,"⚠️┇عذرًا البوت ليس ادمن") 
 return false  
 end
 https.request("https://api.telegram.org/bot"..token.."/restrictChatMember?chat_id="..msg.chat_id_.."&user_id="..result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم تقييده")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم تقييده")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text and text:match("^حظر عام @(.*)$") and Dev_Hadaf(msg) then
@@ -3283,21 +3283,21 @@ elseif text and text:match("^حظر عام @(.*)$") and Dev_Hadaf(msg) then
 function FunctionStatus(arg, result)
 if (result.id_) then
 if result and result.type_ and result.type_.ID == ("ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"⚠┇عذرا هاذا معرف قناة")   
+send(msg.chat_id_,msg.id_,"⚠️┇عذرًا هذا معرف قناة")   
 return false 
 end      
 if tonumber(result.id_) == tonumber(bot_id) then  
-send(msg.chat_id_, msg.id_, "⚠┇لا تسطيع حظر البوت عام")
+send(msg.chat_id_, msg.id_, "⚠️┇لا تسطيع حظر البوت عام")
 return false 
 end
 if Dev_Hadaf_User(result.id_) == true then
-send(msg.chat_id_, msg.id_, "⚠┇لا تستطيع حظر المطور الاساسي عام")
+send(msg.chat_id_, msg.id_, "⚠️┇لا تستطيع حظر المطور الاساسي عام")
 return false 
 end
 redis:sadd(bot_id.."Hadaf:Removal:User:Groups", result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم حظره عام من المجموعات")  
+Send_Options(msg,result.id_,"reply","✅┇تم حظره عام من المجموعات")  
 else
-send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
+send(msg.chat_id_, msg.id_,"❌┇المعرف غلط")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^حظر عام @(.*)$")}, FunctionStatus, nil)
@@ -3305,7 +3305,7 @@ elseif text and text:match("^الغاء العام @(.*)$") and Dev_Hadaf(msg) t
 
 function FunctionStatus(arg, result)
 if (result.id_) then
-Send_Options(msg,result.id_,"reply","☑┇تم الغاء حظره عام من المجموعات")  
+Send_Options(msg,result.id_,"reply","✅┇تم الغاء حظره عام من المجموعات")  
 redis:srem(bot_id.."Hadaf:Removal:User:Groups", result.id_)
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
@@ -3317,11 +3317,11 @@ elseif text and text:match("^اضف مطور @(.*)$") and Dev_Hadaf(msg) then
 function FunctionStatus(arg, result)
 if (result.id_) then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"⚠┇عذرا هاذا معرف قناة")   
+send(msg.chat_id_,msg.id_,"⚠️┇عذرًا هذا معرف قناة")   
 return false 
 end      
 redis:sadd(bot_id.."Hadaf:Developer:Bot", result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم ترقيته مطور في البوت")  
+Send_Options(msg,result.id_,"reply","✅┇تم ترقيته مطور في البوت")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
@@ -3332,7 +3332,7 @@ elseif text and text:match("^حذف مطور @(.*)$") and Dev_Hadaf(msg) then
 function FunctionStatus(arg, result)
 if (result.id_) then
 redis:srem(bot_id.."Hadaf:Developer:Bot", result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم تنزيله من المطورين")  
+Send_Options(msg,result.id_,"reply","✅┇تم تنزيله من المطورين")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
@@ -3343,11 +3343,11 @@ elseif text and text:match("^رفع منشئ اساسي @(.*)$") and DeveloperBo
 function FunctionStatus(arg, result)
 if (result.id_) then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"⚠┇عذرا هاذا معرف قناة")   
+send(msg.chat_id_,msg.id_,"⚠️┇عذرًا هذا معرف قناة")   
 return false 
 end      
 redis:sadd(bot_id.."Hadaf:President:Group"..msg.chat_id_, result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم ترقيته منشئ اساسي")  
+Send_Options(msg,result.id_,"reply","✅┇تم ترقيته منشئ اساسي")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
@@ -3358,7 +3358,7 @@ elseif text and text:match("^تنزيل منشئ اساسي @(.*)$") and Develop
 function FunctionStatus(arg, result)
 if (result.id_) then
 redis:srem(bot_id.."Hadaf:President:Group"..msg.chat_id_, result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم تنزيله من المنشئين")  
+Send_Options(msg,result.id_,"reply","✅┇تم تنزيله من المنشئين")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
@@ -3371,11 +3371,11 @@ if da.status_.ID == "ChatMemberStatusCreator" then
 function FunctionStatus(arg, result)
 if (result.id_) then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"⚠┇عذرا هاذا معرف قناة")   
+send(msg.chat_id_,msg.id_,"⚠️┇عذرًا هذا معرف قناة")   
 return false 
 end      
 redis:sadd(bot_id.."Hadaf:President:Group"..msg.chat_id_, result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم ترقيته منشئ اساسي")  
+Send_Options(msg,result.id_,"reply","✅┇تم ترقيته منشئ اساسي")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
@@ -3391,7 +3391,7 @@ if da.status_.ID == "ChatMemberStatusCreator" then
 function FunctionStatus(arg, result)
 if (result.id_) then
 redis:srem(bot_id.."Hadaf:President:Group"..msg.chat_id_, result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم تنزيله من المنشئين")  
+Send_Options(msg,result.id_,"reply","✅┇تم تنزيله من المنشئين")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
@@ -3405,11 +3405,11 @@ elseif text and text:match("^رفع منشئ @(.*)$") and PresidentGroup(msg) th
 function FunctionStatus(arg, result)
 if (result.id_) then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"⚠┇عذرا هاذا معرف قناة")   
+send(msg.chat_id_,msg.id_,"⚠️┇عذرًا هذا معرف قناة")   
 return false 
 end      
 redis:sadd(bot_id.."Hadaf:Constructor:Group"..msg.chat_id_, result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم ترقيته منشئ في المجموعه")  
+Send_Options(msg,result.id_,"reply","✅┇تم ترقيته منشئ في المجموعه")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
@@ -3420,7 +3420,7 @@ elseif text and text:match("^تنزيل منشئ @(.*)$") and PresidentGroup(msg
 function FunctionStatus(arg, result)
 if (result.id_) then
 redis:srem(bot_id.."Hadaf:Constructor:Group"..msg.chat_id_, result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم تنزيله من المنشئين")  
+Send_Options(msg,result.id_,"reply","✅┇تم تنزيله من المنشئين")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
@@ -3431,11 +3431,11 @@ elseif text and text:match("^رفع مدير @(.*)$") and Constructor(msg) then
 function FunctionStatus(arg, result)
 if (result.id_) then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"⚠┇عذرا هاذا معرف قناة")   
+send(msg.chat_id_,msg.id_,"⚠️┇عذرًا هذا معرف قناة")   
 return false 
 end      
 redis:sadd(bot_id.."Hadaf:Manager:Group"..msg.chat_id_, result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم ترقيته مدير المجموعه")  
+Send_Options(msg,result.id_,"reply","✅┇تم ترقيته مدير المجموعه")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
@@ -3446,7 +3446,7 @@ elseif text and text:match("^تنزيل مدير @(.*)$") and Constructor(msg) t
 function FunctionStatus(arg, result)
 if (result.id_) then
 redis:srem(bot_id.."Hadaf:Manager:Group"..msg.chat_id_, result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم تنزيله من المدراء")  
+Send_Options(msg,result.id_,"reply","✅┇تم تنزيله من المدراء")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
@@ -3455,17 +3455,17 @@ tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تنزيل م�
 elseif text and text:match("^رفع ادمن @(.*)$") and Owner(msg) then
  
 if not Constructor(msg) and redis:get(bot_id.."Hadaf:Cheking:Seted"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذلك لانه تم تعطيل الرفع من قبل المنشئين')
 return false
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"⚠┇عذرا هاذا معرف قناة")   
+send(msg.chat_id_,msg.id_,"⚠️┇عذرًا هذا معرف قناة")   
 return false 
 end      
 redis:sadd(bot_id.."Hadaf:Admin:Group"..msg.chat_id_, result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم ترقيته ادمن للمجموعه")  
+Send_Options(msg,result.id_,"reply","✅┇تم ترقيته ادمن للمجموعه")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
@@ -3476,7 +3476,7 @@ elseif text and text:match("^تنزيل ادمن @(.*)$") and Owner(msg) then
 function FunctionStatus(arg, result)
 if (result.id_) then
 redis:srem(bot_id.."Hadaf:Admin:Group"..msg.chat_id_, result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم تنزيله من ادمنيه المجموعه")  
+Send_Options(msg,result.id_,"reply","✅┇تم تنزيله من ادمنيه المجموعه")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
@@ -3485,17 +3485,17 @@ tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تنزيل ا�
 elseif text and text:match("^رفع مميز @(.*)$") and Admin(msg) then
  
 if not Constructor(msg) and redis:get(bot_id.."Hadaf:Cheking:Seted"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذلك لانه تم تعطيل الرفع من قبل المنشئين')
 return false
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"⚠┇عذرا هاذا معرف قناة")   
+send(msg.chat_id_,msg.id_,"⚠️┇عذرًا هذا معرف قناة")   
 return false 
 end      
 redis:sadd(bot_id.."Hadaf:Vip:Group"..msg.chat_id_, result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم ترقيته مميز للمجموعه")  
+Send_Options(msg,result.id_,"reply","✅┇تم ترقيته مميز للمجموعه")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
@@ -3506,7 +3506,7 @@ elseif text and text:match("^تنزيل مميز @(.*)$") and Admin(msg) then
 function FunctionStatus(arg, result)
 if (result.id_) then
 redis:srem(bot_id.."Hadaf:Vip:Group"..msg.chat_id_, result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم تنزيله من المميزين")  
+Send_Options(msg,result.id_,"reply","✅┇تم تنزيله من المميزين")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
@@ -3527,7 +3527,7 @@ redis:set(bot_id.."Hadaf:Add:Validity:Users"..msg.chat_id_..result.sender_user_i
 redis:sadd(bot_id.."Hadaf:Manager:Group"..msg.chat_id_,result.sender_user_id_)  
 elseif statusrt == "عضو" and Admin(msg) then
 end
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم ترقيته : "..text:match("رفع (.*)").."")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم ترقيته : "..text:match("رفع (.*)").."")  
 end   
 tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, Status_reply, nil)
 end
@@ -3546,7 +3546,7 @@ redis:srem(bot_id.."Hadaf:Manager:Group"..msg.chat_id_,result.sender_user_id_)
 redis:del(bot_id.."Hadaf:Add:Validity:Users"..msg.chat_id_..result.sender_user_id_)
 elseif statusrt == "عضو" and Admin(msg) then
 end
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم تنزيله : "..text:match("تنزيل (.*)").."")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم تنزيله : "..text:match("تنزيل (.*)").."")  
 end   
 tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, Status_reply, nil)
 end
@@ -3567,7 +3567,7 @@ redis:sadd(bot_id.."Hadaf:Manager:Group"..msg.chat_id_,result.id_)
 redis:set(bot_id.."Hadaf:Add:Validity:Users"..msg.chat_id_..result.id_,text1[2])
 elseif statusrt == "عضو" and Admin(msg) then
 end
-Send_Options(msg,result.id_,"reply","☑┇تم رفعه : "..text1[2].."")
+Send_Options(msg,result.id_,"reply","✅┇تم رفعه : "..text1[2].."")
 else
 send(msg.chat_id_, msg.id_,"📌┇المعرف غلط")
 end
@@ -3591,7 +3591,7 @@ redis:srem(bot_id.."Hadaf:Manager:Group"..msg.chat_id_,result.id_)
 redis:del(bot_id.."Hadaf:Add:Validity:Users"..msg.chat_id_..result.id_)
 elseif statusrt == "عضو" and Admin(msg) then
 end
-Send_Options(msg,result.id_,"reply","☑┇تم تنزيله : "..text1[2].."")
+Send_Options(msg,result.id_,"reply","✅┇تم تنزيله : "..text1[2].."")
 else
 send(msg.chat_id_, msg.id_,"📌┇المعرف غلط")
 end
@@ -3601,30 +3601,30 @@ end
 elseif text and text:match("^حظر @(.*)$") and Admin(msg) then
 
 if not Constructor(msg) and redis:get(bot_id.."Hadaf:Lock:Ban:Group"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'☑┇لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'✅┇لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
 return false
 end
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,"⚠┇عذرآ البوت ليس ادمن") 
+send(msg.chat_id_, msg.id_,"⚠️┇عذرًا البوت ليس ادمن") 
 return false  
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
 if Rank_Checking(result.id_, msg.chat_id_) == true then
-send(msg.chat_id_, msg.id_, "\n⚠┇لا تستطيع -( حظر , طرد , كتم , تقيد ) : "..Get_Rank(result.id_,msg.chat_id_).."")
+send(msg.chat_id_, msg.id_, "\n⚠️┇لا تستطيع -( حظر , طرد , كتم , تقييد ) : "..Get_Rank(result.id_,msg.chat_id_).."")
 else
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.id_, status_ = { ID = "ChatMemberStatusKicked" },},function(arg,data) 
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"⚠┇عذرا هاذا معرف قناة")   
+send(msg.chat_id_,msg.id_,"⚠️┇عذرًا هذا معرف قناة")   
 return false 
 end      
 if (data and data.code_ and data.code_ == 400 and data.message_ == "CHAT_ADMIN_REQUIRED") then 
-send(msg.chat_id_, msg.id_,"⚠┇لا توجد لدي صلاحية حظر المستخدمين") 
+send(msg.chat_id_, msg.id_,"⚠️┇لا توجد لدي صلاحية حظر المستخدمين") 
 return false  
 end
 redis:sadd(bot_id.."Hadaf:Removal:User:Group"..msg.chat_id_, result.id_)
 KickGroup(msg.chat_id_, result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم حظره من المجموعه")  
+Send_Options(msg,result.id_,"reply","✅┇تم حظره من المجموعه")  
 end,nil)   
 end
 else
@@ -3632,89 +3632,89 @@ send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^حظر @(.*)$")}, FunctionStatus, nil)
-elseif text and text:match("^الغاء حظر @(.*)$") and Admin(msg) then
+elseif text and text:match("^الغاء الحظر @(.*)$") and Admin(msg) then
 
 function FunctionStatus(arg, result)
 if (result.id_) then
 if tonumber(result.id_) == tonumber(bot_id) then
-send(msg.chat_id_, msg.id_, "☑️┇لا يمكنك عمل هاذا الامر على البوت") 
+send(msg.chat_id_, msg.id_, "✅┇لا يمكنك عمل هذا الامر على البوت") 
 return false 
 end
 redis:srem(bot_id.."Hadaf:Removal:User:Group"..msg.chat_id_, result.id_)
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.id_, status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
-Send_Options(msg,result.id_,"reply","☑┇تم الغاء حظره من هنا")  
+Send_Options(msg,result.id_,"reply","✅┇تم الغاء حظره من هنا")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
 end
-tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^الغاء حظر @(.*)$") }, FunctionStatus, nil)
+tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^الغاء الحظر @(.*)$") }, FunctionStatus, nil)
 elseif text and text:match("^كتم @(.*)$") and Admin(msg) then
 
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,"⚠┇عذرآ البوت ليس ادمن") 
+send(msg.chat_id_, msg.id_,"⚠️┇عذرًا البوت ليس ادمن") 
 return false  
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
 if Rank_Checking(result.id_, msg.chat_id_) == true then
-send(msg.chat_id_, msg.id_, "\n⚠┇لا تستطيع -( حظر , طرد , كتم , تقيد ) : "..Get_Rank(result.id_,msg.chat_id_).." ")
+send(msg.chat_id_, msg.id_, "\n⚠️┇لا تستطيع -( حظر , طرد , كتم , تقييد ) : "..Get_Rank(result.id_,msg.chat_id_).." ")
 return false 
 end     
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"⚠┇عذرا هاذا معرف قناة")   
+send(msg.chat_id_,msg.id_,"⚠️┇عذرًا هذا معرف قناة")   
 return false 
 end      
 redis:sadd(bot_id.."Hadaf:Silence:User:Group"..msg.chat_id_, result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم كتمه من هنا")  
+Send_Options(msg,result.id_,"reply","✅┇تم كتمه من هنا")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^كتم @(.*)$")}, FunctionStatus, nil)
-elseif text and text:match("^الغاء كتم @(.*)$") and Admin(msg) then
+elseif text and text:match("^الغاء الكتم @(.*)$") and Admin(msg) then
 
 function FunctionStatus(arg, result)
 if (result.id_) then
 redis:srem(bot_id.."Hadaf:Silence:User:Group"..msg.chat_id_, result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم الغاء كتمه من هنا")  
+Send_Options(msg,result.id_,"reply","✅┇تم الغاء كتمه من هنا")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
 end
-tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^الغاء كتم @(.*)$")}, FunctionStatus, nil)
-elseif text and text:match("^تقيد @(.*)$") and Admin(msg) then
+tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^الغاء الكتم @(.*)$")}, FunctionStatus, nil)
+elseif text and text:match("^تقييد @(.*)$") and Admin(msg) then
 
 function FunctionStatus(arg, result)
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,"⚠┇عذرآ البوت ليس ادمن") 
+send(msg.chat_id_, msg.id_,"⚠️┇عذرًا البوت ليس ادمن") 
 return false  
 end
 if (result.id_) then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"⚠┇عذرا هاذا معرف قناة")   
+send(msg.chat_id_,msg.id_,"⚠️┇عذرًا هذا معرف قناة")   
 return false 
 end      
 if Rank_Checking(result.id_, msg.chat_id_) then
-send(msg.chat_id_, msg.id_, "\n⚠┇لا تستطيع -( حظر , طرد , كتم , تقيد ) : "..Get_Rank(result.id_,msg.chat_id_).."")
+send(msg.chat_id_, msg.id_, "\n⚠️┇لا تستطيع -( حظر , طرد , كتم , تقييد ) : "..Get_Rank(result.id_,msg.chat_id_).."")
 return false 
 end      
 https.request("https://api.telegram.org/bot"..token.."/restrictChatMember?chat_id="..msg.chat_id_.."&user_id="..result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم تقييده في المجموعه")  
+Send_Options(msg,result.id_,"reply","✅┇تم تقييده في المجموعه")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
 end
-tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تقيد @(.*)$")}, FunctionStatus, nil)
-elseif text and text:match('^تقيد (%d+) (.*) @(.*)$') and Admin(msg) then
-local TextEnd = {string.match(text, "^(تقيد) (%d+) (.*) @(.*)$")}
+tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تقييد @(.*)$")}, FunctionStatus, nil)
+elseif text and text:match('^تقييد (%d+) (.*) @(.*)$') and Admin(msg) then
+local TextEnd = {string.match(text, "^(تقييد) (%d+) (.*) @(.*)$")}
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,"⚠┇عذرآ البوت ليس ادمن") 
+send(msg.chat_id_, msg.id_,"⚠️┇عذرًا البوت ليس ادمن") 
 return false  
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"⚠┇عذرا هاذا معرف قناة")   
+send(msg.chat_id_,msg.id_,"⚠️┇عذرًا هذا معرف قناة")   
 return false 
 end      
 if TextEnd[3] == 'يوم' then
@@ -3733,55 +3733,55 @@ TextEnd[3] = TextEnd[3]:gsub('دقيقه',"دقايق")
 TextEnd[3] = TextEnd[3]:gsub('ساعه',"ساعات") 
 TextEnd[3] = TextEnd[3]:gsub("يوم","ايام") 
 if Rank_Checking(result.id_, msg.chat_id_) then
-send(msg.chat_id_, msg.id_, "\n⚠┇لا تستطيع -( حظر , طرد , كتم , تقيد ) : "..Get_Rank(result.id_,msg.chat_id_).."")
+send(msg.chat_id_, msg.id_, "\n⚠️┇لا تستطيع -( حظر , طرد , كتم , تقييد ) : "..Get_Rank(result.id_,msg.chat_id_).."")
 else
-Send_Options(msg,result.id_,"reply", "☑┇تم تقيده لمدة ~ { "..TextEnd[2]..' '..TextEnd[3]..'}')
+Send_Options(msg,result.id_,"reply", "✅┇تم تقييده لمدة ~ { "..TextEnd[2]..' '..TextEnd[3]..'}')
 https.request("https://api.telegram.org/bot"..token.."/restrictChatMember?chat_id="..msg.chat_id_.."&user_id="..result.id_..'&until_date='..tonumber(msg.date_+Time))
 end
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = TextEnd[4]}, FunctionStatus, nil)
-elseif text and text:match("^الغاء تقيد @(.*)$") and Admin(msg) then
+elseif text and text:match("^الغاء التقييد @(.*)$") and Admin(msg) then
 
 function FunctionStatus(arg, result)
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,"⚠┇عذرآ البوت ليس ادمن") 
+send(msg.chat_id_, msg.id_,"⚠️┇عذرًا البوت ليس ادمن") 
 return false  
 end
 if (result.id_) then
 https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. result.id_ .. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
-Send_Options(msg,result.id_,"reply","☑┇تم الغاء تقييده")  
+Send_Options(msg,result.id_,"reply","✅┇تم الغاء تقييده")  
 else
 send(msg.chat_id_, msg.id_,"❌┇المعرف غلط ")
 end
 end
-tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^الغاء تقيد @(.*)$")}, FunctionStatus, nil)
+tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^الغاء التقييد @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^طرد @(.*)$") and Admin(msg) then
  
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,"⚠┇عذرآ البوت ليس ادمن") 
+send(msg.chat_id_, msg.id_,"⚠️┇عذرًا البوت ليس ادمن") 
 return false  
 end
 if not Constructor(msg) and redis:get(bot_id.."Hadaf:Lock:Ban:Group"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'☑┇لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'✅┇لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
 return false
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
 if Rank_Checking(result.id_, msg.chat_id_) == true then
-send(msg.chat_id_, msg.id_, "\n⚠┇لا تستطيع -( حظر , طرد , كتم , تقيد ) : "..Get_Rank(result.id_,msg.chat_id_).."")
+send(msg.chat_id_, msg.id_, "\n⚠️┇لا تستطيع -( حظر , طرد , كتم , تقييد ) : "..Get_Rank(result.id_,msg.chat_id_).."")
 else
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.id_, status_ = { ID = "ChatMemberStatusKicked" },},function(arg,data) 
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"⚠┇عذرا هاذا معرف قناة")   
+send(msg.chat_id_,msg.id_,"⚠️┇عذرًا هذا معرف قناة")   
 return false 
 end      
 if (data and data.code_ and data.code_ == 400 and data.message_ == "CHAT_ADMIN_REQUIRED") then 
-send(msg.chat_id_, msg.id_,"⚠┇لا توجد لدي صلاحية حظر المستخدمين") 
+send(msg.chat_id_, msg.id_,"⚠️┇لا توجد لدي صلاحية حظر المستخدمين") 
 return false  
 end
 KickGroup(msg.chat_id_, result.id_)
-Send_Options(msg,result.id_,"reply","☑┇تم طرده من هنا")  
+Send_Options(msg,result.id_,"reply","✅┇تم طرده من هنا")  
 end,nil)   
 end
 else
@@ -3792,144 +3792,144 @@ tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^طرد @(.*)$"
 elseif text and text:match("^حظر عام (%d+)$") and Dev_Hadaf(msg) then
 
 if Dev_Hadaf_User(text:match("^حظر عام (%d+)$")) == true then
-send(msg.chat_id_, msg.id_, "⚠┇لا تستطيع حظر المطور الاساسي عام")
+send(msg.chat_id_, msg.id_, "⚠️┇لا تستطيع حظر المطور الاساسي عام")
 return false 
 end
 if tonumber(text:match("^حظر عام (%d+)$")) == tonumber(bot_id) then  
-send(msg.chat_id_, msg.id_, "⚠┇لا تسطيع حظر البوت عام")
+send(msg.chat_id_, msg.id_, "⚠️┇لا تسطيع حظر البوت عام")
 return false 
 end
 redis:sadd(bot_id.."Hadaf:Removal:User:Groups", text:match("^حظر عام (%d+)$"))
-Send_Options(msg,text:match("^حظر عام (%d+)$"),"reply","☑┇تم حظره عام من المجموعات")  
+Send_Options(msg,text:match("^حظر عام (%d+)$"),"reply","✅┇تم حظره عام من المجموعات")  
 elseif text and text:match("^الغاء العام (%d+)$") and Dev_Hadaf(msg) then
 
 redis:srem(bot_id.."Hadaf:Removal:User:Groups", text:match("^الغاء العام (%d+)$"))
-Send_Options(msg,text:match("^الغاء العام (%d+)$"),"reply","☑┇تم الغاء حظره عام من المجموعات")  
+Send_Options(msg,text:match("^الغاء العام (%d+)$"),"reply","✅┇تم الغاء حظره عام من المجموعات")  
 return false
 end
 if text and text:match("^اضف مطور (%d+)$") and Dev_Hadaf(msg) then
 
 redis:sadd(bot_id.."Hadaf:Developer:Bot", text:match("^اضف مطور (%d+)$"))
-Send_Options(msg,text:match("^اضف مطور (%d+)$"),"reply","☑┇تم ترقيته مطور في البوت")  
+Send_Options(msg,text:match("^اضف مطور (%d+)$"),"reply","✅┇تم ترقيته مطور في البوت")  
 elseif text and text:match("^حذف مطور (%d+)$") and Dev_Hadaf(msg) then
 
 redis:srem(bot_id.."Hadaf:Developer:Bot", text:match("^حذف مطور (%d+)$"))
-Send_Options(msg,text:match("^حذف مطور (%d+)$"),"reply","☑┇تم تنزيله من المطورين")  
+Send_Options(msg,text:match("^حذف مطور (%d+)$"),"reply","✅┇تم تنزيله من المطورين")  
 elseif text and text:match("^رفع منشئ اساسي (%d+)$") and DeveloperBot(msg) then
  
 redis:sadd(bot_id.."Hadaf:President:Group"..msg.chat_id_, text:match("^رفع منشئ اساسي (%d+)$") )
-Send_Options(msg,text:match("^رفع منشئ اساسي (%d+)$") ,"reply","☑┇تم ترقيته منشئ اساسي")  
+Send_Options(msg,text:match("^رفع منشئ اساسي (%d+)$") ,"reply","✅┇تم ترقيته منشئ اساسي")  
 elseif text and text:match("^تنزيل منشئ اساسي (%d+)$") and DeveloperBot(msg) then
  
 redis:srem(bot_id.."Hadaf:President:Group"..msg.chat_id_, text:match("^تنزيل منشئ اساسي (%d+)$") )
-Send_Options(msg,text:match("^تنزيل منشئ اساسي (%d+)$") ,"reply","☑┇تم تنزيله من المنشئين")  
+Send_Options(msg,text:match("^تنزيل منشئ اساسي (%d+)$") ,"reply","✅┇تم تنزيله من المنشئين")  
 elseif text and text:match("^رفع منشئ (%d+)$") and PresidentGroup(msg) then
  
 redis:sadd(bot_id.."Hadaf:Constructor:Group"..msg.chat_id_, text:match("^رفع منشئ (%d+)$"))
-Send_Options(msg,text:match("^رفع منشئ (%d+)$"),"reply","☑┇تم ترقيته منشئ في المجموعه")  
+Send_Options(msg,text:match("^رفع منشئ (%d+)$"),"reply","✅┇تم ترقيته منشئ في المجموعه")  
 elseif text and text:match("^تنزيل منشئ (%d+)$") and PresidentGroup(msg) then
  
 redis:srem(bot_id.."Hadaf:Constructor:Group"..msg.chat_id_, text:match("^تنزيل منشئ (%d+)$"))
-Send_Options(msg,text:match("^تنزيل منشئ (%d+)$"),"reply","☑┇تم تنزيله من المنشئين")  
+Send_Options(msg,text:match("^تنزيل منشئ (%d+)$"),"reply","✅┇تم تنزيله من المنشئين")  
 elseif text and text:match("^رفع مدير (%d+)$") and Constructor(msg) then
  
 redis:sadd(bot_id.."Hadaf:Manager:Group"..msg.chat_id_, text:match("^رفع مدير (%d+)$") )
-Send_Options(msg,text:match("^رفع مدير (%d+)$") ,"reply","☑┇تم ترقيته مدير المجموعه")  
+Send_Options(msg,text:match("^رفع مدير (%d+)$") ,"reply","✅┇تم ترقيته مدير المجموعه")  
 elseif text and text:match("^تنزيل مدير (%d+)$") and Constructor(msg) then
  
 redis:srem(bot_id.."Hadaf:Manager:Group"..msg.chat_id_, text:match("^تنزيل مدير (%d+)$") )
-Send_Options(msg,text:match("^تنزيل مدير (%d+)$") ,"reply","☑┇تم تنزيله من المدراء")  
+Send_Options(msg,text:match("^تنزيل مدير (%d+)$") ,"reply","✅┇تم تنزيله من المدراء")  
 elseif text and text:match("^رفع ادمن (%d+)$") and Owner(msg) then
  
 if not Constructor(msg) and redis:get(bot_id.."Hadaf:Cheking:Seted"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذلك لانه تم تعطيل الرفع من قبل المنشئين')
 return false
 end
 redis:sadd(bot_id.."Hadaf:Admin:Group"..msg.chat_id_, text:match("^رفع ادمن (%d+)$"))
-Send_Options(msg,text:match("^رفع ادمن (%d+)$"),"reply","☑┇تم ترقيته ادمن للمجموعه")  
+Send_Options(msg,text:match("^رفع ادمن (%d+)$"),"reply","✅┇تم ترقيته ادمن للمجموعه")  
 elseif text and text:match("^تنزيل ادمن (%d+)$") and Owner(msg) then
  
 redis:srem(bot_id.."Hadaf:Admin:Group"..msg.chat_id_, text:match("^تنزيل ادمن (%d+)$"))
-Send_Options(msg,text:match("^تنزيل ادمن (%d+)$"),"reply","☑┇تم تنزيله من ادمنيه المجموعه")  
+Send_Options(msg,text:match("^تنزيل ادمن (%d+)$"),"reply","✅┇تم تنزيله من ادمنيه المجموعه")  
 elseif text and text:match("^رفع مميز (%d+)$") and Admin(msg) then
  
 if not Constructor(msg) and redis:get(bot_id.."Hadaf:Cheking:Seted"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذلك لانه تم تعطيل الرفع من قبل المنشئين')
 return false
 end
 redis:sadd(bot_id.."Hadaf:Vip:Group"..msg.chat_id_, text:match("^رفع مميز (%d+)$"))
-Send_Options(msg,text:match("^رفع مميز (%d+)$"),"reply","☑┇تم ترقيته مميز للمجموعه")  
+Send_Options(msg,text:match("^رفع مميز (%d+)$"),"reply","✅┇تم ترقيته مميز للمجموعه")  
 elseif text and text:match("^تنزيل مميز (%d+)$") and Admin(msg) then
  
 redis:srem(bot_id.."Hadaf:Vip:Group"..msg.chat_id_, text:match("^تنزيل مميز (%d+)$") )
-Send_Options(msg,text:match("^تنزيل مميز (%d+)$") ,"reply","☑┇تم تنزيله من المميزين")  
+Send_Options(msg,text:match("^تنزيل مميز (%d+)$") ,"reply","✅┇تم تنزيله من المميزين")  
 elseif text and text:match("^حظر (%d+)$") and Admin(msg) then
 
 if not Constructor(msg) and redis:get(bot_id.."Hadaf:Lock:Ban:Group"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'☑┇لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'✅┇لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
 return false
 end
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,"⚠┇عذرآ البوت ليس ادمن") 
+send(msg.chat_id_, msg.id_,"⚠️┇عذرًا البوت ليس ادمن") 
 return false  
 end
 if Rank_Checking(text:match("^حظر (%d+)$") , msg.chat_id_) == true then
-send(msg.chat_id_, msg.id_, "\n⚠┇لا تستطيع -( حظر , طرد , كتم , تقيد ) : "..Get_Rank(userid,msg.chat_id_).."")
+send(msg.chat_id_, msg.id_, "\n⚠️┇لا تستطيع -( حظر , طرد , كتم , تقييد ) : "..Get_Rank(userid,msg.chat_id_).."")
 else
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = text:match("^حظر (%d+)$") , status_ = { ID = "ChatMemberStatusKicked" },},function(arg,data) 
 if (data and data.code_ and data.code_ == 400 and data.message_ == "CHAT_ADMIN_REQUIRED") then 
-send(msg.chat_id_, msg.id_,"⚠┇لا توجد لدي صلاحية حظر المستخدمين") 
+send(msg.chat_id_, msg.id_,"⚠️┇لا توجد لدي صلاحية حظر المستخدمين") 
 return false  
 end
 redis:sadd(bot_id.."Hadaf:Removal:User:Group"..msg.chat_id_, text:match("^حظر (%d+)$") )
 KickGroup(msg.chat_id_, text:match("^حظر (%d+)$") )  
-Send_Options(msg,text:match("^حظر (%d+)$") ,"reply","☑┇تم حظره من المجموعه")  
+Send_Options(msg,text:match("^حظر (%d+)$") ,"reply","✅┇تم حظره من المجموعه")  
 end,nil)   
 end
-elseif text and text:match("^الغاء حظر (%d+)$") and Admin(msg) then
+elseif text and text:match("^الغاء الحظر (%d+)$") and Admin(msg) then
 
-if tonumber(text:match("^الغاء حظر (%d+)$") ) == tonumber(bot_id) then
-send(msg.chat_id_, msg.id_, "☑️┇لا يمكنك عمل هاذا الامر على البوت") 
+if tonumber(text:match("^الغاء الحظر (%d+)$") ) == tonumber(bot_id) then
+send(msg.chat_id_, msg.id_, "✅️┇لا يمكنك عمل هذا الامر على البوت") 
 return false 
 end
-redis:srem(bot_id.."Hadaf:Removal:User:Group"..msg.chat_id_, text:match("^الغاء حظر (%d+)$") )
-tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = text:match("^الغاء حظر (%d+)$") , status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
-Send_Options(msg,text:match("^الغاء حظر (%d+)$") ,"reply","☑┇تم الغاء حظره من هنا")  
+redis:srem(bot_id.."Hadaf:Removal:User:Group"..msg.chat_id_, text:match("^الغاء الحظر (%d+)$") )
+tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = text:match("^الغاء الحظر (%d+)$") , status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
+Send_Options(msg,text:match("^الغاء الحظر (%d+)$") ,"reply","✅┇تم الغاء حظره من هنا")  
 elseif text and text:match("^كتم (%d+)$") and Admin(msg) then
 
 if Rank_Checking(text:match("^كتم (%d+)$"), msg.chat_id_) == true then
-send(msg.chat_id_, msg.id_, "\n⚠┇لا تستطيع -( حظر , طرد , كتم , تقيد ) : "..Get_Rank(userid,msg.chat_id_).."")
+send(msg.chat_id_, msg.id_, "\n⚠️┇لا تستطيع -( حظر , طرد , كتم , تقييد ) : "..Get_Rank(userid,msg.chat_id_).."")
 else
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,"⚠┇عذرآ البوت ليس ادمن") 
+send(msg.chat_id_, msg.id_,"⚠️┇عذرًا البوت ليس ادمن") 
 return false  
 end
 if Rank_Checking(text:match("^كتم (%d+)$"), msg.chat_id_) then
-send(msg.chat_id_, msg.id_, "\n⚠┇لا تستطيع -( حظر , طرد , كتم , تقيد ) : "..Get_Rank(result.id_,msg.chat_id_).."")
+send(msg.chat_id_, msg.id_, "\n⚠️┇لا تستطيع -( حظر , طرد , كتم , تقييد ) : "..Get_Rank(result.id_,msg.chat_id_).."")
 return false 
 end      
 redis:sadd(bot_id.."Hadaf:Silence:User:Group"..msg.chat_id_, text:match("^كتم (%d+)$"))
-Send_Options(msg,text:match("^كتم (%d+)$"),"reply","☑┇تم كتمه من هنا")  
+Send_Options(msg,text:match("^كتم (%d+)$"),"reply","✅┇تم كتمه من هنا")  
 end
-elseif text and text:match("^الغاء كتم (%d+)$") and Admin(msg) then
+elseif text and text:match("^الغاء الكتم (%d+)$") and Admin(msg) then
 
-redis:srem(bot_id.."Hadaf:Silence:User:Group"..msg.chat_id_,text:match("^الغاء كتم (%d+)$") )
-Send_Options(msg,text:match("^الغاء كتم (%d+)$") ,"reply","☑┇تم الغاء كتمه من هنا")  
-elseif text and text:match("^تقيد (%d+)$") and Admin(msg) then
+redis:srem(bot_id.."Hadaf:Silence:User:Group"..msg.chat_id_,text:match("^الغاء الكتم (%d+)$") )
+Send_Options(msg,text:match("^الغاء الكتم (%d+)$") ,"reply","✅┇تم الغاء كتمه من هنا")  
+elseif text and text:match("^تقييد (%d+)$") and Admin(msg) then
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,"⚠┇عذرآ البوت ليس ادمن") 
+send(msg.chat_id_, msg.id_,"⚠️┇عذرًا البوت ليس ادمن") 
 return false  
 end
-if Rank_Checking(text:match("^تقيد (%d+)$"), msg.chat_id_) then
-send(msg.chat_id_, msg.id_, "\n⚠┇لا تستطيع -( حظر , طرد , كتم , تقيد ) : "..Get_Rank(userid,msg.chat_id_).."")
+if Rank_Checking(text:match("^تقييد (%d+)$"), msg.chat_id_) then
+send(msg.chat_id_, msg.id_, "\n⚠️┇لا تستطيع -( حظر , طرد , كتم , تقييد ) : "..Get_Rank(userid,msg.chat_id_).."")
 else
-https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..text:match("^تقيد (%d+)$"))
-Send_Options(msg,userid,"reply","☑┇تم تقييده في المجموعه")  
+https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..text:match("^تقييد (%d+)$"))
+Send_Options(msg,userid,"reply","✅┇تم تقييده في المجموعه")  
 end
-elseif text and text:match('^تقيد (%d+) (.*)$') and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
-local TextEnd = {string.match(text, "^(تقيد) (%d+) (.*)$")}
+elseif text and text:match('^تقييد (%d+) (.*)$') and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
+local TextEnd = {string.match(text, "^(تقييد) (%d+) (.*)$")}
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,"⚠┇عذرآ البوت ليس ادمن") 
+send(msg.chat_id_, msg.id_,"⚠️┇عذرًا البوت ليس ادمن") 
 return false  
 end
 function FunctionStatus(arg, result)
@@ -3949,543 +3949,543 @@ TextEnd[3] = TextEnd[3]:gsub('دقيقه',"دقايق")
 TextEnd[3] = TextEnd[3]:gsub('ساعه',"ساعات") 
 TextEnd[3] = TextEnd[3]:gsub("يوم","ايام") 
 if Rank_Checking(result.sender_user_id_, msg.chat_id_) then
-send(msg.chat_id_, msg.id_, "\n⚠┇لا تستطيع -( حظر , طرد , كتم , تقيد ) : "..Get_Rank(result.sender_user_id_,msg.chat_id_).."")
+send(msg.chat_id_, msg.id_, "\n⚠️┇لا تستطيع -( حظر , طرد , كتم , تقييد ) : "..Get_Rank(result.sender_user_id_,msg.chat_id_).."")
 else
-Send_Options(msg,result.sender_user_id_,"reply", "☑┇تم تقيده لمدة ~ { "..TextEnd[2]..' '..TextEnd[3]..'}')
+Send_Options(msg,result.sender_user_id_,"reply", "✅┇تم تقييده لمدة ~ { "..TextEnd[2]..' '..TextEnd[3]..'}')
 https.request("https://api.telegram.org/bot"..token.."/restrictChatMember?chat_id="..msg.chat_id_.."&user_id="..result.sender_user_id_..'&until_date='..tonumber(msg.date_+Time))
 end
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
-elseif text and text:match("^الغاء تقيد (%d+)$") and Admin(msg) then
+elseif text and text:match("^الغاء التقييد (%d+)$") and Admin(msg) then
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,"⚠┇عذرآ البوت ليس ادمن") 
+send(msg.chat_id_, msg.id_,"⚠️┇عذرًا البوت ليس ادمن") 
 return false  
 end
-https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..text:match("^الغاء تقيد (%d+)$").. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
-Send_Options(msg,text:match("^الغاء تقيد (%d+)$"),"reply","☑┇تم الغاء تقييده")  
+https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..text:match("^الغاء التقييد (%d+)$").. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
+Send_Options(msg,text:match("^الغاء التقييد (%d+)$"),"reply","✅┇تم الغاء تقييده")  
 elseif text == ("طرد") and msg.reply_to_message_id_ ~=0 and Admin(msg) then
 if not Constructor(msg) and redis:get(bot_id.."Hadaf:Lock:Ban:Group"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'☑┇لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'✅┇لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
 return false
 end
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,"⚠┇عذرآ البوت ليس ادمن") 
+send(msg.chat_id_, msg.id_,"⚠️┇عذرًا البوت ليس ادمن") 
 return false  
 end
 function FunctionStatus(arg, result)
 if Rank_Checking(result.sender_user_id_, msg.chat_id_) == true then
-send(msg.chat_id_, msg.id_, "\n⚠┇لا تستطيع -( حظر , طرد , كتم , تقيد ) : "..Get_Rank(result.sender_user_id_,msg.chat_id_).."")
+send(msg.chat_id_, msg.id_, "\n⚠️┇لا تستطيع -( حظر , طرد , كتم , تقييد ) : "..Get_Rank(result.sender_user_id_,msg.chat_id_).."")
 else
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.id_, status_ = { ID = "ChatMemberStatusKicked" },},function(arg,data) 
 if (data and data.code_ and data.code_ == 400 and data.message_ == "CHAT_ADMIN_REQUIRED") then 
-send(msg.chat_id_, msg.id_,"⚠┇لا توجد لدي صلاحية حظر المستخدمين") 
+send(msg.chat_id_, msg.id_,"⚠️┇لا توجد لدي صلاحية حظر المستخدمين") 
 return false  
 end
 KickGroup(result.chat_id_, result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","☑┇تم طرده من هنا")  
+Send_Options(msg,result.sender_user_id_,"reply","✅┇تم طرده من هنا")  
 end,nil)
 end
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text and text:match("^طرد (%d+)$") and Admin(msg) then 
 if not Constructor(msg) and redis:get(bot_id.."Hadaf:Lock:Ban:Group"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'☑┇لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'✅┇لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
 return false
 end
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,"⚠┇عذرآ البوت ليس ادمن") 
+send(msg.chat_id_, msg.id_,"⚠️┇عذرًا البوت ليس ادمن") 
 return false  
 end
 if Rank_Checking(text:match("^طرد (%d+)$") , msg.chat_id_) == true then
-send(msg.chat_id_, msg.id_, "\n⚠┇لا تستطيع -( حظر , طرد , كتم , تقيد ) : "..Get_Rank(userid,msg.chat_id_).."")
+send(msg.chat_id_, msg.id_, "\n⚠️┇لا تستطيع -( حظر , طرد , كتم , تقييد ) : "..Get_Rank(userid,msg.chat_id_).."")
 else
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = text:match("^طرد (%d+)$") , status_ = { ID = "ChatMemberStatusKicked" },},function(arg,data) 
 if (data and data.code_ and data.code_ == 400 and data.message_ == "CHAT_ADMIN_REQUIRED") then 
-send(msg.chat_id_, msg.id_,"⚠┇لا توجد لدي صلاحية حظر المستخدمين") 
+send(msg.chat_id_, msg.id_,"⚠️┇لا توجد لدي صلاحية حظر المستخدمين") 
 return false  
 end
 KickGroup(msg.chat_id_, text:match("^طرد (%d+)$") )
-Send_Options(msg,text:match("^طرد (%d+)$") ,"reply","☑┇تم طرده من هنا")  
+Send_Options(msg,text:match("^طرد (%d+)$") ,"reply","✅┇تم طرده من هنا")  
 end,nil)   
 end
-elseif text == "قفل الدردشه" and msg.reply_to_message_id_ == 0 and Owner(msg) then 
+elseif text == "قفل المحادثه" and msg.reply_to_message_id_ == 0 and Owner(msg) then 
 redis:set(bot_id.."Hadaf:Lock:text"..msg.chat_id_,true) 
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل الدردشه")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل المحادثه")  
 elseif text == "قفل الاضافه" and msg.reply_to_message_id_ == 0 and Admin(msg) then 
 redis:set(bot_id.."Hadaf:Lock:AddMempar"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل اضافة الاعضاء")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل اضافة الاعضاء")  
 elseif text == "قفل الدخول" and msg.reply_to_message_id_ == 0 and Admin(msg) then 
 redis:set(bot_id.."Hadaf:Lock:Join"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل دخول الاعضاء")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل دخول الاعضاء")  
 elseif text == "قفل البوتات" and msg.reply_to_message_id_ == 0 and Admin(msg) then 
 redis:set(bot_id.."Hadaf:Lock:Bot:kick"..msg.chat_id_,"del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل البوتات")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل البوتات")  
 elseif text == "قفل البوتات بالطرد" and msg.reply_to_message_id_ == 0 and Admin(msg) then 
 redis:set(bot_id.."Hadaf:Lock:Bot:kick"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفـل البوتات")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفـل البوتات")  
 elseif text == "قفل الاشعارات" and msg.reply_to_message_id_ == 0 and Admin(msg) then  
 redis:set(bot_id.."Hadaf:Lock:tagservr"..msg.chat_id_,true)  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل الاشعارات")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل الاشعارات")  
 elseif text == "قفل التثبيت" and msg.reply_to_message_id_ == 0 and Constructor(msg) then 
 redis:set(bot_id.."Hadaf:lockpin"..msg.chat_id_, true) 
 redis:sadd(bot_id.."Hadaf:Lock:pin",msg.chat_id_) 
 tdcli_function ({ ID = "GetChannelFull",  channel_id_ = msg.chat_id_:gsub("-100","") }, function(arg,data)  redis:set(bot_id.."Hadaf:Get:Id:Msg:Pin"..msg.chat_id_,data.pinned_message_id_)  end,nil)
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل التثبيت هنا")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل التثبيت هنا")  
 elseif text == "قفل التعديل" and msg.reply_to_message_id_ == 0 and Constructor(msg) then 
 redis:set(bot_id.."Hadaf:Lock:edit"..msg.chat_id_,true) 
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل تعديل")  
-elseif text == "قفل تعديل الميديا" and msg.reply_to_message_id_ == 0 and Constructor(msg) then 
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل تعديل")  
+elseif text == "قفل تعديل الوسائط" and msg.reply_to_message_id_ == 0 and Constructor(msg) then 
 redis:set(bot_id.."Hadaf:Lock:edit"..msg.chat_id_,true) 
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل تعديل")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل تعديل")  
 elseif text == "قفل الكل" and msg.reply_to_message_id_ == 0 and Constructor(msg) then  
 redis:set(bot_id.."Hadaf:Lock:tagservrbot"..msg.chat_id_,true)   
 list ={"Lock:Bot:kick","Lock:User:Name","Lock:hashtak","Lock:Cmd","Lock:Link","Lock:forward","Lock:Keyboard","Lock:geam","Lock:Photo","Lock:Animation","Lock:Video","Lock:Audio","Lock:vico","Lock:Sticker","Lock:Document","Lock:Unsupported","Lock:Markdaun","Lock:Contact","Lock:Spam"}
 for i,lock in pairs(list) do;redis:set(bot_id..lock..msg.chat_id_,"del");end
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل جميع الاوامر")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل جميع الاوامر")  
 elseif text == "فتح الاضافه" and msg.reply_to_message_id_ == 0 and Admin(msg) then 
 redis:del(bot_id.."Hadaf:Lock:AddMempar"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح اضافة الاعضاء")  
-elseif text == "فتح الدردشه" and msg.reply_to_message_id_ == 0 and Owner(msg) then 
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح اضافة الاعضاء")  
+elseif text == "فتح المحادثه" and msg.reply_to_message_id_ == 0 and Owner(msg) then 
 redis:del(bot_id.."Hadaf:Lock:text"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح الدردشه")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح المحادثه")  
 elseif text == "فتح الدخول" and msg.reply_to_message_id_ == 0 and Admin(msg) then 
 redis:del(bot_id.."Hadaf:Lock:Join"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح دخول الاعضاء")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح دخول الاعضاء")  
 elseif text == "فتح البوتات" and msg.reply_to_message_id_ == 0 and Admin(msg) then 
 redis:del(bot_id.."Hadaf:Lock:Bot:kick"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فـتح البوتات")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فـتح البوتات")  
 elseif text == "فتح البوتات " and msg.reply_to_message_id_ == 0 and Admin(msg) then 
 redis:del(bot_id.."Hadaf:Lock:Bot:kick"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","🍃\n☑┇تم فـتح البوتات")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","🍃\n✅┇تم فـتح البوتات")  
 elseif text == "فتح الاشعارات" and msg.reply_to_message_id_ == 0 and Admin(msg) then  
 redis:del(bot_id.."Hadaf:Lock:tagservr"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فـتح الاشعارات")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فـتح الاشعارات")  
 elseif text == "فتح التثبيت" and msg.reply_to_message_id_ == 0 and Constructor(msg) then 
 redis:del(bot_id.."Hadaf:lockpin"..msg.chat_id_)  
 redis:srem(bot_id.."Hadaf:Lock:pin",msg.chat_id_)
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فـتح التثبيت هنا")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فـتح التثبيت هنا")  
 elseif text == "فتح التعديل" and msg.reply_to_message_id_ == 0 and Constructor(msg) then 
 redis:del(bot_id.."Hadaf:Lock:edit"..msg.chat_id_) 
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فـتح تعديل")  
-elseif text == "فتح التعديل الميديا" and msg.reply_to_message_id_ == 0 and Constructor(msg) then 
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فـتح تعديل")  
+elseif text == "فتح تعديل الوسائط" and msg.reply_to_message_id_ == 0 and Constructor(msg) then 
 redis:del(bot_id.."Hadaf:Lock:edit"..msg.chat_id_) 
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فـتح تعديل")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فـتح تعديل")  
 elseif text == "فتح الكل" and msg.reply_to_message_id_ == 0 and Admin(msg) then 
 redis:del(bot_id.."Hadaf:Lock:tagservrbot"..msg.chat_id_)   
 list ={"Lock:Bot:kick","Lock:User:Name","Lock:hashtak","Lock:Cmd","Lock:Link","Lock:forward","Lock:Keyboard","Lock:geam","Lock:Photo","Lock:Animation","Lock:Video","Lock:Audio","Lock:vico","Lock:Sticker","Lock:Document","Lock:Unsupported","Lock:Markdaun","Lock:Contact","Lock:Spam"}
 for i,lock in pairs(list) do;redis:del(bot_id..lock..msg.chat_id_);end
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فـتح جميع الاوامر")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فـتح جميع الاوامر")  
 elseif text == "قفل الروابط" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Link"..msg.chat_id_,"del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل الروابط")  
-elseif text == "قفل الروابط بالتقيد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل الروابط")  
+elseif text == "قفل الروابط بالتقييد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Link"..msg.chat_id_,"ked")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","☑┇تم قفـل الروابط")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","✅┇تم قفـل الروابط")  
 elseif text == "قفل الروابط بالكتم" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Link"..msg.chat_id_,"ktm")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","☑┇تم قفـل الروابط")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","✅┇تم قفـل الروابط")  
 elseif text == "قفل الروابط بالطرد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Link"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفـل الروابط")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفـل الروابط")  
 elseif text == "فتح الروابط" and Admin(msg) then
 redis:del(bot_id.."Hadaf:Lock:Link"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح الروابط")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح الروابط")  
 elseif text == "قفل المعرفات" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:User:Name"..msg.chat_id_,"del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل المعرفات")  
-elseif text == "قفل المعرفات بالتقيد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل المعرفات")  
+elseif text == "قفل المعرفات بالتقييد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:User:Name"..msg.chat_id_,"ked")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","☑┇تم قفـل المعرفات")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","✅┇تم قفـل المعرفات")  
 elseif text == "قفل المعرفات بالكتم" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:User:Name"..msg.chat_id_,"ktm")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","☑┇تم قفـل المعرفات")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","✅┇تم قفـل المعرفات")  
 elseif text == "قفل المعرفات بالطرد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:User:Name"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفـل المعرفات")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفـل المعرفات")  
 elseif text == "فتح المعرفات" and Admin(msg) then
 redis:del(bot_id.."Hadaf:Lock:User:Name"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح المعرفات")  
-elseif text == "قفل التاك" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح المعرفات")  
+elseif text == "قفل النداء" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:hashtak"..msg.chat_id_,"del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل التاك")  
-elseif text == "قفل التاك بالتقيد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل النداء")  
+elseif text == "قفل النداء بالتقييد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:hashtak"..msg.chat_id_,"ked")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","☑┇تم قفـل التاك")  
-elseif text == "قفل التاك بالكتم" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","✅┇تم قفـل النداء")  
+elseif text == "قفل النداء بالكتم" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:hashtak"..msg.chat_id_,"ktm")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","☑┇تم قفـل التاك")  
-elseif text == "قفل التاك بالطرد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","✅┇تم قفـل النداء")  
+elseif text == "قفل النداء بالطرد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:hashtak"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفـل التاك")  
-elseif text == "فتح التاك" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفـل النداء")  
+elseif text == "فتح النداء" and Admin(msg) then
 redis:del(bot_id.."Hadaf:Lock:hashtak"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح التاك")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح النداء")  
 elseif text == "قفل الشارحه" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Cmd"..msg.chat_id_,"del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل الشارحه")  
-elseif text == "قفل الشارحه بالتقيد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل الشارحه")  
+elseif text == "قفل الشارحه بالتقييد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Cmd"..msg.chat_id_,"ked")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","☑┇تم قفـل الشارحه")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","✅┇تم قفـل الشارحه")  
 elseif text == "قفل الشارحه بالكتم" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Cmd"..msg.chat_id_,"ktm")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","☑┇تم قفـل الشارحه")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","✅┇تم قفـل الشارحه")  
 elseif text == "قفل الشارحه بالطرد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Cmd"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفـل الشارحه")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفـل الشارحه")  
 elseif text == "فتح الشارحه" and Admin(msg) then
 redis:del(bot_id.."Hadaf:Lock:Cmd"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح الشارحه")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح الشارحه")  
 elseif text == "قفل الصور"and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Photo"..msg.chat_id_,"del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل الصور")  
-elseif text == "قفل الصور بالتقيد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل الصور")  
+elseif text == "قفل الصور بالتقييد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Photo"..msg.chat_id_,"ked")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","☑┇تم قفـل الصور")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","✅┇تم قفـل الصور")  
 elseif text == "قفل الصور بالكتم" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Photo"..msg.chat_id_,"ktm")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","☑┇تم قفـل الصور")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","✅┇تم قفـل الصور")  
 elseif text == "قفل الصور بالطرد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Photo"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفـل الصور")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفـل الصور")  
 elseif text == "فتح الصور" and Admin(msg) then
 redis:del(bot_id.."Hadaf:Lock:Photo"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح الصور")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح الصور")  
 elseif text == "قفل الفيديو" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Video"..msg.chat_id_,"del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل الفيديو")  
-elseif text == "قفل الفيديو بالتقيد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل الفيديو")  
+elseif text == "قفل الفيديو بالتقييد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Video"..msg.chat_id_,"ked")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","☑┇تم قفـل الفيديو")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","✅┇تم قفـل الفيديو")  
 elseif text == "قفل الفيديو بالكتم" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Video"..msg.chat_id_,"ktm")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","☑┇تم قفـل الفيديو")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","✅┇تم قفـل الفيديو")  
 elseif text == "قفل الفيديو بالطرد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Video"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفـل الفيديو")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفـل الفيديو")  
 elseif text == "فتح الفيديو" and Admin(msg) then
 redis:del(bot_id.."Hadaf:Lock:Video"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح الفيديو")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح الفيديو")  
 elseif text == "قفل المتحركه" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Animation"..msg.chat_id_,"del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل المتحركه")  
-elseif text == "قفل المتحركه بالتقيد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل المتحركه")  
+elseif text == "قفل المتحركه بالتقييد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Animation"..msg.chat_id_,"ked")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","☑┇تم قفـل المتحركه")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","✅┇تم قفـل المتحركه")  
 elseif text == "قفل المتحركه بالكتم" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Animation"..msg.chat_id_,"ktm")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","☑┇تم قفـل المتحركه")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","✅┇تم قفـل المتحركه")  
 elseif text == "قفل المتحركه بالطرد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Animation"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفـل المتحركه")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفـل المتحركه")  
 elseif text == "فتح المتحركه" and Admin(msg) then
 redis:del(bot_id.."Hadaf:Lock:Animation"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح المتحركه")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح المتحركه")  
 elseif text == "قفل الالعاب" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:geam"..msg.chat_id_,"del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل الالعاب")  
-elseif text == "قفل الالعاب بالتقيد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل الالعاب")  
+elseif text == "قفل الالعاب بالتقييد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:geam"..msg.chat_id_,"ked")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","☑┇تم قفـل الالعاب")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","✅┇تم قفـل الالعاب")  
 elseif text == "قفل الالعاب بالكتم" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:geam"..msg.chat_id_,"ktm")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","☑┇تم قفـل الالعاب")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","✅┇تم قفـل الالعاب")  
 elseif text == "قفل الالعاب بالطرد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:geam"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفـل الالعاب")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفـل الالعاب")  
 elseif text == "فتح الالعاب" and Admin(msg) then
 redis:del(bot_id.."Hadaf:Lock:geam"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح الالعاب")  
-elseif text == "قفل الاغاني" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح الالعاب")  
+elseif text == "قفل الصوت" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Audio"..msg.chat_id_,"del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل الاغاني")  
-elseif text == "قفل الاغاني بالتقيد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل الصوت")  
+elseif text == "قفل الصوت بالتقييد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Audio"..msg.chat_id_,"ked")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","☑┇تم قفـل الاغاني")  
-elseif text == "قفل الاغاني بالكتم" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","✅┇تم قفـل الصوت")  
+elseif text == "قفل الصوت بالكتم" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Audio"..msg.chat_id_,"ktm")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","☑┇تم قفـل الاغاني")  
-elseif text == "قفل الاغاني بالطرد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","✅┇تم قفـل الصوت")  
+elseif text == "قفل الصوت بالطرد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Audio"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفـل الاغاني")  
-elseif text == "فتح الاغاني" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفـل الصوت")  
+elseif text == "فتح الصوت" and Admin(msg) then
 redis:del(bot_id.."Hadaf:Lock:Audio"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح الاغاني")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح الصوت")  
 elseif text == "قفل الصوت" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:vico"..msg.chat_id_,"del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل الصوت")  
-elseif text == "قفل الصوت بالتقيد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل الصوت")  
+elseif text == "قفل الصوت بالتقييد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:vico"..msg.chat_id_,"ked")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","☑┇تم قفـل الصوت")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","✅┇تم قفـل الصوت")  
 elseif text == "قفل الصوت بالكتم" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:vico"..msg.chat_id_,"ktm")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","☑┇تم قفـل الصوت")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","✅┇تم قفـل الصوت")  
 elseif text == "قفل الصوت بالطرد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:vico"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفـل الصوت")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفـل الصوت")  
 elseif text == "فتح الصوت" and Admin(msg) then
 redis:del(bot_id.."Hadaf:Lock:vico"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح الصوت")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح الصوت")  
 elseif text == "قفل الكيبورد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Keyboard"..msg.chat_id_,"del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل الكيبورد")  
-elseif text == "قفل الكيبورد بالتقيد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل الكيبورد")  
+elseif text == "قفل الكيبورد بالتقييد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Keyboard"..msg.chat_id_,"ked")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","☑┇تم قفـل الكيبورد")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","✅┇تم قفـل الكيبورد")  
 elseif text == "قفل الكيبورد بالكتم" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Keyboard"..msg.chat_id_,"ktm")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","☑┇تم قفـل الكيبورد")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","✅┇تم قفـل الكيبورد")  
 elseif text == "قفل الكيبورد بالطرد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Keyboard"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفـل الكيبورد")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفـل الكيبورد")  
 elseif text == "فتح الكيبورد" and Admin(msg) then
 redis:del(bot_id.."Hadaf:Lock:Keyboard"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح الكيبورد")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح الكيبورد")  
 elseif text == "قفل الملصقات" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Sticker"..msg.chat_id_,"del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل الملصقات")  
-elseif text == "قفل الملصقات بالتقيد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل الملصقات")  
+elseif text == "قفل الملصقات بالتقييد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Sticker"..msg.chat_id_,"ked")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","☑┇تم قفـل الملصقات")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","✅┇تم قفـل الملصقات")  
 elseif text == "قفل الملصقات بالكتم" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Sticker"..msg.chat_id_,"ktm")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","☑┇تم قفـل الملصقات")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","✅┇تم قفـل الملصقات")  
 elseif text == "قفل الملصقات بالطرد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Sticker"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفـل الملصقات")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفـل الملصقات")  
 elseif text == "فتح الملصقات" and Admin(msg) then
 redis:del(bot_id.."Hadaf:Lock:Sticker"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح الملصقات")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح الملصقات")  
 elseif text == "قفل التوجيه" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:forward"..msg.chat_id_,"del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل التوجيه")  
-elseif text == "قفل التوجيه بالتقيد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل التوجيه")  
+elseif text == "قفل التوجيه بالتقييد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:forward"..msg.chat_id_,"ked")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","☑┇تم قفـل التوجيه")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","✅┇تم قفـل التوجيه")  
 elseif text == "قفل التوجيه بالكتم" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:forward"..msg.chat_id_,"ktm")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","☑┇تم قفـل التوجيه")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","✅┇تم قفـل التوجيه")  
 elseif text == "قفل التوجيه بالطرد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:forward"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفـل التوجيه")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفـل التوجيه")  
 elseif text == "فتح التوجيه" and Admin(msg) then
 redis:del(bot_id.."Hadaf:Lock:forward"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح التوجيه")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح التوجيه")  
 elseif text == "قفل الملفات" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Document"..msg.chat_id_,"del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل الملفات")  
-elseif text == "قفل الملفات بالتقيد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل الملفات")  
+elseif text == "قفل الملفات بالتقييد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Document"..msg.chat_id_,"ked")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","☑┇تم قفـل الملفات")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","✅┇تم قفـل الملفات")  
 elseif text == "قفل الملفات بالكتم" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Document"..msg.chat_id_,"ktm")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","☑┇تم قفـل الملفات")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","✅┇تم قفـل الملفات")  
 elseif text == "قفل الملفات بالطرد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Document"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفـل الملفات")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفـل الملفات")  
 elseif text == "فتح الملفات" and Admin(msg) then
 redis:del(bot_id.."Hadaf:Lock:Document"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح الملفات")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح الملفات")  
 elseif text == "قفل السيلفي" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Unsupported"..msg.chat_id_,"del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل السيلفي")  
-elseif text == "قفل السيلفي بالتقيد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل السيلفي")  
+elseif text == "قفل السيلفي بالتقييد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Unsupported"..msg.chat_id_,"ked")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","☑┇تم قفـل السيلفي")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","✅┇تم قفـل السيلفي")  
 elseif text == "قفل السيلفي بالكتم" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Unsupported"..msg.chat_id_,"ktm")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","☑┇تم قفـل السيلفي")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","✅┇تم قفـل السيلفي")  
 elseif text == "قفل السيلفي بالطرد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Unsupported"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفـل السيلفي")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفـل السيلفي")  
 elseif text == "فتح السيلفي" and Admin(msg) then
 redis:del(bot_id.."Hadaf:Lock:Unsupported"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح السيلفي")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح السيلفي")  
 elseif text == "قفل الماركداون" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Markdaun"..msg.chat_id_,"del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل الماركداون")  
-elseif text == "قفل الماركداون بالتقيد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل الماركداون")  
+elseif text == "قفل الماركداون بالتقييد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Markdaun"..msg.chat_id_,"ked")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","☑┇تم قفـل الماركداون")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","✅┇تم قفـل الماركداون")  
 elseif text == "قفل الماركداون بالكتم" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Markdaun"..msg.chat_id_,"ktm")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","☑┇تم قفـل الماركداون")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","✅┇تم قفـل الماركداون")  
 elseif text == "قفل الماركداون بالطرد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Markdaun"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفـل الماركداون")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفـل الماركداون")  
 elseif text == "فتح الماركداون" and Admin(msg) then
 redis:del(bot_id.."Hadaf:Lock:Markdaun"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح الماركداون")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح الماركداون")  
 elseif text == "قفل الجهات" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Contact"..msg.chat_id_,"del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل الجهات")  
-elseif text == "قفل الجهات بالتقيد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل الجهات")  
+elseif text == "قفل الجهات بالتقييد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Contact"..msg.chat_id_,"ked")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","☑┇تم قفـل الجهات")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","✅┇تم قفـل الجهات")  
 elseif text == "قفل الجهات بالكتم" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Contact"..msg.chat_id_,"ktm")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","☑┇تم قفـل الجهات")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","✅┇تم قفـل الجهات")  
 elseif text == "قفل الجهات بالطرد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Contact"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفـل الجهات")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفـل الجهات")  
 elseif text == "فتح الجهات" and Admin(msg) then
 redis:del(bot_id.."Hadaf:Lock:Contact"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح الجهات")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح الجهات")  
 elseif text == "قفل الكلايش" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Spam"..msg.chat_id_,"del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل الكلايش")  
-elseif text == "قفل الكلايش بالتقيد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل الكلايش")  
+elseif text == "قفل الكلايش بالتقييد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Spam"..msg.chat_id_,"ked")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","☑┇تم قفـل الكلايش")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","✅┇تم قفـل الكلايش")  
 elseif text == "قفل الكلايش بالكتم" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Spam"..msg.chat_id_,"ktm")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","☑┇تم قفـل الكلايش")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","✅┇تم قفـل الكلايش")  
 elseif text == "قفل الكلايش بالطرد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Spam"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفـل الكلايش")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفـل الكلايش")  
 elseif text == "فتح الكلايش" and Admin(msg) then
 redis:del(bot_id.."Hadaf:Lock:Spam"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح الكلايش")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح الكلايش")  
 elseif text == "قفل الانلاين" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Inlen"..msg.chat_id_,"del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفـل الانلاين")  
-elseif text == "قفل الانلاين بالتقيد" and Admin(msg) then
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفـل الانلاين")  
+elseif text == "قفل الانلاين بالتقييد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Inlen"..msg.chat_id_,"ked")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","☑┇تم قفـل الانلاين")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","✅┇تم قفـل الانلاين")  
 elseif text == "قفل الانلاين بالكتم" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Inlen"..msg.chat_id_,"ktm")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","☑┇تم قفـل الانلاين")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","✅┇تم قفـل الانلاين")  
 elseif text == "قفل الانلاين بالطرد" and Admin(msg) then
 redis:set(bot_id.."Hadaf:Lock:Inlen"..msg.chat_id_,"kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفـل الانلاين")  
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفـل الانلاين")  
 elseif text == "فتح الانلاين" and Admin(msg) then
 redis:del(bot_id.."Hadaf:Lock:Inlen"..msg.chat_id_)  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح الانلاين")  
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح الانلاين")  
 elseif text == "قفل التكرار بالطرد" and Admin(msg) then 
 redis:hset(bot_id.."Hadaf:Spam:Group:User"..msg.chat_id_ ,"Spam:User","kick")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","☑┇تم قفل التكرار")
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kick","✅┇تم قفل التكرار")
 elseif text == "قفل التكرار" and Admin(msg) then 
 redis:hset(bot_id.."Hadaf:Spam:Group:User"..msg.chat_id_ ,"Spam:User","del")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status","☑┇تم قفل التكرار بالحذف")
-elseif text == "قفل التكرار بالتقيد" and Admin(msg) then 
+Send_Options(msg,msg.sender_user_id_,"Close_Status","✅┇تم قفل التكرار بالحذف")
+elseif text == "قفل التكرار بالتقييد" and Admin(msg) then 
 redis:hset(bot_id.."Hadaf:Spam:Group:User"..msg.chat_id_ ,"Spam:User","keed")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","☑┇تم قفل التكرار")
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Kid","✅┇تم قفل التكرار")
 elseif text == "قفل التكرار بالكتم" and Admin(msg) then 
 redis:hset(bot_id.."Hadaf:Spam:Group:User"..msg.chat_id_ ,"Spam:User","mute")  
-Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","☑┇تم قفل التكرار")
+Send_Options(msg,msg.sender_user_id_,"Close_Status_Ktm","✅┇تم قفل التكرار")
 elseif text == "فتح التكرار" and Admin(msg) then 
 redis:hdel(bot_id.."Hadaf:Spam:Group:User"..msg.chat_id_ ,"Spam:User")  
-Send_Options(msg,msg.sender_user_id_,"Open_Status","☑┇تم فتح التكرار")
+Send_Options(msg,msg.sender_user_id_,"Open_Status","✅┇تم فتح التكرار")
 elseif text == "تفعيل جلب الرابط" and Admin(msg) or text == 'تفعيل الرابط' and Admin(msg) then  
 redis:set(bot_id.."Hadaf:Link_Group"..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_,"☑┇تم تفعيل جلب الرابط المجموعه") 
+send(msg.chat_id_, msg.id_,"✅┇تم تفعيل جلب الرابط المجموعه") 
 elseif text == "تعطيل جلب الرابط" and Admin(msg) or text == 'تعطيل الرابط' and Admin(msg) then
 redis:del(bot_id.."Hadaf:Link_Group"..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,"☑┇تم تعطيل جلب رابط المجموعه") 
+send(msg.chat_id_, msg.id_,"✅┇تم تعطيل جلب رابط المجموعه") 
 elseif text == "تفعيل الترحيب" and Admin(msg) then  
 redis:set(bot_id.."Hadaf:Chek:Welcome"..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_,"☑┇تم تفعيل ترحيب المجموعه") 
+send(msg.chat_id_, msg.id_,"✅┇تم تفعيل ترحيب المجموعه") 
 elseif text == "تعطيل الترحيب" and Admin(msg) then  
 redis:del(bot_id.."Hadaf:Chek:Welcome"..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,"☑┇تم تعطيل ترحيب المجموعه") 
-elseif text == "تفعيل ردود المدير" and Owner(msg) then   
+send(msg.chat_id_, msg.id_,"✅┇تم تعطيل ترحيب المجموعه") 
+elseif text == "تفعيل الردود" and Owner(msg) then   
 redis:del(bot_id.."Hadaf:Reply:Manager"..msg.chat_id_)  
-send(msg.chat_id_, msg.id_,"☑┇تم تفعيل ردود المدير") 
-elseif text == "تعطيل ردود المدير" and Owner(msg) then  
+send(msg.chat_id_, msg.id_,"✅┇تم تفعيل الردود") 
+elseif text == "تعطيل الردود" and Owner(msg) then  
 redis:set(bot_id.."Hadaf:Reply:Manager"..msg.chat_id_,true)  
-send(msg.chat_id_, msg.id_,"☑┇تم تعطيل ردود المدير" ) 
-elseif text == "تفعيل ردود المطور" and Owner(msg) then   
+send(msg.chat_id_, msg.id_,"✅┇تم تعطيل الردود" ) 
+elseif text == "تفعيل ردود العام" and Owner(msg) then   
 redis:del(bot_id.."Hadaf:Reply:Sudo"..msg.chat_id_)  
-send(msg.chat_id_, msg.id_,"☑┇تم تفعيل ردود المطور" ) 
-elseif text == "تعطيل ردود المطور" and Owner(msg) then  
+send(msg.chat_id_, msg.id_,"✅┇تم تفعيل ردود العام" ) 
+elseif text == "تعطيل ردود العام" and Owner(msg) then  
 redis:set(bot_id.."Hadaf:Reply:Sudo"..msg.chat_id_,true)   
-send(msg.chat_id_, msg.id_,"☑┇تم تعطيل ردود المطور" ) 
+send(msg.chat_id_, msg.id_,"✅┇تم تعطيل ردود العام" ) 
 elseif text == "تفعيل اطردني" and Owner(msg) then   
 redis:del(bot_id.."Hadaf:Cheking:Kick:Me:Group"..msg.chat_id_)  
 send(msg.chat_id_, msg.id_,Text) 
 elseif text == "تعطيل اطردني" and Owner(msg) then  
 redis:set(bot_id.."Hadaf:Cheking:Kick:Me:Group"..msg.chat_id_,true)  
-send(msg.chat_id_, msg.id_,"☑┇تم تعطيل امر اطردني") 
+send(msg.chat_id_, msg.id_,"✅┇تم تعطيل امر اطردني") 
 elseif text == "تفعيل المغادره" and Dev_Hadaf(msg) then   
 redis:del(bot_id.."Hadaf:Lock:Left"..msg.chat_id_)  
-send(msg.chat_id_, msg.id_,"☑┇تم تفعيل مغادرة البوت") 
+send(msg.chat_id_, msg.id_,"✅┇تم تفعيل مغادرة البوت") 
 elseif text == "تعطيل المغادره" and Dev_Hadaf(msg) then  
 redis:set(bot_id.."Hadaf:Lock:Left"..msg.chat_id_,true)   
-send(msg.chat_id_, msg.id_, "☑┇تم تعطيل مغادرة البوت") 
+send(msg.chat_id_, msg.id_, "✅┇تم تعطيل مغادرة البوت") 
 elseif text == "تفعيل الاذاعه" and Dev_Hadaf(msg) then  
 redis:del(bot_id.."Hadaf:Broadcasting:Bot") 
-send(msg.chat_id_, msg.id_,"☑┇تم تفعيل الاذاعه \n〽┇الان يمكن للمطورين الاذاعه" ) 
+send(msg.chat_id_, msg.id_,"✅┇تم تفعيل الاذاعه \n⚠️️┇الان يمكن للمطورين الاذاعه" ) 
 elseif text == "تعطيل الاذاعه" and Dev_Hadaf(msg) then  
 redis:set(bot_id.."Hadaf:Broadcasting:Bot",true) 
-send(msg.chat_id_, msg.id_,"☑┇تم تعطيل الاذاعه") 
+send(msg.chat_id_, msg.id_,"✅┇تم تعطيل الاذاعه") 
 elseif text == "تعطيل اوامر التحشيش" and Owner(msg) then    
-send(msg.chat_id_, msg.id_, '☑┇تم تعطيل اوامر التحشيش')
+send(msg.chat_id_, msg.id_, '✅┇تم تعطيل اوامر التحشيش')
 redis:set(bot_id.."Hadaf:Fun:Group"..msg.chat_id_,"true")
 elseif text == "تفعيل اوامر التحشيش" and Owner(msg) then    
-send(msg.chat_id_, msg.id_,'☑┇تم تفعيل اوامر التحشيش')
+send(msg.chat_id_, msg.id_,'✅┇تم تفعيل اوامر التحشيش')
 redis:del(bot_id.."Hadaf:Fun:Group"..msg.chat_id_)
 elseif text == 'تفعيل الايدي' and Owner(msg) then   
 redis:del(bot_id..'Hadaf:Lock:Id:Photo'..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,'☑┇تم تفعيل الايدي') 
+send(msg.chat_id_, msg.id_,'✅┇تم تفعيل الايدي') 
 elseif text == 'تعطيل الايدي' and Owner(msg) then  
 redis:set(bot_id..'Hadaf:Lock:Id:Photo'..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_,'☑┇تم تعطيل الايدي') 
+send(msg.chat_id_, msg.id_,'✅┇تم تعطيل الايدي') 
 elseif text == 'تفعيل الايدي بالصوره' and Owner(msg) then   
 redis:del(bot_id..'Hadaf:Lock:Id:Py:Photo'..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,'☑┇تم تفعيل الايدي بالصوره') 
+send(msg.chat_id_, msg.id_,'✅┇تم تفعيل الايدي بالصوره') 
 elseif text == 'تعطيل الايدي بالصوره' and Owner(msg) then  
 redis:set(bot_id..'Hadaf:Lock:Id:Py:Photo'..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_,'☑┇تم تعطيل الايدي بالصوره') 
+send(msg.chat_id_, msg.id_,'✅┇تم تعطيل الايدي بالصوره') 
 elseif text == "تعطيل الالعاب" and Owner(msg) then   
 redis:del(bot_id.."Hadaf:Lock:Game:Group"..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,"☑┇تم تعطيل الالعاب") 
+send(msg.chat_id_, msg.id_,"✅┇تم تعطيل الالعاب") 
 elseif text == "تفعيل الالعاب" and Owner(msg) then  
 redis:set(bot_id.."Hadaf:Lock:Game:Group"..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_,"☑┇تم تفعيل الالعاب") 
+send(msg.chat_id_, msg.id_,"✅┇تم تفعيل الالعاب") 
 elseif text == 'تفعيل البوت الخدمي' and Dev_Hadaf(msg) then  
 redis:del(bot_id..'Hadaf:Free:Bot') 
-send(msg.chat_id_, msg.id_,'☑┇تم تفعيل البوت الخدمي \n⚡┇الان يمكن الجميع تفعيله') 
+send(msg.chat_id_, msg.id_,'✅┇تم تفعيل البوت الخدمي \n⚡┇الان يمكن الجميع تفعيله') 
 elseif text == 'تعطيل البوت الخدمي' and Dev_Hadaf(msg) then  
 redis:set(bot_id..'Hadaf:Free:Bot',true) 
-send(msg.chat_id_, msg.id_,'☑┇تم تعطيل البوت الخدمي') 
+send(msg.chat_id_, msg.id_,'✅┇تم تعطيل البوت الخدمي') 
 elseif text == "تعطيل الطرد" and Constructor(msg) or text == "تعطيل الحظر" and Constructor(msg) then
 redis:set(bot_id.."Hadaf:Lock:Ban:Group"..msg.chat_id_,"true")
-send(msg.chat_id_, msg.id_, '☑┇تم تعطيل - ( الحظر - الطرد ) ')
+send(msg.chat_id_, msg.id_, '✅┇تم تعطيل - ( الحظر - الطرد ) ')
 elseif text == "تفعيل الطرد" and Constructor(msg) or text == "تفعيل الحظر" and Constructor(msg) then
 redis:del(bot_id.."Hadaf:Lock:Ban:Group"..msg.chat_id_)
-send(msg.chat_id_, msg.id_, '☑┇تم تفعيل - ( الحظر - الطرد ) ')
+send(msg.chat_id_, msg.id_, '✅┇تم تفعيل - ( الحظر - الطرد ) ')
 elseif text == "تعطيل الرفع" and Constructor(msg) or text == "تعطيل الترقيه" and Constructor(msg) then
 redis:set(bot_id.."Hadaf:Cheking:Seted"..msg.chat_id_,"true")
-send(msg.chat_id_, msg.id_, '☑┇تم تعطيل رفع - ( الادمن - المميز ) ')
+send(msg.chat_id_, msg.id_, '✅┇تم تعطيل رفع - ( الادمن - المميز ) ')
 elseif text == "تفعيل الرفع" and Constructor(msg) or text == "تفعيل الترقيه" and Constructor(msg) then
 redis:del(bot_id.."Hadaf:Cheking:Seted"..msg.chat_id_)
-send(msg.chat_id_, msg.id_, '☑┇تم تفعيل رفع - ( الادمن - المميز ) ')
+send(msg.chat_id_, msg.id_, '✅┇تم تفعيل رفع - ( الادمن - المميز ) ')
 elseif text ==("تثبيت") and msg.reply_to_message_id_ ~= 0 and Admin(msg) then
   
 if redis:sismember(bot_id.."Hadaf:Lock:pin",msg.chat_id_) and not Constructor(msg) then
-send(msg.chat_id_,msg.id_,"⚠┇التثبيت مقفل من قبل المنشئين")  
+send(msg.chat_id_,msg.id_,"⚠️┇التثبيت مقفل من قبل المنشئين")  
 return false end
 tdcli_function ({ID = "PinChannelMessage",channel_id_ = msg.chat_id_:gsub("-100",""),message_id_ = msg.reply_to_message_id_,disable_notification_ = 1},function(arg,data) 
 if data.ID == "Ok" then
-send(msg.chat_id_, msg.id_,"☑┇تم تثبيت الرساله بنجاح")   
+send(msg.chat_id_, msg.id_,"✅┇تم تثبيت الرساله بنجاح")   
 redis:set(bot_id.."Hadaf:Get:Id:Msg:Pin"..msg.chat_id_,msg.reply_to_message_id_)
 elseif data.code_ == 6 then
-send(msg.chat_id_,msg.id_,"⚠┇البوت ليس ادمن هنا")  
+send(msg.chat_id_,msg.id_,"⚠️┇البوت ليس ادمن هنا")  
 elseif data.message_ == "CHAT_ADMIN_REQUIRED" then
-send(msg.chat_id_,msg.id_,"⚠┇ليست لدي صلاحية التثبيت .")  
+send(msg.chat_id_,msg.id_,"⚠️┇ليست لدي صلاحية التثبيت .")  
 end;end,nil) 
 elseif text == "الغاء التثبيت" and Admin(msg) then
   
 if redis:sismember(bot_id.."Hadaf:Lock:pin",msg.chat_id_) and not Constructor(msg) then
-send(msg.chat_id_,msg.id_,"⚠┇التثبيت مقفل من قبل المنشئين")  
+send(msg.chat_id_,msg.id_,"⚠️┇التثبيت مقفل من قبل المنشئين")  
 return false end
 tdcli_function({ID="UnpinChannelMessage",channel_id_ = msg.chat_id_:gsub("-100","")},function(arg,data) 
 if data.ID == "Ok" then
-send(msg.chat_id_, msg.id_,"☑┇تم الغاء تثبيت الرساله بنجاح")   
+send(msg.chat_id_, msg.id_,"✅┇تم الغاء تثبيت الرساله بنجاح")   
 redis:del(bot_id.."Hadaf:Get:Id:Msg:Pin"..msg.chat_id_)
 elseif data.code_ == 6 then
-send(msg.chat_id_,msg.id_,"⚠┇البوت ليس ادمن هنا")  
+send(msg.chat_id_,msg.id_,"⚠️┇البوت ليس ادمن هنا")  
 elseif data.message_ == "CHAT_ADMIN_REQUIRED" then
-send(msg.chat_id_,msg.id_,"⚠┇ليست لدي صلاحية التثبيت .")
+send(msg.chat_id_,msg.id_,"⚠️┇ليست لدي صلاحية التثبيت .")
 end;end,nil)
 elseif text == 'طرد المحذوفين' or text == 'مسح المحذوفين' then  
 if Admin(msg) then    
@@ -4495,13 +4495,13 @@ tdcli_function({ID = "GetUser",user_id_ = v.user_id_},function(b,data)
 if data.first_name_ == false then
 KickGroup(msg.chat_id_, data.id_)
 end;end,nil);end
-send(msg.chat_id_, msg.id_,'☑┇تم طرد الحسابات المحذوفه')
+send(msg.chat_id_, msg.id_,'✅┇تم طرد الحسابات المحذوفه')
 end,nil)
 end
 elseif text ==("مسح المطرودين") and Admin(msg) then    
 local function delbans(extra, result)  
 if not msg.can_be_deleted_ == true then  
-send(msg.chat_id_, msg.id_, "⚠┇ يرجى ترقيتي ادمن هنا") 
+send(msg.chat_id_, msg.id_, "⚠️┇ يرجى ترقيتي ادمن هنا") 
 return false
 end  
 local num = 0 
@@ -4509,7 +4509,7 @@ for k,y in pairs(result.members_) do
 num = num + 1  
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = y.user_id_, status_ = { ID = "ChatMemberStatusLeft"}, }, dl_cb, nil)  
 end  
-send(msg.chat_id_, msg.id_,"☑┇ تم الغاء الحظر عن *: "..num.." * شخص") 
+send(msg.chat_id_, msg.id_,"✅┇ تم الغاء الحظر عن *: "..num.." * شخص") 
 end    
 elseif text == "مسح البوتات" and Admin(msg) then 
 tdcli_function ({ ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersBots"},offset_ = 0,limit_ = 100 },function(arg,tah)  
@@ -4526,35 +4526,35 @@ end
 c = c + 1
 end     
 if (c - x) == 0 then
-send(msg.chat_id_, msg.id_, "⚠┇لا توجد بوتات في المجموعه")
+send(msg.chat_id_, msg.id_, "⚠️┇لا توجد بوتات في المجموعه")
 else
 send(msg.chat_id_, msg.id_,"\n⛔┇عدد البوتات هنا : "..c.."\n👮┇عدد البوتات التي هي ادمن : "..x.."\n🚷┇تم طرد - "..(c - x).." - بوتات ") 
 end 
 end,nil)  
 elseif text == "مسح الرابط" and Admin(msg) or text == "حذف الرابط" and Admin(msg) then
-send(msg.chat_id_,msg.id_,"☑┇تم ازالة رابط المجموعه")           
+send(msg.chat_id_,msg.id_,"✅┇تم ازالة رابط المجموعه")           
 redis:del(bot_id.."Hadaf:link:set:Group"..msg.chat_id_) 
 elseif text == "حذف الصوره" and Admin(msg) or text == "مسح الصوره" and Admin(msg) then 
 https.request("https://api.telegram.org/bot"..token.."/deleteChatPhoto?chat_id="..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,"☑┇تم ازالة صورة المجموعه") 
+send(msg.chat_id_, msg.id_,"✅┇تم ازالة صورة المجموعه") 
 elseif text == "مسح الترحيب" and Admin(msg) or text == "حذف الترحيب" and Admin(msg) then 
 redis:del(bot_id.."Hadaf:Get:Welcome:Group"..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,"☑┇تم ازالة ترحيب المجموعه") 
+send(msg.chat_id_, msg.id_,"✅┇تم ازالة ترحيب المجموعه") 
 elseif text == "مسح القوانين" and Admin(msg) or text == "حذف القوانين" and Admin(msg) then  
-send(msg.chat_id_, msg.id_,"〽┇تم ازالة قوانين المجموعه")  
+send(msg.chat_id_, msg.id_,"⚠️️┇تم ازالة قوانين المجموعه")  
 redis:del(bot_id.."Hadaf::Rules:Group"..msg.chat_id_) 
 elseif text == 'حذف الايدي' and Owner(msg) or text == 'مسح الايدي' and Owner(msg) then
 redis:del(bot_id.."Hadaf:Set:Id:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, '⚡┇تم ازالة كليشة الايدي ')
 elseif text == 'مسح رسائلي' then
 redis:del(bot_id..'Hadaf:Num:Message:User'..msg.chat_id_..':'..msg.sender_user_id_)
-send(msg.chat_id_, msg.id_,'☑┇تم مسح جميع رسائلك ') 
-elseif text == 'مسح سحكاتي' or text == 'مسح تعديلاتي' then
+send(msg.chat_id_, msg.id_,'✅┇تم مسح جميع رسائلك ') 
+elseif text == 'مسح تعديلاتي' or text == 'مسح تعديلاتي' then
 redis:del(bot_id..'Hadaf:Num:Message:Edit'..msg.chat_id_..':'..msg.sender_user_id_)
-send(msg.chat_id_, msg.id_,'☑┇تم مسح جميع تعديلاتك ') 
+send(msg.chat_id_, msg.id_,'✅┇تم مسح جميع تعديلاتك ') 
 elseif text == 'مسح جهاتي' then
 redis:del(bot_id..'Hadaf:Num:Add:Memp'..msg.chat_id_..':'..msg.sender_user_id_)
-send(msg.chat_id_, msg.id_,'☑┇تم مسح جميع جهاتك المضافه ') 
+send(msg.chat_id_, msg.id_,'✅┇تم مسح جميع جهاتك المضافه ') 
 elseif text ==("مسح") and Admin(msg) and tonumber(msg.reply_to_message_id_) > 0 then
 Delete_Message(msg.chat_id_,{[0] = tonumber(msg.reply_to_message_id_),msg.id_})   
 tdcli_function({ID="GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersKicked"},offset_ = 0,limit_ = 200}, delbans, {chat_id_ = msg.chat_id_, msg_id_ = msg.id_})    
@@ -4586,11 +4586,11 @@ elseif text and text:match("^ضع اسم (.*)") and Owner(msg) or text and text:
 local Name = text:match("^ضع اسم (.*)") or text:match("^وضع اسم (.*)") 
 tdcli_function ({ ID = "ChangeChatTitle",chat_id_ = msg.chat_id_,title_ = Name },function(arg,data) 
 if data.message_ == "Channel chat title can be changed by administrators only" then
-send(msg.chat_id_,msg.id_,"⚠┇ البوت ليس ادمن يرجى ترقيتي !")  
+send(msg.chat_id_,msg.id_,"⚠️┇ البوت ليس ادمن يرجى ترقيتي !")  
 return false  
 end 
 if data.message_ == "CHAT_ADMIN_REQUIRED" then
-send(msg.chat_id_,msg.id_,"⚠┇ ليست لدي صلاحية تغير اسم المجموعه")  
+send(msg.chat_id_,msg.id_,"⚠️┇ ليست لدي صلاحية تغيير اسم المجموعه")  
 else
 send(msg.chat_id_,msg.id_,"🔘┇ تم تغيير اسم المجموعه الى {["..Name.."]}")  
 end
@@ -4598,7 +4598,7 @@ end,nil)
 elseif text == "الرابط" then 
 local status_Link = redis:get(bot_id.."Hadaf:Link_Group"..msg.chat_id_)
 if not status_Link then
-send(msg.chat_id_, msg.id_,"☑┇جلب الرابط معطل") 
+send(msg.chat_id_, msg.id_,"✅┇جلب الرابط معطل") 
 return false  
 end
 local link = redis:get(bot_id.."Hadaf:link:set:Group"..msg.chat_id_)            
@@ -4609,7 +4609,7 @@ local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token.
 if linkgpp.ok == true then 
 send(msg.chat_id_,msg.id_,"📮┇ Link Chat :\n ["..linkgpp.result.."]")                          
 else
-send(msg.chat_id_, msg.id_,"⚠┇لا يوجد رابط للمجموعه")              
+send(msg.chat_id_, msg.id_,"⚠️┇لا يوجد رابط للمجموعه")              
 end            
 end
 elseif text == "الترحيب" and Admin(msg) then 
@@ -4626,7 +4626,7 @@ redis:del(bot_id.."Hadaf:Filter:Reply1"..msg.sender_user_id_..msg.chat_id_)
 redis:del(bot_id.."Hadaf:Filter:Reply2"..v..msg.chat_id_)  
 redis:srem(bot_id.."Hadaf:List:Filter"..msg.chat_id_,v)  
 end  
-send(msg.chat_id_, msg.id_,"☑┇تم مسح قائمه المنع")  
+send(msg.chat_id_, msg.id_,"✅┇تم مسح قائمه المنع")  
 elseif text == "قائمه المنع" and Admin(msg) then   
 local list = redis:smembers(bot_id.."Hadaf:List:Filter"..msg.chat_id_)  
 t = "\n⛔┇قائمة المنع \n━━━━━━━━━━━━━\n"
@@ -4664,12 +4664,12 @@ tr = " {★}"
 end
 text = text..": [@"..ta.username_.."]"..tr.."\n"
 if #admins == 0 then
-send(msg.chat_id_, msg.id_, "⚠┇لا توجد بوتات في المجموعه")
+send(msg.chat_id_, msg.id_, "⚠️┇لا توجد بوتات في المجموعه")
 return false 
 end
 if #admins == i then 
 local a = "\n━━━━━━━━━━━━━\n🔖┇عدد البوتات التي هنا : "..n.." بوت"
-local f = "\n👮┇عدد البوتات التي هي ادمن : "..t.."\n⚠┇ملاحضه علامة النجمه يعني البوت ادمن - ★ \n"
+local f = "\n👮┇عدد البوتات التي هي ادمن : "..t.."\n⚠️┇ملاحضه علامة النجمه يعني البوت ادمن - ★ \n"
 send(msg.chat_id_, msg.id_, text..a..f)
 end
 end,nil)
@@ -4680,7 +4680,7 @@ local Set_Rules = redis:get(bot_id.."Hadaf::Rules:Group" .. msg.chat_id_)
 if Set_Rules then     
 send(msg.chat_id_,msg.id_, Set_Rules)   
 else      
-send(msg.chat_id_, msg.id_,"⚠┇لا توجد قوانين هنا")   
+send(msg.chat_id_, msg.id_,"⚠️┇لا توجد قوانين هنا")   
 end    
 elseif text == "اضف امر" and Constructor(msg) then
 redis:set(bot_id.."Hadaf:Command:Reids:Group"..msg.chat_id_..":"..msg.sender_user_id_,"true") 
@@ -4692,63 +4692,63 @@ elseif text and text:match("^مسح صلاحيه (.*)$") and Admin(msg) or text 
 local ComdNew = text:match("^مسح صلاحيه (.*)$") or text:match("^حذف صلاحيه (.*)$")
 redis:del(bot_id.."Hadaf:Add:Validity:Group:Rt"..ComdNew..msg.chat_id_)
 redis:srem(bot_id.."Hadaf:Validitys:Group"..msg.chat_id_,ComdNew)  
-send(msg.chat_id_, msg.id_, "\n☑┇تم مسح ← { "..ComdNew..' } من الصلاحيات') 
+send(msg.chat_id_, msg.id_, "\n✅┇تم مسح ← { "..ComdNew..' } من الصلاحيات') 
 elseif text and text:match("^اضف صلاحيه (.*)$") and Admin(msg) then 
 local ComdNew = text:match("^اضف صلاحيه (.*)$")
 redis:set(bot_id.."Hadaf:Add:Validity:Group:Rt:New"..msg.chat_id_..msg.sender_user_id_,ComdNew)  
 redis:sadd(bot_id.."Hadaf:Validitys:Group"..msg.chat_id_,ComdNew)  
 redis:setex(bot_id.."Hadaf:Redis:Validity:Group"..msg.chat_id_..""..msg.sender_user_id_,200,true)  
-send(msg.chat_id_, msg.id_, "\n〽┇ارسل نوع الصلاحيه كما مطلوب منك :\n💢┇انواع الصلاحيات المطلوبه ← { عضو ، مميز  ، ادمن  ، مدير }") 
-elseif text and text:match("^تغير رد المطور (.*)$") and Owner(msg) then
-local Teext = text:match("^تغير رد المطور (.*)$") 
+send(msg.chat_id_, msg.id_, "\n⚠️️┇ارسل نوع الصلاحيه كما مطلوب منك :\n💢┇انواع الصلاحيات المطلوبه ← { عضو ، مميز  ، ادمن  ، مدير }") 
+elseif text and text:match("^تغيير رد المطور (.*)$") and Owner(msg) then
+local Teext = text:match("^تغيير رد المطور (.*)$") 
 redis:set(bot_id.."Hadaf:Developer:Bot:Reply"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"〽┇ تم تغير رد المطور الى :"..Teext)
-elseif text and text:match("^تغير رد المنشئ الاساسي (.*)$") and Owner(msg) then
-local Teext = text:match("^تغير رد المنشئ الاساسي (.*)$") 
+send(msg.chat_id_, msg.id_,"⚠️️┇ تم تغيير رد المطور الى :"..Teext)
+elseif text and text:match("^تغيير رد المنشئ الاساسي (.*)$") and Owner(msg) then
+local Teext = text:match("^تغيير رد المنشئ الاساسي (.*)$") 
 redis:set(bot_id.."Hadaf:President:Group:Reply"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"〽┇ تم تغير رد المنشئ الاساسي الى :"..Teext)
-elseif text and text:match("^تغير رد المنشئ (.*)$") and Owner(msg) then
-local Teext = text:match("^تغير رد المنشئ (.*)$") 
+send(msg.chat_id_, msg.id_,"⚠️️┇ تم تغيير رد المنشئ الاساسي الى :"..Teext)
+elseif text and text:match("^تغيير رد المنشئ (.*)$") and Owner(msg) then
+local Teext = text:match("^تغيير رد المنشئ (.*)$") 
 redis:set(bot_id.."Hadaf:Constructor:Group:Reply"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"〽┇ تم تغير رد المنشئ الى :"..Teext)
-elseif text and text:match("^تغير رد المدير (.*)$") and Owner(msg) then
-local Teext = text:match("^تغير رد المدير (.*)$") 
+send(msg.chat_id_, msg.id_,"⚠️️┇ تم تغيير رد المنشئ الى :"..Teext)
+elseif text and text:match("^تغيير رد المدير (.*)$") and Owner(msg) then
+local Teext = text:match("^تغيير رد المدير (.*)$") 
 redis:set(bot_id.."Hadaf:Manager:Group:Reply"..msg.chat_id_,Teext) 
-send(msg.chat_id_, msg.id_,"〽┇ تم تغير رد المدير الى :"..Teext)
-elseif text and text:match("^تغير رد الادمن (.*)$") and Owner(msg) then
-local Teext = text:match("^تغير رد الادمن (.*)$") 
+send(msg.chat_id_, msg.id_,"⚠️️┇ تم تغيير رد المدير الى :"..Teext)
+elseif text and text:match("^تغيير رد الادمن (.*)$") and Owner(msg) then
+local Teext = text:match("^تغيير رد الادمن (.*)$") 
 redis:set(bot_id.."Hadaf:Admin:Group:Reply"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"〽┇ تم تغير رد الادمن الى :"..Teext)
-elseif text and text:match("^تغير رد المميز (.*)$") and Owner(msg) then
-local Teext = text:match("^تغير رد المميز (.*)$") 
+send(msg.chat_id_, msg.id_,"⚠️️┇ تم تغيير رد الادمن الى :"..Teext)
+elseif text and text:match("^تغيير رد المميز (.*)$") and Owner(msg) then
+local Teext = text:match("^تغيير رد المميز (.*)$") 
 redis:set(bot_id.."Hadaf:Vip:Group:Reply"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"〽┇ تم تغير رد المميز الى :"..Teext)
-elseif text and text:match("^تغير رد العضو (.*)$") and Owner(msg) then
-local Teext = text:match("^تغير رد العضو (.*)$") 
+send(msg.chat_id_, msg.id_,"⚠️️┇ تم تغيير رد المميز الى :"..Teext)
+elseif text and text:match("^تغيير رد العضو (.*)$") and Owner(msg) then
+local Teext = text:match("^تغيير رد العضو (.*)$") 
 redis:set(bot_id.."Hadaf:Mempar:Group:Reply"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"〽┇ تم تغير رد العضو الى :"..Teext)
+send(msg.chat_id_, msg.id_,"⚠️️┇ تم تغيير رد العضو الى :"..Teext)
 elseif text == 'حذف رد المطور' and Owner(msg) then
 redis:del(bot_id.."Hadaf:Developer:Bot:Reply"..msg.chat_id_)
-send(msg.chat_id_, msg.id_,"☑┇تم حدف رد المطور")
+send(msg.chat_id_, msg.id_,"✅┇تم حدف رد المطور")
 elseif text == 'حذف رد المنشئ الاساسي' and Owner(msg) then
 redis:del(bot_id.."Hadaf:President:Group:Reply"..msg.chat_id_)
-send(msg.chat_id_, msg.id_,"☑┇تم حذف رد المنشئ الاساسي ")
+send(msg.chat_id_, msg.id_,"✅┇تم حذف رد المنشئ الاساسي ")
 elseif text == 'حذف رد المنشئ' and Owner(msg) then
 redis:del(bot_id.."Hadaf:Constructor:Group:Reply"..msg.chat_id_)
-send(msg.chat_id_, msg.id_,"☑┇تم حذف رد المنشئ ")
+send(msg.chat_id_, msg.id_,"✅┇تم حذف رد المنشئ ")
 elseif text == 'حذف رد المدير' and Owner(msg) then
 redis:del(bot_id.."Hadaf:Manager:Group:Reply"..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,"☑┇تم حذف رد المدير ")
+send(msg.chat_id_, msg.id_,"✅┇تم حذف رد المدير ")
 elseif text == 'حذف رد الادمن' and Owner(msg) then
 redis:del(bot_id.."Hadaf:Admin:Group:Reply"..msg.chat_id_)
-send(msg.chat_id_, msg.id_,"☑┇تم حذف رد الادمن ")
+send(msg.chat_id_, msg.id_,"✅┇تم حذف رد الادمن ")
 elseif text == 'حذف رد المميز' and Owner(msg) then
 redis:del(bot_id.."Hadaf:Vip:Group:Reply"..msg.chat_id_)
-send(msg.chat_id_, msg.id_,"☑┇تم حذف رد المميز")
+send(msg.chat_id_, msg.id_,"✅┇تم حذف رد المميز")
 elseif text == 'حذف رد العضو' and Owner(msg) then
 redis:del(bot_id.."Hadaf:Mempar:Group:Reply"..msg.chat_id_)
-send(msg.chat_id_, msg.id_,"☑┇تم حذف رد العضو")
-elseif text == ("مسح ردود المدير") and Owner(msg) then
+send(msg.chat_id_, msg.id_,"✅┇تم حذف رد العضو")
+elseif text == ("مسح الردود") and Owner(msg) then
 local list = redis:smembers(bot_id.."Hadaf:List:Manager"..msg.chat_id_.."")
 for k,v in pairs(list) do
 redis:del(bot_id.."Hadaf:Add:Rd:Manager:Gif"..v..msg.chat_id_)   
@@ -4761,10 +4761,10 @@ redis:del(bot_id.."Hadaf:Add:Rd:Manager:File"..v..msg.chat_id_)
 redis:del(bot_id.."Hadaf:Add:Rd:Manager:Audio"..v..msg.chat_id_)
 redis:del(bot_id.."Hadaf:List:Manager"..msg.chat_id_)
 end
-send(msg.chat_id_, msg.id_,"☑┇تم مسح قائمه ردود المدير")
-elseif text == ("ردود المدير") and Owner(msg) then
+send(msg.chat_id_, msg.id_,"✅┇تم مسح قائمه الردود")
+elseif text == ("الردود") and Owner(msg) then
 local list = redis:smembers(bot_id.."Hadaf:List:Manager"..msg.chat_id_.."")
-text = "📑┇قائمه ردود المدير \n━━━━━━━━━━━━━\n"
+text = "📑┇قائمه الردود \n━━━━━━━━━━━━━\n"
 for k,v in pairs(list) do
 if redis:get(bot_id.."Hadaf:Add:Rd:Manager:Gif"..v..msg.chat_id_) then
 db = "متحركه 🎭"
@@ -4781,21 +4781,21 @@ db = "فيديو 📹"
 elseif redis:get(bot_id.."Hadaf:Add:Rd:Manager:File"..v..msg.chat_id_) then
 db = "ملف 📁"
 elseif redis:get(bot_id.."Hadaf:Add:Rd:Manager:Audio"..v..msg.chat_id_) then
-db = "اغنيه 🎵"
+db = "مقطع صوتي 🎵"
 end
 text = text..""..k.." » {"..v.."} » {"..db.."}\n"
 end
 if #list == 0 then
-text = "⚠┇عذرا لا يوجد ردود للمدير في المجموعه"
+text = "⚠️┇عذرًا لا يوجد ردود في المجموعه"
 end
 send(msg.chat_id_, msg.id_,"["..text.."]")
 elseif text == "اضف رد" and Owner(msg) then
-send(msg.chat_id_, msg.id_,"📮┇ارسل الان الكلمه لاضافتها في ردود المدير ")
+send(msg.chat_id_, msg.id_,"📮┇ارسل الان الكلمه لاضافتها في الردود")
 redis:set(bot_id.."Hadaf:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_,true)
 elseif text == "حذف رد" and Owner(msg) then
-send(msg.chat_id_, msg.id_,"📮┇ارسل الان الكلمه لحذفها من ردود المدير")
+send(msg.chat_id_, msg.id_,"📮┇ارسل الان الكلمه لحذفها من الردود")
 redis:set(bot_id.."Hadaf:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_,"true2")
-elseif text == ("مسح ردود المطور") and Dev_Hadaf(msg) then 
+elseif text == ("مسح ردود العام") and Dev_Hadaf(msg) then 
 local list = redis:smembers(bot_id.."Hadaf:List:Rd:Sudo")
 for k,v in pairs(list) do
 redis:del(bot_id.."Hadaf:Add:Rd:Sudo:Gif"..v)   
@@ -4808,10 +4808,10 @@ redis:del(bot_id.."Hadaf:Add:Rd:Sudo:File"..v)
 redis:del(bot_id.."Hadaf:Add:Rd:Sudo:Audio"..v)
 redis:del(bot_id.."Hadaf:List:Rd:Sudo")
 end
-send(msg.chat_id_, msg.id_,"☑┇تم حذف ردود المطور")
-elseif text == ("ردود المطور") and Dev_Hadaf(msg) then 
+send(msg.chat_id_, msg.id_,"✅┇تم حذف ردود العام")
+elseif text == ("ردود العام") and Dev_Hadaf(msg) then 
 local list = redis:smembers(bot_id.."Hadaf:List:Rd:Sudo")
-text = "\n📝┇قائمة ردود المطور \n━━━━━━━━━━━━━\n"
+text = "\n📝┇قائمة ردود العام \n━━━━━━━━━━━━━\n"
 for k,v in pairs(list) do
 if redis:get(bot_id.."Hadaf:Add:Rd:Sudo:Gif"..v) then
 db = "متحركه 🎭"
@@ -4828,19 +4828,19 @@ db = "فيديو 📹"
 elseif redis:get(bot_id.."Hadaf:Add:Rd:Sudo:File"..v) then
 db = "ملف 📁"
 elseif redis:get(bot_id.."Hadaf:Add:Rd:Sudo:Audio"..v) then
-db = "اغنيه 🎵"
+db = "مقطع صوتي 🎵"
 end
 text = text..""..k.." » {"..v.."} » {"..db.."}\n"
 end
 if #list == 0 then
-text = "⚠┇لا توجد ردود للمطور"
+text = "⚠️┇لا توجد ردود عام"
 end
 send(msg.chat_id_, msg.id_,"["..text.."]")
-elseif text == "اضف رد للكل" and Dev_Hadaf(msg) then 
-send(msg.chat_id_, msg.id_,"📮┇ارسل الان الكلمه لاضافتها في ردود المكور ")
+elseif text == "اضف رد عام" and Dev_Hadaf(msg) then 
+send(msg.chat_id_, msg.id_,"📮┇ارسل الان الكلمه لاضافتها في ردود العام ")
 redis:set(bot_id.."Hadaf:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_,true)
-elseif text == "حذف رد للكل" and Dev_Hadaf(msg) then 
-send(msg.chat_id_, msg.id_,"📮┇ارسل الان الكلمه لحذفها من ردود المطور")
+elseif text == "حذف رد عام" and Dev_Hadaf(msg) then 
+send(msg.chat_id_, msg.id_,"📮┇ارسل الان الكلمه لحذفها من ردود العام")
 redis:set(bot_id.."Hadaf:Set:On"..msg.sender_user_id_..":"..msg.chat_id_,true)
 end
 if text and text:match("^تنزيل الكل @(.*)$") and Owner(msg) then
@@ -4848,7 +4848,7 @@ print('&&&')
 function FunctionStatus(extra, result, success)
 if (result.id_) then
 if Dev_Hadaf_User(result.id_) == true then
-send(msg.chat_id_, msg.id_,"⚠┇ لا تستطيع تنزيل المطور الاساسي")
+send(msg.chat_id_, msg.id_,"⚠️┇ لا تستطيع تنزيل المطور الاساسي")
 return false 
 end
 if redis:sismember(bot_id.."Hadaf:Developer:Bot",result.id_) then
@@ -4902,7 +4902,7 @@ end
 if text == ("تنزيل الكل") and msg.reply_to_message_id_ ~= 0 and Owner(msg) then
 function Function_Status(extra, result, success)
 if Dev_Hadaf_User(result.sender_user_id_) == true then
-send(msg.chat_id_, msg.id_,"⚠┇ لا تستطيع تنزيل المطور الاساسي")
+send(msg.chat_id_, msg.id_,"⚠️┇ لا تستطيع تنزيل المطور الاساسي")
 return false 
 end
 if redis:sismember(bot_id.."Hadaf:Developer:Bot",result.sender_user_id_) then
@@ -4968,9 +4968,9 @@ last_name = ""
 end      
 send(msg.chat_id_, msg.id_,first_name.."\n"..last_name) 
 end,nil)
-elseif text==("عدد الكروب") and Admin(msg) then  
+elseif text==("عدد القروب") and Admin(msg) then  
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_,msg.id_,"⚠┇ البوت ليس ادمن هنا \n") 
+send(msg.chat_id_,msg.id_,"⚠️┇ البوت ليس ادمن هنا \n") 
 return false  
 end 
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
@@ -4978,8 +4978,8 @@ tdcli_function({ID="GetChannelFull",channel_id_ = msg.chat_id_:gsub("-100","")},
 local taha = "👮┇ عدد الادمنيه : "..data.administrator_count_..
 "\n🚯┇ عدد المطرودين : "..data.kicked_count_..
 "\n👥┇ عدد الاعضاء : "..data.member_count_..
-"\n📨┇ عدد رسائل الكروب : "..(msg.id_/2097152/0.5)..
-"\n〽┇ اسم المجموعه : ["..ta.title_.."]"
+"\n📨┇ عدد رسائل القروب : "..(msg.id_/2097152/0.5)..
+"\n⚠️️┇ اسم المجموعه : ["..ta.title_.."]"
 send(msg.chat_id_, msg.id_, taha) 
 end,nil)end,nil)
 elseif text == "غادر" then 
@@ -4996,63 +4996,63 @@ send(msg.chat_id_, msg.id_,"📫┇ تم مغادرة المجموعه")
 send(GP_ID[2], 0,"📫┇ تم مغادرة المجموعه بامر من مطور البوت") 
 redis:srem(bot_id.."Hadaf:ChekBotAdd",GP_ID[2])  
 end
-elseif text == (redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "سكر") then
+elseif text == (redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "هدف") then
 local namebot = {
-"عمر "..(redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "سكر").. " شتريد؟",
-"أჂ̤ أჂ̤ هياتني اني",
-"موجود بس لتصيح",
-"لتــلح دا احجي ويه بنات سكر بعدين اجاوبك",
-"راح نموت بكورونا ونته بعدك تصيح "..(redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "سكر"),
-'يمعود والله نعسان'
+--"عمر "..(redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "هدف").. " شتريد؟",
+--"أჂ̤ أჂ̤ هياتني اني",
+--"موجود بس لتصيح",
+"لبيه",
+--"راح نموت بكورونا وانت لسّه تنادي "..(redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "هدف"),
+--'يمعود والله نعسان'
 }
 name = math.random(#namebot)
 send(msg.chat_id_, msg.id_, namebot[name]) 
 elseif text == "بوت" then
 print('&&&')
 local BotName = {
-"باوع لك خليني احبك وصيحلي باسمي "..(redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "سكر").. "",
-"لتخليني ارجع لحركاتي لقديمه وردا ترا اسمي "..(redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "سكر").. "",
-"راح نموت بكورونا ونته بعدك تصيح بوت"
+--"باوع لك خليني احبك وصيحلي باسمي "..(redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "هدف").. "",
+--"لتخليني ارجع لحركاتي لقديمه وردا ترا اسمي "..(redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "هدف").. "",
+"راح نموت بكورونا وانت ماحفظت اسمي، اسمي "..(redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "هدف").. ""
 }
 BotNameText = math.random(#BotName)
 send(msg.chat_id_, msg.id_,BotName[BotNameText]) 
-elseif text == "تغير اسم البوت" and Dev_Hadaf(msg) or text == "تغيير اسم البوت" and Dev_Hadaf(msg) then 
+elseif text == "تغيير اسم البوت" and Dev_Hadaf(msg) or text == "تغيير اسم البوت" and Dev_Hadaf(msg) then 
 redis:setex(bot_id.."Hadaf:Change:Name:Bot"..msg.sender_user_id_,300,true) 
 send(msg.chat_id_, msg.id_,"📫┇ ارسل لي الاسم الان ")  
 elseif text=="اذاعه خاص" and msg.reply_to_message_id_ == 0 and DeveloperBot(msg) then 
 if redis:get(bot_id.."Hadaf:Broadcasting:Bot") and not Dev_Hadaf(msg) then 
-send(msg.chat_id_, msg.id_,"☑┇تم تعطيل الاذاعه من قبل المطور الاساسي !")
+send(msg.chat_id_, msg.id_,"✅┇تم تعطيل الاذاعه من قبل المطور الاساسي !")
 return false end
 redis:setex(bot_id.."Hadaf:Broadcasting:Users" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"🔘┇ارسل لي المنشور الان\n〽┇يمكنك ارسال -{ صوره - ملصق - متحركه - رساله }\n⚠┇لالغاء الاذاعه ارسل : الغاء") 
+send(msg.chat_id_, msg.id_,"🔘┇ارسل لي المنشور الان\n⚠️️┇يمكنك ارسال -{ صوره - ملصق - متحركه - رساله }\n⚠️┇لالغاء الاذاعه ارسل : الغاء") 
 return false
 elseif text=="اذاعه" and msg.reply_to_message_id_ == 0 and DeveloperBot(msg) then 
 if redis:get(bot_id.."Hadaf:Broadcasting:Bot") and not Dev_Hadaf(msg) then 
-send(msg.chat_id_, msg.id_,"☑┇تم تعطيل الاذاعه من قبل المطور الاساسي !")
+send(msg.chat_id_, msg.id_,"✅┇تم تعطيل الاذاعه من قبل المطور الاساسي !")
 return false end
 redis:setex(bot_id.."Hadaf:Broadcasting:Groups" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"🔘┇ارسل لي المنشور الان\n〽┇يمكنك ارسال -{ صوره - ملصق - متحركه - رساله }\n⚠┇لالغاء الاذاعه ارسل : الغاء") 
+send(msg.chat_id_, msg.id_,"🔘┇ارسل لي المنشور الان\n⚠️️┇يمكنك ارسال -{ صوره - ملصق - متحركه - رساله }\n⚠️┇لالغاء الاذاعه ارسل : الغاء") 
 return false
 elseif text=="اذاعه بالتثبيت" and msg.reply_to_message_id_ == 0 and DeveloperBot(msg) then 
 if redis:get(bot_id.."Hadaf:Broadcasting:Bot") and not Dev_Hadaf(msg) then 
-send(msg.chat_id_, msg.id_,"☑┇تم تعطيل الاذاعه من قبل المطور الاساسي !")
+send(msg.chat_id_, msg.id_,"✅┇تم تعطيل الاذاعه من قبل المطور الاساسي !")
 return false end
 redis:setex(bot_id.."Hadaf:Broadcasting:Groups:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"🔘┇ارسل لي المنشور الان\n〽┇يمكنك ارسال -{ صوره - ملصق - متحركه - رساله }\n⚠┇لالغاء الاذاعه ارسل : الغاء") 
+send(msg.chat_id_, msg.id_,"🔘┇ارسل لي المنشور الان\n⚠️️┇يمكنك ارسال -{ صوره - ملصق - متحركه - رساله }\n⚠️┇لالغاء الاذاعه ارسل : الغاء") 
 return false
 elseif text=="اذاعه بالتوجيه" and msg.reply_to_message_id_ == 0  and DeveloperBot(msg) then 
 if redis:get(bot_id.."Hadaf:Broadcasting:Bot") and not Dev_Hadaf(msg) then 
-send(msg.chat_id_, msg.id_,"☑┇تم تعطيل الاذاعه من قبل المطور الاساسي !")
+send(msg.chat_id_, msg.id_,"✅┇تم تعطيل الاذاعه من قبل المطور الاساسي !")
 return false end
 redis:setex(bot_id.."Hadaf:Broadcasting:Groups:Fwd" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"〽┇ارسل لي التوجيه الان\n☑┇ليتم نشره في المجموعات") 
+send(msg.chat_id_, msg.id_,"⚠️️┇ارسل لي التوجيه الان\n✅┇ليتم نشره في المجموعات") 
 return false
 elseif text=="اذاعه بالتوجيه خاص" and msg.reply_to_message_id_ == 0  and DeveloperBot(msg) then 
 if redis:get(bot_id.."Hadaf:Broadcasting:Bot") and not Dev_Hadaf(msg) then 
-send(msg.chat_id_, msg.id_,"☑┇تم تعطيل الاذاعه من قبل المطور الاساسي !")
+send(msg.chat_id_, msg.id_,"✅┇تم تعطيل الاذاعه من قبل المطور الاساسي !")
 return false end
 redis:setex(bot_id.."Hadaf:Broadcasting:Users:Fwd" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"〽┇ارسل لي التوجيه الان\n☑┇ليتم نشره الى المشتركين") 
+send(msg.chat_id_, msg.id_,"⚠️️┇ارسل لي التوجيه الان\n✅┇ليتم نشره الى المشتركين") 
 return false
 
 elseif text == "الاعدادات" and Admin(msg) then    
@@ -5094,7 +5094,7 @@ end
 if redis:hget(bot_id.."Hadaf:Spam:Group:User"..msg.chat_id_, "Spam:User") == "kick" then     
 flood = "← { بالطرد }"     
 elseif redis:hget(bot_id.."Hadaf:Spam:Group:User"..msg.chat_id_,"Spam:User") == "keed" then     
-flood = "← { بالتقيد }"     
+flood = "← { بالتقييد }"     
 elseif redis:hget(bot_id.."Hadaf:Spam:Group:User"..msg.chat_id_,"Spam:User") == "mute" then     
 flood = "← { بالكتم }"           
 elseif redis:hget(bot_id.."Hadaf:Spam:Group:User"..msg.chat_id_,"Spam:User") == "del" then     
@@ -5105,7 +5105,7 @@ end
 if redis:get(bot_id.."Hadaf:Lock:Photo"..msg.chat_id_) == "del" then
 lock_photo = "← {✔️}" 
 elseif redis:get(bot_id.."Hadaf:Lock:Photo"..msg.chat_id_) == "ked" then 
-lock_photo = "← { بالتقيد }"   
+lock_photo = "← { بالتقييد }"   
 elseif redis:get(bot_id.."Hadaf:Lock:Photo"..msg.chat_id_) == "ktm" then 
 lock_photo = "← { بالكتم }"    
 elseif redis:get(bot_id.."Hadaf:Lock:Photo"..msg.chat_id_) == "kick" then 
@@ -5116,7 +5116,7 @@ end
 if redis:get(bot_id.."Hadaf:Lock:Contact"..msg.chat_id_) == "del" then
 lock_phon = "← {✔️}" 
 elseif redis:get(bot_id.."Hadaf:Lock:Contact"..msg.chat_id_) == "ked" then 
-lock_phon = "← { بالتقيد }"    
+lock_phon = "← { بالتقييد }"    
 elseif redis:get(bot_id.."Hadaf:Lock:Contact"..msg.chat_id_) == "ktm" then 
 lock_phon = "← { بالكتم }"    
 elseif redis:get(bot_id.."Hadaf:Lock:Contact"..msg.chat_id_) == "kick" then 
@@ -5127,7 +5127,7 @@ end
 if redis:get(bot_id.."Hadaf:Lock:Link"..msg.chat_id_) == "del" then
 lock_links = "← {✔️}"
 elseif redis:get(bot_id.."Hadaf:Lock:Link"..msg.chat_id_) == "ked" then
-lock_links = "← { بالتقيد }"    
+lock_links = "← { بالتقييد }"    
 elseif redis:get(bot_id.."Hadaf:Lock:Link"..msg.chat_id_) == "ktm" then
 lock_links = "← { بالكتم }"    
 elseif redis:get(bot_id.."Hadaf:Lock:Link"..msg.chat_id_) == "kick" then
@@ -5138,7 +5138,7 @@ end
 if redis:get(bot_id.."Hadaf:Lock:Cmd"..msg.chat_id_) == "del" then
 lock_cmds = "← {✔️}"
 elseif redis:get(bot_id.."Hadaf:Lock:Cmd"..msg.chat_id_) == "ked" then
-lock_cmds = "← { بالتقيد }"    
+lock_cmds = "← { بالتقييد }"    
 elseif redis:get(bot_id.."Hadaf:Lock:Cmd"..msg.chat_id_) == "ktm" then
 lock_cmds = "← { بالكتم }"   
 elseif redis:get(bot_id.."Hadaf:Lock:Cmd"..msg.chat_id_) == "kick" then
@@ -5149,7 +5149,7 @@ end
 if redis:get(bot_id.."Hadaf:Lock:User:Name"..msg.chat_id_) == "del" then
 lock_user = "← {✔️}"
 elseif redis:get(bot_id.."Hadaf:Lock:User:Name"..msg.chat_id_) == "ked" then
-lock_user = "← { بالتقيد }"    
+lock_user = "← { بالتقييد }"    
 elseif redis:get(bot_id.."Hadaf:Lock:User:Name"..msg.chat_id_) == "ktm" then
 lock_user = "← { بالكتم }"    
 elseif redis:get(bot_id.."Hadaf:Lock:User:Name"..msg.chat_id_) == "kick" then
@@ -5160,7 +5160,7 @@ end
 if redis:get(bot_id.."Hadaf:Lock:hashtak"..msg.chat_id_) == "del" then
 lock_hash = "← {✔️}"
 elseif redis:get(bot_id.."Hadaf:Lock:hashtak"..msg.chat_id_) == "ked" then 
-lock_hash = "← { بالتقيد }"    
+lock_hash = "← { بالتقييد }"    
 elseif redis:get(bot_id.."Hadaf:Lock:hashtak"..msg.chat_id_) == "ktm" then 
 lock_hash = "← { بالكتم }"    
 elseif redis:get(bot_id.."Hadaf:Lock:hashtak"..msg.chat_id_) == "kick" then 
@@ -5171,7 +5171,7 @@ end
 if redis:get(bot_id.."Hadaf:Lock:vico"..msg.chat_id_) == "del" then
 lock_muse = "← {✔️}"
 elseif redis:get(bot_id.."Hadaf:Lock:vico"..msg.chat_id_) == "ked" then 
-lock_muse = "← { بالتقيد }"    
+lock_muse = "← { بالتقييد }"    
 elseif redis:get(bot_id.."Hadaf:Lock:vico"..msg.chat_id_) == "ktm" then 
 lock_muse = "← { بالكتم }"    
 elseif redis:get(bot_id.."Hadaf:Lock:vico"..msg.chat_id_) == "kick" then 
@@ -5182,7 +5182,7 @@ end
 if redis:get(bot_id.."Hadaf:Lock:Video"..msg.chat_id_) == "del" then
 lock_ved = "← {✔️}"
 elseif redis:get(bot_id.."Hadaf:Lock:Video"..msg.chat_id_) == "ked" then 
-lock_ved = "← { بالتقيد }"    
+lock_ved = "← { بالتقييد }"    
 elseif redis:get(bot_id.."Hadaf:Lock:Video"..msg.chat_id_) == "ktm" then 
 lock_ved = "← { بالكتم }"    
 elseif redis:get(bot_id.."Hadaf:Lock:Video"..msg.chat_id_) == "kick" then 
@@ -5193,7 +5193,7 @@ end
 if redis:get(bot_id.."Hadaf:Lock:Animation"..msg.chat_id_) == "del" then
 lock_gif = "← {✔️}"
 elseif redis:get(bot_id.."Hadaf:Lock:Animation"..msg.chat_id_) == "ked" then 
-lock_gif = "← { بالتقيد }"    
+lock_gif = "← { بالتقييد }"    
 elseif redis:get(bot_id.."Hadaf:Lock:Animation"..msg.chat_id_) == "ktm" then 
 lock_gif = "← { بالكتم }"    
 elseif redis:get(bot_id.."Hadaf:Lock:Animation"..msg.chat_id_) == "kick" then 
@@ -5204,7 +5204,7 @@ end
 if redis:get(bot_id.."Hadaf:Lock:Sticker"..msg.chat_id_) == "del" then
 lock_ste = "← {✔️}"
 elseif redis:get(bot_id.."Hadaf:Lock:Sticker"..msg.chat_id_) == "ked" then 
-lock_ste = "بالتقيد "    
+lock_ste = "بالتقييد "    
 elseif redis:get(bot_id.."Hadaf:Lock:Sticker"..msg.chat_id_) == "ktm" then 
 lock_ste = "بالكتم "    
 elseif redis:get(bot_id.."Hadaf:Lock:Sticker"..msg.chat_id_) == "kick" then 
@@ -5215,7 +5215,7 @@ end
 if redis:get(bot_id.."Hadaf:Lock:geam"..msg.chat_id_) == "del" then
 lock_geam = "← {✔️}"
 elseif redis:get(bot_id.."Hadaf:Lock:geam"..msg.chat_id_) == "ked" then 
-lock_geam = "← { بالتقيد }"    
+lock_geam = "← { بالتقييد }"    
 elseif redis:get(bot_id.."Hadaf:Lock:geam"..msg.chat_id_) == "ktm" then 
 lock_geam = "← { بالكتم }"    
 elseif redis:get(bot_id.."Hadaf:Lock:geam"..msg.chat_id_) == "kick" then 
@@ -5226,7 +5226,7 @@ end
 if redis:get(bot_id.."Hadaf:Lock:vico"..msg.chat_id_) == "del" then
 lock_vico = "← {✔️}"
 elseif redis:get(bot_id.."Hadaf:Lock:vico"..msg.chat_id_) == "ked" then 
-lock_vico = "← { بالتقيد }"    
+lock_vico = "← { بالتقييد }"    
 elseif redis:get(bot_id.."Hadaf:Lock:vico"..msg.chat_id_) == "ktm" then 
 lock_vico = "← { بالكتم }"    
 elseif redis:get(bot_id.."Hadaf:Lock:vico"..msg.chat_id_) == "kick" then 
@@ -5237,7 +5237,7 @@ end
 if redis:get(bot_id.."Hadaf:Lock:Keyboard"..msg.chat_id_) == "del" then
 lock_inlin = "← {✔️}"
 elseif redis:get(bot_id.."Hadaf:Lock:Keyboard"..msg.chat_id_) == "ked" then 
-lock_inlin = "← { بالتقيد }"
+lock_inlin = "← { بالتقييد }"
 elseif redis:get(bot_id.."Hadaf:Lock:Keyboard"..msg.chat_id_) == "ktm" then 
 lock_inlin = "← { بالكتم }"    
 elseif redis:get(bot_id.."Hadaf:Lock:Keyboard"..msg.chat_id_) == "kick" then 
@@ -5248,7 +5248,7 @@ end
 if redis:get(bot_id.."Hadaf:Lock:forward"..msg.chat_id_) == "del" then
 lock_fwd = "← {✔️}"
 elseif redis:get(bot_id.."Hadaf:Lock:forward"..msg.chat_id_) == "ked" then 
-lock_fwd = "← { بالتقيد }"    
+lock_fwd = "← { بالتقييد }"    
 elseif redis:get(bot_id.."Hadaf:Lock:forward"..msg.chat_id_) == "ktm" then 
 lock_fwd = "← { بالكتم }"    
 elseif redis:get(bot_id.."Hadaf:Lock:forward"..msg.chat_id_) == "kick" then 
@@ -5259,7 +5259,7 @@ end
 if redis:get(bot_id.."Hadaf:Lock:Document"..msg.chat_id_) == "del" then
 lock_file = "← {✔️}"
 elseif redis:get(bot_id.."Hadaf:Lock:Document"..msg.chat_id_) == "ked" then 
-lock_file = "← { بالتقيد }"    
+lock_file = "← { بالتقييد }"    
 elseif redis:get(bot_id.."Hadaf:Lock:Document"..msg.chat_id_) == "ktm" then 
 lock_file = "← { بالكتم }"    
 elseif redis:get(bot_id.."Hadaf:Lock:Document"..msg.chat_id_) == "kick" then 
@@ -5270,7 +5270,7 @@ end
 if redis:get(bot_id.."Hadaf:Lock:Unsupported"..msg.chat_id_) == "del" then
 lock_self = "← {✔️}"
 elseif redis:get(bot_id.."Hadaf:Lock:Unsupported"..msg.chat_id_) == "ked" then 
-lock_self = "← { بالتقيد }"    
+lock_self = "← { بالتقييد }"    
 elseif redis:get(bot_id.."Hadaf:Lock:Unsupported"..msg.chat_id_) == "ktm" then 
 lock_self = "← { بالكتم }"    
 elseif redis:get(bot_id.."Hadaf:Lock:Unsupported"..msg.chat_id_) == "kick" then 
@@ -5281,7 +5281,7 @@ end
 if redis:get(bot_id.."Hadaf:Lock:Bot:kick"..msg.chat_id_) == "del" then
 lock_bots = "← {✔️}"
 elseif redis:get(bot_id.."Hadaf:Lock:Bot:kick"..msg.chat_id_) == "ked" then
-lock_bots = "← { بالتقيد }"   
+lock_bots = "← { بالتقييد }"   
 elseif redis:get(bot_id.."Hadaf:Lock:Bot:kick"..msg.chat_id_) == "kick" then
 lock_bots = "← { بالطرد }"    
 else
@@ -5290,7 +5290,7 @@ end
 if redis:get(bot_id.."Hadaf:Lock:Markdaun"..msg.chat_id_) == "del" then
 lock_mark = "← {✔️}"
 elseif redis:get(bot_id.."Hadaf:Lock:Markdaun"..msg.chat_id_) == "ked" then 
-lock_mark = "← { بالتقيد }"    
+lock_mark = "← { بالتقييد }"    
 elseif redis:get(bot_id.."Hadaf:Lock:Markdaun"..msg.chat_id_) == "ktm" then 
 lock_mark = "← { بالكتم }"    
 elseif redis:get(bot_id.."Hadaf:Lock:Markdaun"..msg.chat_id_) == "kick" then 
@@ -5301,7 +5301,7 @@ end
 if redis:get(bot_id.."Hadaf:Lock:Spam"..msg.chat_id_) == "del" then    
 lock_spam = "← {✔️}"
 elseif redis:get(bot_id.."Hadaf:Lock:Spam"..msg.chat_id_) == "ked" then 
-lock_spam = "← { بالتقيد }"    
+lock_spam = "← { بالتقييد }"    
 elseif redis:get(bot_id.."Hadaf:Lock:Spam"..msg.chat_id_) == "ktm" then 
 lock_spam = "← { بالكتم }"    
 elseif redis:get(bot_id.."Hadaf:Lock:Spam"..msg.chat_id_) == "kick" then 
@@ -5363,23 +5363,23 @@ send(msg.chat_id_, msg.id_,"*\n🔖┇اعدادات المجموعه "..
 "\n📌┇الروابط "..lock_links..
 "\n".."📌┇الكلايش "..lock_spam..
 "\n".."📌┇الكيبورد "..lock_inlin..
-"\n".."📌┇الاغاني "..lock_vico..
+"\n".."📌┇الصوت "..lock_vico..
 "\n".."📌┇المتحركه "..lock_gif..
 "\n".."📌┇الملفات "..lock_file..
-"\n".."📌┇الدردشه "..lock_text..
+"\n".."📌┇المحادثه "..lock_text..
 "\n".."📌┇الفيديو "..lock_ved..
 "\n".."📌┇الصور "..lock_photo..
 "\n━━━━━━━━━━━━━"..
-"\n".."〽┇المعرفات  "..lock_user..
-"\n".."〽┇التاك "..lock_hash..
-"\n".."〽┇البوتات "..lock_bots..
-"\n".."〽┇التوجيه "..lock_fwd..
-"\n".."〽┇الصوت "..lock_muse..
-"\n".."〽┇الملصقات "..lock_ste..
-"\n".."〽┇الجهات "..lock_phon..
-"\n".."〽┇الدخول "..lock_join..
-"\n".."〽┇الاضافه "..lock_add..
-"\n".."〽┇السيلفي "..lock_self..
+"\n".."⚠️️┇المعرفات  "..lock_user..
+"\n".."⚠️️┇النداء "..lock_hash..
+"\n".."⚠️️┇البوتات "..lock_bots..
+"\n".."⚠️️┇التوجيه "..lock_fwd..
+"\n".."⚠️️┇الصوت "..lock_muse..
+"\n".."⚠️️┇الملصقات "..lock_ste..
+"\n".."⚠️️┇الجهات "..lock_phon..
+"\n".."⚠️️┇الدخول "..lock_join..
+"\n".."⚠️️┇الاضافه "..lock_add..
+"\n".."⚠️️┇السيلفي "..lock_self..
 "\n━━━━━━━━━━━━━"..
 "\n".."🔰┇التثبيت "..lock_pin..
 "\n".."🔰┇الاشعارات "..lock_tagservr..
@@ -5394,12 +5394,11 @@ send(msg.chat_id_, msg.id_,"*\n🔖┇اعدادات المجموعه "..
 "\n".."💢┇الايدي "..IdPhoto..
 "\n".."💢┇الايدي بالصوره "..IdPyPhoto..
 "\n".."💢┇اطردني "..KickMe..
-"\n".."💢┇ردود المدير "..ReplyManager..
-"\n".."💢┇ردود المطور "..ReplySudo..
-"\n".."💢┇اوامر التحشيش "..FunGroup..
+"\n".."💢┇الردود "..ReplyManager..
+"\n".."💢┇ردود العام "..ReplySudo..
 "\n".."💢┇جلب الرابط "..Link_Group..
 "\n".."💢┇عدد التكرار ← {"..Num_Flood.."}\n\n.*")     
-elseif text == 'تعين الايدي' and Owner(msg) then
+elseif text == 'تعيين الايدي' and Owner(msg) then
 redis:setex(bot_id.."Hadaf:Redis:Id:Group"..msg.chat_id_..""..msg.sender_user_id_,240,true)  
 lsend(msg.chat_id_, msg.id_,[[
 📝┇ارسل الان النص
@@ -5410,8 +5409,8 @@ lsend(msg.chat_id_, msg.id_,[[
 🚸┇`#id` » ايدي المستخدم
 📈┇`#auto` » نسبة التفاعل
 🙋┇`#stast` » رتبة المستخدم 
-📝┇`#edit` » عدد السحكات
-💎┇`#game` » عدد المجوهرات
+📝┇`#edit` » عدد التعديلات
+💎┇`#game` » عدد النقاط
 📱┇`#AddMem` » عدد الجهات
 📋┇`#Description` » تعليق الصوره
 ]])
@@ -5434,11 +5433,9 @@ local Num_Games = redis:get(bot_id.."Hadaf:Num:Add:Games"..msg.chat_id_..msg.sen
 local Add_Mem = redis:get(bot_id.."Hadaf:Num:Add:Memp"..msg.chat_id_..":"..msg.sender_user_id_) or 0
 local Total_Photp = (taha.total_count_ or 0)
 local Texting = {
-'ملاك وناسيك بكروبنه😟',
-"حلغوم والله☹️ ",
+'اللهم زد جماله',
+"الله يحفظك",
 "اطلق صوره🐼❤️",
-"كيكك والله🥺",
-"لازك بيها غيرها عاد😒",
 }
 local Description = Texting[math.random(#Texting)]
 local Get_Is_Id = redis:get(bot_id.."Hadaf:Set:Id:Group"..msg.chat_id_)
@@ -5457,10 +5454,10 @@ local Get_Is_Id = Get_Is_Id:gsub('#game',Num_Games)
 local Get_Is_Id = Get_Is_Id:gsub('#photos',Total_Photp) 
 sendPhoto(msg.chat_id_,msg.id_,taha.photos_[0].sizes_[1].photo_.persistent_id_,Get_Is_Id)
 else
-sendPhoto(msg.chat_id_,msg.id_,taha.photos_[0].sizes_[1].photo_.persistent_id_,'🌇┇'..Description..'\n〽┇ايديك ← '..Id..'\n👤┇معرفك ← '..UserName_User..'\n🚸┇رتبتك ← '..Status_Gps..'\n📧┇رسائلك ← '..NumMsg..'\n📝┇السحكات ← '..NumMessageEdit..' \n📊┇تتفاعلك ← '..TotalMsg..'\n💎┇ مجوهراتك ← '..Num_Games)
+sendPhoto(msg.chat_id_,msg.id_,taha.photos_[0].sizes_[1].photo_.persistent_id_,'🌇┇'..Description..'\n⚠️️┇ايديك ← '..Id..'\n👤┇معرفك ← '..UserName_User..'\n🚸┇رتبتك ← '..Status_Gps..'\n📧┇رسائلك ← '..NumMsg..'\n📝┇التعديلات ← '..NumMessageEdit..' \n📊┇تتفاعلك ← '..TotalMsg..'\n💎┇ نقاطك ← '..Num_Games)
 end
 else
-send(msg.chat_id_, msg.id_,'\n*〽┇ايديك ← '..Id..'\n👤┇معرفك ← *['..UserName_User..']*\n🚸┇رتبتك ← '..Status_Gps..'\n📧┇رسائلك ← '..NumMsg..'\n📝┇السحكات ← '..NumMessageEdit..' \n📊┇تتفاعلك ← '..TotalMsg..'\n💎┇ مجوهراتك ← '..Num_Games..'*') 
+send(msg.chat_id_, msg.id_,'\n*⚠️️┇ايديك ← '..Id..'\n👤┇معرفك ← *['..UserName_User..']*\n🚸┇رتبتك ← '..Status_Gps..'\n📧┇رسائلك ← '..NumMsg..'\n📝┇التعديلات ← '..NumMessageEdit..' \n📊┇تتفاعلك ← '..TotalMsg..'\n💎┇ نقاطك ← '..Num_Games..'*') 
 end
 else
 if Get_Is_Id then
@@ -5476,7 +5473,7 @@ local Get_Is_Id = Get_Is_Id:gsub('#game',Num_Games)
 local Get_Is_Id = Get_Is_Id:gsub('#photos',Total_Photp) 
 send(msg.chat_id_, msg.id_,'['..Get_Is_Id..']') 
 else
-send(msg.chat_id_, msg.id_,'\n*〽┇ايديك ← '..Id..'\n👤┇معرفك ← *['..UserName_User..']*\n🚸┇رتبتك ← '..Status_Gps..'\n📧┇رسائلك ← '..NumMsg..'\n📝┇السحكات ← '..NumMessageEdit..' \n📊┇تتفاعلك ← '..TotalMsg..'\n💎┇ مجوهراتك ← '..Num_Games..'*') 
+send(msg.chat_id_, msg.id_,'\n*⚠️️┇ايديك ← '..Id..'\n👤┇معرفك ← *['..UserName_User..']*\n🚸┇رتبتك ← '..Status_Gps..'\n📧┇رسائلك ← '..NumMsg..'\n📝┇التعديلات ← '..NumMessageEdit..' \n📊┇تتفاعلك ← '..TotalMsg..'\n💎┇ نقاطك ← '..Num_Games..'*') 
 end
 end
 end,nil)   
@@ -5485,7 +5482,7 @@ end
 if text and text:match('^تنظيف (%d+)$') and Admin(msg) or text and text:match('^حذف (%d+)$') and Admin(msg) or text and text:match('^مسح (%d+)$') and Admin(msg) then    
 local Msg_Num = tonumber(text:match('^تنظيف (%d+)$')) or tonumber(text:match('^حذف (%d+)$'))  or tonumber(text:match('^مسح (%d+)$')) 
 if Msg_Num > 1000 then 
-send(msg.chat_id_, msg.id_,'⚠┇تستطيع حذف *(1000)* رساله فقط') 
+send(msg.chat_id_, msg.id_,'⚠️┇تستطيع حذف *(1000)* رساله فقط') 
 return false  
 end  
 local Message = msg.id_
@@ -5493,12 +5490,12 @@ for i=1,tonumber(Msg_Num) do
 Delete_Message(msg.chat_id_,{[0]=Message})
 Message = Message - 1048576
 end
-send(msg.chat_id_, msg.id_,'☑┇تم ازالة *- '..Msg_Num..'* رساله من المجموعه')  
-elseif text == 'ايدي' and tonumber(msg.reply_to_message_id_) > 0 and not redis:get(bot_id..'Hadaf:Lock:Id:Photo'..msg.chat_id_) then
+send(msg.chat_id_, msg.id_,'✅┇تم ازالة *- '..Msg_Num..'* رساله من المجموعه')  
+elseif text == 'كشف' and tonumber(msg.reply_to_message_id_) > 0 and not redis:get(bot_id..'Hadaf:Lock:Id:Photo'..msg.chat_id_) then
 function Function_Status(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 if data.first_name_ == false then
-send(msg.chat_id_, msg.id_,'⚠┇ الحساب محذوف لا توجد معلوماته ')
+send(msg.chat_id_, msg.id_,'⚠️┇ الحساب محذوف لا توجد معلوماته ')
 return false
 end
 if data.username_ then
@@ -5513,13 +5510,13 @@ local Status_Gps = Get_Rank(Id,msg.chat_id_)
 local NumMessageEdit = redis:get(bot_id..'Hadaf:Num:Message:Edit'..msg.chat_id_..data.id_) or 0
 local Num_Games = redis:get(bot_id.."Hadaf:Msg_User"..msg.chat_id_..":"..data.id_) or 0
 local Add_Mem = redis:get(bot_id.."Hadaf:Num:Add:Memp"..msg.chat_id_..":"..data.id_) or 0
-send(msg.chat_id_, msg.id_,'\n*〽┇ايديه ← '..Id..'\n📧┇رسائله ← '..NumMsg..'\n👤┇معرفه ← *['..UserName_User..']*\n📊┇تفاعله ← '..TotalMsg..'\n🚸┇رتبته ← '..Status_Gps..'\n📝┇تعديلاته ← '..NumMessageEdit..'\n👥┇جهاته ← '..Add_Mem..'*') 
+send(msg.chat_id_, msg.id_,'\n*⚠️️┇ايديه ← '..Id..'\n📧┇رسائله ← '..NumMsg..'\n👤┇معرفه ← *['..UserName_User..']*\n🚸┇رتبته ← '..Status_Gps..'\n📝┇تعديلاته ← '..NumMessageEdit..'\n👥┇جهاته ← '..Add_Mem..'*') 
 end,nil)   
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_Status, nil)
 return false
-elseif text and text:match("^ايدي @(.*)$") and not redis:get(bot_id..'Hadaf:Lock:Id:Photo'..msg.chat_id_) then
-local username = text:match("^ايدي @(.*)$")
+elseif text and text:match("^كشف @(.*)$") and not redis:get(bot_id..'Hadaf:Lock:Id:Photo'..msg.chat_id_) then
+local username = text:match("^كشف @(.*)$")
 function Function_Status(extra, result, success)
 if result.id_ then
 tdcli_function ({ID = "GetUser",user_id_ = result.id_},function(arg,data) 
@@ -5535,10 +5532,10 @@ local Status_Gps = Get_Rank(Id,msg.chat_id_)
 local NumMessageEdit = redis:get(bot_id..'Hadaf:Num:Message:Edit'..msg.chat_id_..data.id_) or 0
 local Num_Games = redis:get(bot_id.."Hadaf:Msg_User"..msg.chat_id_..":"..data.id_) or 0
 local Add_Mem = redis:get(bot_id.."Hadaf:Num:Add:Memp"..msg.chat_id_..":"..data.id_) or 0
-send(msg.chat_id_, msg.id_,'\n*〽┇ايديه ← '..Id..'\n📧┇رسائله ← '..NumMsg..'\n👤┇معرفه ← *['..UserName_User..']*\n📊┇تفاعله ← '..TotalMsg..'\n🚸┇رتبته ← '..Status_Gps..'\n📝┇تعديلاته ← '..NumMessageEdit..'\n👥┇جهاته ← '..Add_Mem..'*') 
+send(msg.chat_id_, msg.id_,'\n*⚠️️┇ايديه ← '..Id..'\n📧┇رسائله ← '..NumMsg..'\n👤┇معرفه ← *['..UserName_User..']*\n🚸┇رتبته ← '..Status_Gps..'\n📝┇تعديلاته ← '..NumMessageEdit..'\n👥┇جهاته ← '..Add_Mem..'*') 
 end,nil)   
 else
-send(msg.chat_id_, msg.id_,'⚠┇لا يوجد حساب بهاذا المعرف')
+send(msg.chat_id_, msg.id_,'⚠️┇لا يوجد حساب بهذا المعرف')
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Status, nil)
@@ -5549,21 +5546,19 @@ redis:del(bot_id.."Hadaf:Set:Sma"..msg.chat_id_)
 Random = {"🍏","🍎","🍐","🍊","🍋","🍉","🍇","🍓","🍈","🍒","🍑","🍍","🥥","🥝","🍅","🍆","🥑","🥦","🥒","🌶","🌽","🥕","🥔","🥖","🥐","🍞","🥨","🍟","🧀","🥚","🍳","🥓","🥩","🍗","🍖","🌭","🍔","🍠","🍕","🥪","🥙","☕️","??","🥤","🍶","🍺","🍻","🏀","⚽️","🏈","⚾️","🎾","🏐","🏉","🎱","🏓","🏸","🥅","🎰","🎮","🎳","🎯","🎲","🎻","🎸","🎺","🥁","🎹","🎼","🎧","🎤","🎬","🎨","🎭","🎪","🎟","🎫","🎗","🏵","🎖","🏆","🥌","🛷","🚗","🚌","🏎","🚓","🚑","🚚","🚛","🚜","🇮🇶","⚔","🛡","🔮","🌡","💣","📌","📍","📓","📗","📂","📅","📪","📫","📬","📭","⏰","📺","🎚","☎️","📡"}
 SM = Random[math.random(#Random)]
 redis:set(bot_id.."Hadaf:Random:Sm"..msg.chat_id_,SM)
-send(msg.chat_id_, msg.id_,"🔰┇اسرع واحد يدز هاذا السمايل ? ~ {`"..SM.."`}")
+send(msg.chat_id_, msg.id_,"🔰┇اسرع واحد يرسل هذا السمايل ? ~ {`"..SM.."`}")
 return false
 end
 elseif text == "الاسرع" or tect == "ترتيب" then
 if redis:get(bot_id.."Hadaf:Lock:Game:Group"..msg.chat_id_) then
 redis:del(bot_id.."Hadaf:Speed:Tr"..msg.chat_id_)
-KlamSpeed = {"سحور","سياره","استقبال","قنفه","ايفون","بزونه","مطبخ","كرستيانو","دجاجه","مدرسه","الوان","غرفه","ثلاجه","كهوه","سفينه","العراق","محطه","طياره","رادار","منزل","مستشفى","كهرباء","تفاحه","اخطبوط","سلمون","فرنسا","برتقاله","تفاح","مطرقه","بتيته","لهانه","شباك","باص","سمكه","ذباب","تلفاز","حاسوب","انترنيت","ساحه","جسر"};
+KlamSpeed = {"سحور","سياره","استقبال","ايفون","مطبخ","كرستيانو","دجاجه","مدرسه","الوان","غرفه","ثلاجه","قهوه","سفينه","العراق","محطه","طياره","رادار","منزل","مستشفى","كهرباء","تفاحه","اخطبوط","سلمون","فرنسا","برتقاله","تفاح","مطرقه","شباك","باص","سمكه","ذباب","تلفاز","حاسوب","انترنت","ساحه","جسر"};
 name = KlamSpeed[math.random(#KlamSpeed)]
 redis:set(bot_id.."Hadaf:Klam:Speed"..msg.chat_id_,name)
 name = string.gsub(name,"سحور","س ر و ح")
 name = string.gsub(name,"سياره","ه ر س ي ا")
 name = string.gsub(name,"استقبال","ل ب ا ت ق س ا")
-name = string.gsub(name,"قنفه","ه ق ن ف")
 name = string.gsub(name,"ايفون","و ن ف ا")
-name = string.gsub(name,"بزونه","ز و ه ن")
 name = string.gsub(name,"مطبخ","خ ب ط م")
 name = string.gsub(name,"كرستيانو","س ت ا ن و ك ر ي")
 name = string.gsub(name,"دجاجه","ج ج ا د ه")
@@ -5571,7 +5566,7 @@ name = string.gsub(name,"مدرسه","ه م د ر س")
 name = string.gsub(name,"الوان","ن ا و ا ل")
 name = string.gsub(name,"غرفه","غ ه ر ف")
 name = string.gsub(name,"ثلاجه","ج ه ت ل ا")
-name = string.gsub(name,"كهوه","ه ك ه و")
+name = string.gsub(name,"قهوه","ه ق ه و")
 name = string.gsub(name,"سفينه","ه ن ف ي س")
 name = string.gsub(name,"العراق","ق ع ا ل ر ا")
 name = string.gsub(name,"محطه","ه ط م ح")
@@ -5587,15 +5582,13 @@ name = string.gsub(name,"فرنسا","ن ف ر س ا")
 name = string.gsub(name,"برتقاله","ر ت ق ب ا ه ل")
 name = string.gsub(name,"تفاح","ح ف ا ت")
 name = string.gsub(name,"مطرقه","ه ط م ر ق")
-name = string.gsub(name,"بتيته","ب ت ت ي ه")
-name = string.gsub(name,"لهانه","ه ن ل ه ل")
 name = string.gsub(name,"شباك","ب ش ا ك")
 name = string.gsub(name,"باص","ص ا ب")
 name = string.gsub(name,"سمكه","ك س م ه")
 name = string.gsub(name,"ذباب","ب ا ب ذ")
 name = string.gsub(name,"تلفاز","ت ف ل ز ا")
 name = string.gsub(name,"حاسوب","س ا ح و ب")
-name = string.gsub(name,"انترنيت","ا ت ن ر ن ي ت")
+name = string.gsub(name,"انترنت","ا ت ن ر ن ت")
 name = string.gsub(name,"ساحه","ح ا ه س")
 name = string.gsub(name,"جسر","ر ج س")
 send(msg.chat_id_, msg.id_,"🔰┇اسرع واحد يرتبها ~ {"..name.."}")
@@ -5604,42 +5597,40 @@ end
 elseif text == "حزوره" then
 if redis:get(bot_id.."Hadaf:Lock:Game:Group"..msg.chat_id_) then
 redis:del(bot_id.."Hadaf:Set:Hzora"..msg.chat_id_)
-Hzora = {"الجرس","عقرب الساعه","السمك","المطر","5","الكتاب","البسمار","7","الكعبه","بيت الشعر","لهانه","انا","امي","الابره","الساعه","22","غلط","كم الساعه","البيتنجان","البيض","المرايه","الضوء","الهواء","الضل","العمر","القلم","المشط","الحفره","البحر","الثلج","الاسفنج","الصوت","بلم"};
+Hzora = {"الجرس","عقرب الساعه","السمك","المطر","5","الكتاب","المسمار","7","الكعبه","بيت الشعر","انا","امي","الابره","الساعه","22","غلط","كم الساعه","البيض","المرايه","الضوء","الهواء","الظل","العمر","القلم","المشط","الحفره","البحر","الثلج","الاسفنج","الصوت","سفينه"};
 name = Hzora[math.random(#Hzora)]
 redis:set(bot_id.."Hadaf:Klam:Hzor"..msg.chat_id_,name)
-name = string.gsub(name,"الجرس","شيئ اذا لمسته صرخ ما هوه ؟")
-name = string.gsub(name,"عقرب الساعه","اخوان لا يستطيعان تمضيه اكثر من دقيقه معا فما هما ؟")
+name = string.gsub(name,"الجرس","شيء اذا لمسته صرخ ما هو ؟")
+name = string.gsub(name,"عقرب الساعه","اخوان لا يستطيعان تمضيه اكثر من دقيقه معا فمن هما ؟")
 name = string.gsub(name,"السمك","ما هو الحيوان الذي لم يصعد الى سفينة نوح عليه السلام ؟")
-name = string.gsub(name,"المطر","شيئ يسقط على رأسك من الاعلى ولا يجرحك فما هو ؟")
+name = string.gsub(name,"المطر","شيء يسقط على رأسك من الاعلى ولا يجرحك فما هو ؟")
 name = string.gsub(name,"5","ما العدد الذي اذا ضربته بنفسه واضفت عليه 5 يصبح ثلاثين ")
-name = string.gsub(name,"الكتاب","ما الشيئ الذي له اوراق وليس له جذور ؟")
-name = string.gsub(name,"البسمار","ما هو الشيئ الذي لا يمشي الا بالضرب ؟")
+name = string.gsub(name,"الكتاب","ما الشيء الذي له اوراق وليس له جذور ؟")
+name = string.gsub(name,"المسمار","ما هو الشيء الذي لا يمشي الا بالضرب ؟")
 name = string.gsub(name,"7","عائله مؤلفه من 6 بنات واخ لكل منهن .فكم عدد افراد العائله ")
-name = string.gsub(name,"الكعبه","ما هو الشيئ الموجود وسط مكة ؟")
+name = string.gsub(name,"الكعبه","ما هو الشيء الموجود وسط مكة ؟")
 name = string.gsub(name,"بيت الشعر","ما هو البيت الذي ليس فيه ابواب ولا نوافذ ؟ ")
-name = string.gsub(name,"لهانه","وحده حلوه ومغروره تلبس مية تنوره .من هيه ؟ ")
 name = string.gsub(name,"انا","ابن امك وابن ابيك وليس باختك ولا باخيك فمن يكون ؟")
 name = string.gsub(name,"امي","اخت خالك وليست خالتك من تكون ؟ ")
-name = string.gsub(name,"الابره","ما هو الشيئ الذي كلما خطا خطوه فقد شيئا من ذيله ؟ ")
-name = string.gsub(name,"الساعه","ما هو الشيئ الذي يقول الصدق ولكنه اذا جاع كذب ؟")
+name = string.gsub(name,"الابره","ما هو الشيء الذي كلما خطا خطوه فقد شيئا من ذيله ؟ ")
+name = string.gsub(name,"الساعه","ما هو الشيء الذي يقول الصدق ولكنه اذا جاع كذب ؟")
 name = string.gsub(name,"22","كم مره ينطبق عقربا الساعه على بعضهما في اليوم الواحد ")
 name = string.gsub(name,"غلط","ما هي الكلمه الوحيده التي تلفض غلط دائما ؟ ")
 name = string.gsub(name,"كم الساعه","ما هو السؤال الذي تختلف اجابته دائما ؟")
-name = string.gsub(name,"البيتنجان","جسم اسود وقلب ابيض وراس اخظر فما هو ؟")
-name = string.gsub(name,"البيض","ماهو الشيئ الذي اسمه على لونه ؟")
-name = string.gsub(name,"المرايه","ارى كل شيئ من دون عيون من اكون ؟ ")
-name = string.gsub(name,"الضوء","ما هو الشيئ الذي يخترق الزجاج ولا يكسره ؟")
-name = string.gsub(name,"الهواء","ما هو الشيئ الذي يسير امامك ولا تراه ؟")
-name = string.gsub(name,"الضل","ما هو الشيئ الذي يلاحقك اينما تذهب ؟ ")
+name = string.gsub(name,"البيض","ماهو الشيء الذي اسمه على لونه ؟")
+name = string.gsub(name,"المرايه","ارى كل شيء من دون عيون من اكون ؟ ")
+name = string.gsub(name,"الضوء","ما هو الشيء الذي يخترق الزجاج ولا يكسره ؟")
+name = string.gsub(name,"الهواء","ما هو الشيء الذي يسير امامك ولا تراه ؟")
+name = string.gsub(name,"الظل","ما هو الشيء الذي يلاحقك اينما تذهب ؟ ")
 name = string.gsub(name,"العمر","ما هو الشيء الذي كلما طال قصر ؟ ")
-name = string.gsub(name,"القلم","ما هو الشيئ الذي يكتب ولا يقرأ ؟")
+name = string.gsub(name,"القلم","ما هو الشيء الذي يكتب ولا يقرأ ؟")
 name = string.gsub(name,"المشط","له أسنان ولا يعض ما هو ؟ ")
-name = string.gsub(name,"الحفره","ما هو الشيئ اذا أخذنا منه ازداد وكبر ؟")
-name = string.gsub(name,"البحر","ما هو الشيئ الذي يرفع اثقال ولا يقدر يرفع مسمار ؟")
+name = string.gsub(name,"الحفره","ما هو الشيء اذا أخذنا منه ازداد وكبر ؟")
+name = string.gsub(name,"البحر","ما هو الشيء الذي يرفع اثقال ولا يقدر يرفع مسمار ؟")
 name = string.gsub(name,"الثلج","انا ابن الماء فان تركوني في الماء مت فمن انا ؟")
-name = string.gsub(name,"الاسفنج","كلي ثقوب ومع ذالك احفض الماء فمن اكون ؟")
+name = string.gsub(name,"الاسفنج","كلي ثقوب ومع ذلك احفظ الماء فمن اكون ؟")
 name = string.gsub(name,"الصوت","اسير بلا رجلين ولا ادخل الا بالاذنين فمن انا ؟")
-name = string.gsub(name,"بلم","حامل ومحمول نصف ناشف ونصف مبلول فمن اكون ؟ ")
+name = string.gsub(name,"سفينه","حامل ومحمول نصف ناشف ونصف مبلول فمن اكون ؟ ")
 send(msg.chat_id_, msg.id_,"🔰┇اسرع واحد يحل الحزوره ↓\n {"..name.."}")
 return false
 end
@@ -5674,41 +5665,41 @@ name = string.gsub(name,"زرافه","🦒")
 name = string.gsub(name,"قنفذ","??")
 name = string.gsub(name,"تفاحه","🍎")
 name = string.gsub(name,"باذنجان","🍆")
-send(msg.chat_id_, msg.id_,"🔰┇اسرع واحد يدز معنى السمايل ~ {"..name.."}")
+send(msg.chat_id_, msg.id_,"🔰┇اسرع واحد يرسل معنى السمايل ~ {"..name.."}")
 return false
 end
 elseif text == "العكس" then
 if redis:get(bot_id.."Hadaf:Lock:Game:Group"..msg.chat_id_) then
 redis:del(bot_id.."Hadaf:Set:Aks"..msg.chat_id_)
-katu = {"باي","فهمت","موزين","اسمعك","احبك","موحلو","نضيف","حاره","ناصي","جوه","سريع","ونسه","طويل","سمين","ضعيف","شريف","شجاع","رحت","عدل","نشيط","شبعان","موعطشان","خوش ولد","اني","هادئ"}
+katu = {"بارد","فهمت","زين","اسمعك","اسود","جميل","نظيف","حاره","عالي","جوا","سريع","سعادة","طويل","سمين","ضعيف","كبير","شجاع","عدل","حي","نشيط","شبعان","موعطشان","ولد","انا","هادئ"}
 name = katu[math.random(#katu)]
 redis:set(bot_id.."Hadaf:Set:Aks:Game"..msg.chat_id_,name)
-name = string.gsub(name,"باي","هلو")
+name = string.gsub(name,"بارد","حار")
 name = string.gsub(name,"فهمت","مافهمت")
-name = string.gsub(name,"موزين","زين")
+name = string.gsub(name,"زين","مو زين")
 name = string.gsub(name,"اسمعك","ماسمعك")
-name = string.gsub(name,"احبك","ماحبك")
-name = string.gsub(name,"موحلو","حلو")
-name = string.gsub(name,"نضيف","وصخ")
+name = string.gsub(name,"اسود","ابيض")
+name = string.gsub(name,"جميل","قبيح")
+name = string.gsub(name,"نظيف","وصخ")
 name = string.gsub(name,"حاره","بارده")
-name = string.gsub(name,"ناصي","عالي")
-name = string.gsub(name,"جوه","فوك")
+name = string.gsub(name,"عالي","واطي")
+name = string.gsub(name,"جوا","برا")
 name = string.gsub(name,"سريع","بطيء")
-name = string.gsub(name,"ونسه","ضوجه")
-name = string.gsub(name,"طويل","قزم")
-name = string.gsub(name,"سمين","ضعيف")
+name = string.gsub(name,"سعادة","حزن")
+name = string.gsub(name,"طويل","قصير")
+name = string.gsub(name,"سمين","نحيف")
 name = string.gsub(name,"ضعيف","قوي")
-name = string.gsub(name,"شريف","كواد")
+name = string.gsub(name,"كبير","صغير")
 name = string.gsub(name,"شجاع","جبان")
-name = string.gsub(name,"رحت","اجيت")
-name = string.gsub(name,"عدل","ميت")
+name = string.gsub(name,"عدل","ظلم")
+name = string.gsub(name,"حي","ميت")
 name = string.gsub(name,"نشيط","كسول")
 name = string.gsub(name,"شبعان","جوعان")
 name = string.gsub(name,"موعطشان","عطشان")
-name = string.gsub(name,"خوش ولد","موخوش ولد")
-name = string.gsub(name,"اني","مطي")
+name = string.gsub(name,"ولد","بنت")
+name = string.gsub(name,"انا","انت")
 name = string.gsub(name,"هادئ","عصبي")
-send(msg.chat_id_, msg.id_,"🔰┇اسرع واحد يدز العكس ~ {"..name.."}")
+send(msg.chat_id_, msg.id_,"🔰┇اسرع واحد يرسل العكس ~ {"..name.."}")
 return false
 end
 elseif text == "خمن" or text == "تخمين" then   
@@ -5765,7 +5756,7 @@ name = string.gsub(name,"🕒","🕒🕒🕒🕒🕒🕒🕓🕒🕒🕒")
 name = string.gsub(name,"🕤","🕥🕥🕥🕥🕥🕤🕥🕥🕥")
 name = string.gsub(name,"⌛️","⏳⏳⏳⏳⏳⏳⌛️⏳⏳")
 name = string.gsub(name,"📅","📆📆📆📆📆📆📅📆📆")
-send(msg.chat_id_, msg.id_,"🔰┇اسرع واحد يدز الاختلاف ~ {"..name.."}")
+send(msg.chat_id_, msg.id_,"🔰┇اسرع واحد يرسل المختلف ~ {"..name.."}")
 return false
 end
 elseif text == "امثله" then
@@ -5800,10 +5791,8 @@ end
 elseif text == 'السورس' or text == 'سورس' or text == 'ياسورس'  then
 send(msg.chat_id_, msg.id_,[[
 💢┇Source Hadaf
+💢┇By: @i3mrz
 ━━━━━━━━━━━━━
-
-💠┇[Channel Source ،](t.me/i3mrz)
-
 ]]) 
 elseif text == 'الاوامر' and Admin(msg) then
 send(msg.chat_id_, msg.id_,[[*
@@ -5815,19 +5804,20 @@ send(msg.chat_id_, msg.id_,[[*
 🌀┇ارسل { م4 } ← اوامر المنشئين
 🗯┇ارسل { م5 } ← اوامر مطورين البوت
 ━━━━━━━━━━━━━
-⚡┇مطور السورس ←* @i3mrz
+⚡┇مطور البوت ←* @i3mrz
 ]]) 
 elseif text == 'م1' and Admin(msg) then
 send(msg.chat_id_, msg.id_,[[*
 💢┇اوامر الحمايه اتبع مايلي ...
 ━━━━━━━━━━━━━
-☑┇قفل ، فتح ← الامر 
-☑┇تستطيع قفل حمايه كما يلي ...
-📛┇← { بالتقيد ، بالطرد ، بالكتم }
+✅┇قفل ، فتح ← الامر 
+✅┇تستطيع قفل حمايه كما يلي ...
+📛┇← { بالتقييد ، بالطرد ، بالكتم }
+📛┇مثال : قفل الروابط بالكتم
 ━━━━━━━━━━━━━
 ⚡┇الروابط
 ⚡┇المعرف
-⚡┇التاك
+⚡┇النداء
 ⚡┇الشارحه
 ⚡┇التعديل
 ⚡┇التثبيت
@@ -5835,49 +5825,59 @@ send(msg.chat_id_, msg.id_,[[*
 ⚡┇الملفات
 ⚡┇الصور
 ━━━━━━━━━━━━━
-〽┇الماركداون
-〽┇البوتات
-〽┇التكرار
-〽┇الكلايش
-〽┇السيلفي
-〽┇الملصقات
-〽┇الفيديو
-〽┇الانلاين
-〽┇الدردشه
+⚠️️┇الماركداون
+⚠️️┇البوتات
+⚠️️┇التكرار
+⚠️️┇الكلايش
+⚠️️┇السيلفي
+⚠️️┇الملصقات
+⚠️️┇الفيديو
+⚠️️┇الانلاين
+⚠️️┇المحادثه
 ━━━━━━━━━━━━━
 💢┇التوجيه
-💢┇الاغاني
+💢┇المقاطع الصوتية
 💢┇الصوت
 💢┇الجهات
 💢┇الاشعارات
 ━━━━━━━━━━━━━
-⚡┇مطور السورس ←* @i3mrz
+⚡┇مطور البوت ←* @i3mrz
 ]]) 
 elseif text == 'م2' and Admin(msg) then
 send(msg.chat_id_, msg.id_,[[*
 💢┇اوامر ادمنية المجموعه ...
 ━━━━━━━━━━━━━
 🔗┇رفع، تنزيل ← مميز
-🔗┇تاك للكل ، عدد الكروب
-🔗┇كتم ، حظر ، طرد ، تقيد
-🔗┇الغاء كتم ، الغاء حظر ، الغاء تقيد
+🔗┇نداء للكل ، عدد القروب
+🔗┇كتم ، حظر ، طرد ، تقييد
+🔗┇الغاء الكتم ، الغاء الحظر ، الغاء التقييد
 🔗┇منع ، الغاء منع 
 ━━━━━━━━━━━━━
 📑┇عرض القوائم كما يلي ...
 ━━━━━━━━━━━━━
+⛔┇المطورين
+⛔┇المنشئين الاساسيين
+⛔┇المنشئين
+⛔┇المدراء
+⛔┇الادمنيه
+⛔┇المحظورين
 ⛔┇المكتومين
 ⛔┇المميزين 
 ⛔┇قائمه المنع
 ⛔┇الصلاحيات
+⛔┇الردود
+⛔┇ردود العام
+⛔┇الاوامر المضافه
 ━━━━━━━━━━━━━
 📌┇تثبيت ، الغاء تثبيت
 📌┇الرابط ، الاعدادات
 📌┇الترحيب ، القوانين
 📌┇تفعيل ، تعطيل ← الترحيب
 📌┇تفعيل ، تعطيل ← الرابط
+📌┇تفعيل ، تعطيل ← الرابط
 📌┇اضف صلاحيه ، مسح صلاحيه 
 📌┇جهاتي ،ايدي ، رسائلي
-📌┇سحكاتي ، مجوهراتي
+📌┇تعديلاتي ، نقاطي
 📌┇كشف البوتات
 ━━━━━━━━━━━━━
 🆕┇وضع ، ضع ← الاوامر التاليه 
@@ -5890,7 +5890,7 @@ send(msg.chat_id_, msg.id_,[[*
 💥┇المطرودين ، البوتات ، الصوره
 💥┇الصلاحيات ، الرابط
 ━━━━━━━━━━━━━
-⚡┇مطور السورس ←* @i3mrz
+⚡┇مطور البوت ←* @i3mrz
 ]]) 
 elseif text == 'م3' and Owner(msg) then
 send(msg.chat_id_, msg.id_,[[*
@@ -5903,7 +5903,7 @@ send(msg.chat_id_, msg.id_,[[*
 ━━━━━━━━━━━━━
 📛┇لتغيير رد الرتب في البوت
 ━━━━━━━━━━━━━
-♻️┇تغير رد ← {اسم الرتبه والنص} 
+♻️┇تغيير رد ← {اسم الرتبه والنص} 
 💠┇المطور ، المنشئ الاساسي
 💠┇المنشئ ، المدير ، الادمن
 💠┇المميز ، العضو
@@ -5911,17 +5911,17 @@ send(msg.chat_id_, msg.id_,[[*
 💭┇تفعيل ، تعطيل ← الاوامر التاليه ↓
 ━━━━━━━━━━━━━
 ♦️┇الايدي ، الايدي بالصوره
-♦️┇ردود المطور ، ردود المدير
+♦️┇ردود العام ، الردود
 ♦️┇اطردني ، الالعاب ، الرفع
-♦️┇الحظر ، الرابط ، اوامر التحشيش
+♦️┇الحظر ، الرابط
 ━━━━━━━━━━━━━
-🎐┇تعين ، مسح ←{ الايدي }
+🎐┇تعيين ، مسح ←{ الايدي }
 🎐┇رفع الادمنيه ، مسح الادمنيه
-🎐┇ردود المدير ، مسح ردود المدير
+🎐┇الردود ، مسح الردود
 🎐┇اضف ، حذف ← { رد }
 🎐┇تنظيف ← { عدد }
 ━━━━━━━━━━━━━
-⚡┇مطور السورس ←* @i3mrz
+⚡┇مطور البوت ←* @i3mrz
 ]]) 
 elseif text == 'م4' and Constructor(msg) then
 send(msg.chat_id_, msg.id_,[[*
@@ -5935,11 +5935,11 @@ send(msg.chat_id_, msg.id_,[[*
 💠┇رفع ، تنزيل ← { مدير }
 💠┇المدراء ، مسح المدراء
 💠┇اضف رسائل ← { بالرد او الايدي }
-💠┇اضف مجوهرات ← { بالرد او الايدي }
+💠┇اضف نقاط ← { بالرد او الايدي }
 💠┇اضف ، حذف ← { امر }
 💠┇الاوامر المضافه ، مسح الاوامر المضافه
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-⚡┇مطور السورس ←* @i3mrz
+⚡┇مطور البوت ←* @i3mrz
 ]]) 
 elseif text == 'م5' and DeveloperBot(msg)  then
 send(msg.chat_id_, msg.id_,[[*
@@ -5950,18 +5950,15 @@ send(msg.chat_id_, msg.id_,[[*
 💭┇قائمه العام ، مسح قائمه العام
 💭┇المطورين ، مسح المطورين
 ━━━━━━━━━━━━━
-📪┇اضف ، حذف ← { رد للكل }
+📪┇اضف ، حذف ← { رد عام }
 📪┇وضع ، حذف ← { كليشه المطور } 
-📪┇مسح ردود المطور ، ردود المطور 
+📪┇مسح ردود العام ، ردود العام 
 📪┇تحديث ،  تحديث السورس 
-📪┇تعين عدد الاعضاء ← { العدد }
+📪┇تعيين عدد الاعضاء ← { العدد }
 ━━━━━━━━━━━━━
 💠┇تفعيل ، تعطيل ← { الاوامر التاليه ↓}
 🌀┇البوت الخدمي ، المغادرة ، الاذاعه
 🌀┇ملف ← { اسم الملف }
-━━━━━━━━━━━━━
-🗑┇مسح جميع الملفات 
-🗂┇المتجر ، الملفات
 ━━━━━━━━━━━━━
 ⚜┇اوامر المطور في البوت
 ━━━━━━━━━━━━━
@@ -5972,7 +5969,7 @@ send(msg.chat_id_, msg.id_,[[*
 📛┇اذاعه ، اذاعه بالتوجيه ، اذاعه بالتثبيت
 📛┇اذاعه خاص ، اذاعه خاص بالتوجيه 
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-⚡┇مطور السورس ←* @i3mrz
+⚡┇مطور البوت ←* @i3mrz
 ]]) 
 elseif text == 'الالعاب' then
 send(msg.chat_id_, msg.id_,[[*
@@ -5983,48 +5980,48 @@ send(msg.chat_id_, msg.id_,[[*
 🎮┇لعبة العكس » العكس
 🎮┇لعبة الحزوره » حزوره
 🎮┇لعبة المعاني » معاني
-🎮┇لعبة البات » بات
+🎮┇لعبة المحيبس » محيبس
 🎮┇لعبة التخمين » خمن
 🎮┇لعبه الاسرع » الاسرع
 🎮┇لعبة السمايلات » سمايلات
 ━━━━━━━━━━━━━
-💠┇مجوهراتي ← لعرض عدد الارباح
-💬┇بيع مجوهراتي ← { العدد } ← لبيع كل مجوهره مقابل {50} رساله
+💠┇نقاطي ← لعرض عدد الارباح
+💬┇بيع نقاطي ← { العدد } ← لبيع كل نقطة مقابل {50} رساله
 *]]) 
 elseif text == 'رسائلي' then
 local nummsg = redis:get(bot_id..'Hadaf:Num:Message:User'..msg.chat_id_..':'..msg.sender_user_id_) or 1
 send(msg.chat_id_, msg.id_,'📨┇عدد رسائلك هنا *~ '..nummsg..'*') 
-elseif text == 'سحكاتي' or text == 'تعديلاتي' then
+elseif text == '' or text == 'تعديلاتي' then
 local edit = redis:get(bot_id..'Hadaf:Num:Message:Edit'..msg.chat_id_..msg.sender_user_id_) or 0
 send(msg.chat_id_, msg.id_,'📝┇عدد التعديلات هنا *~ '..edit..'*') 
 elseif text == 'جهاتي' then
 local addmem = redis:get(bot_id.."Hadaf:Num:Add:Memp"..msg.chat_id_..":"..msg.sender_user_id_) or 0
 send(msg.chat_id_, msg.id_,'👥┇عدد جهاتك المضافه هنا *~ '..addmem..'*') 
-elseif text == "مجوهراتي" then 
+elseif text == "نقاطي" then 
 local Num = redis:get(bot_id.."Hadaf:Num:Add:Games"..msg.chat_id_..msg.sender_user_id_) or 0
 if Num == 0 then 
-Text = "⚠┇لم تفز بأي مجوهره "
+Text = "⚠️┇لم تفز بأي نقطة "
 else
-Text = "🎁┇عدد الجواهر التي ربحتها *← "..Num.." *"
+Text = "🎁┇عدد النقاط التي ربحتها *← "..Num.." *"
 end
 send(msg.chat_id_, msg.id_,Text) 
-elseif text and text:match("^بيع مجوهراتي (%d+)$") then
-local NUMPY = text:match("^بيع مجوهراتي (%d+)$") 
+elseif text and text:match("^بيع نقاطي (%d+)$") then
+local NUMPY = text:match("^بيع نقاطي (%d+)$") 
 if tonumber(NUMPY) == tonumber(0) then
 send(msg.chat_id_,msg.id_,"\n*📮┇لا استطيع البيع اقل من 1 *") 
 return false 
 elseif tonumber(redis:get(bot_id.."Hadaf:Num:Add:Games"..msg.chat_id_..msg.sender_user_id_)) == tonumber(0) then
-send(msg.chat_id_,msg.id_,"🔖┇ليس لديك جواهر من الالعاب \n📬┇اذا كنت تريد ربح الجواهر \n📌┇ارسل الالعاب وابدأ اللعب ! ") 
+send(msg.chat_id_,msg.id_,"🔖┇ليس لديك نقاط من الالعاب \n📬┇اذا كنت تريد ربح النقاط \n📌┇ارسل الالعاب وابدأ اللعب ! ") 
 else
 local NUM_GAMES = redis:get(bot_id.."Hadaf:Num:Add:Games"..msg.chat_id_..msg.sender_user_id_)
 if tonumber(NUMPY) > tonumber(NUM_GAMES) then
-send(msg.chat_id_,msg.id_,"\n⚠┇ليس لديك جواهر بهاذا العدد \n📬┇لزيادة مجوهراتك في اللعبه \n📌┇ارسل الالعاب وابدأ اللعب !") 
+send(msg.chat_id_,msg.id_,"\n⚠️┇ليس لديك نقاط بهذا العدد \n📬┇لزيادة نقاطك في اللعبه \n📌┇ارسل الالعاب وابدأ اللعب !") 
 return false 
 end
 local NUMNKO = (NUMPY * 50)
 redis:decrby(bot_id.."Hadaf:Num:Add:Games"..msg.chat_id_..msg.sender_user_id_,NUMPY)  
 redis:incrby(bot_id.."Hadaf:Num:Message:User"..msg.chat_id_..":"..msg.sender_user_id_,NUMNKO)  
-send(msg.chat_id_,msg.id_,"☑┇تم خصم *~ { "..NUMPY.." }* من مجوهراتك \n📨┇وتم اضافة* ~ { "..(NUMPY * 50).." } رساله الى رسالك *")
+send(msg.chat_id_,msg.id_,"✅┇تم خصم *~ { "..NUMPY.." }* من نقاطك \n📨┇وتم اضافة* ~ { "..(NUMPY * 50).." } رساله الى رسالك *")
 end 
 return false 
 elseif text and text:match("^اضف رسائل (%d+)$") and msg.reply_to_message_id_ == 0 and Constructor(msg) then    
@@ -6033,15 +6030,15 @@ redis:set(bot_id.."Hadaf:id:user"..msg.chat_id_,taha)
 redis:setex(bot_id.."Hadaf:Add:msg:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 120, true)  
 send(msg.chat_id_, msg.id_, "✉┇ارسل لي عدد الرسائل الان") 
 return false
-elseif text and text:match("^اضف مجوهرات (%d+)$") and msg.reply_to_message_id_ == 0 and Constructor(msg) then  
-taha = text:match("^اضف مجوهرات (%d+)$")
+elseif text and text:match("^اضف نقاط (%d+)$") and msg.reply_to_message_id_ == 0 and Constructor(msg) then  
+taha = text:match("^اضف نقاط (%d+)$")
 redis:set(bot_id.."Hadaf:idgem:user"..msg.chat_id_,taha)  
 redis:setex(bot_id.."Hadaf:gemadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 120, true)  
-send(msg.chat_id_, msg.id_, "💠┇ارسل لي عدد المجوهرات الان") 
-elseif text and text:match("^اضف مجوهرات (%d+)$") and msg.reply_to_message_id_ ~= 0 and Constructor(msg) then
+send(msg.chat_id_, msg.id_, "💠┇ارسل لي عدد النقاط الان") 
+elseif text and text:match("^اضف نقاط (%d+)$") and msg.reply_to_message_id_ ~= 0 and Constructor(msg) then
 function reply(extra, result, success)
-redis:incrby(bot_id.."Hadaf:Num:Add:Games"..msg.chat_id_..result.sender_user_id_,text:match("^اضف مجوهرات (%d+)$"))  
-send(msg.chat_id_, msg.id_,"📮┇تم اضافه عدد مجوهرات : "..text:match("^اضف مجوهرات (%d+)$").." ")  
+redis:incrby(bot_id.."Hadaf:Num:Add:Games"..msg.chat_id_..result.sender_user_id_,text:match("^اضف نقاط (%d+)$"))  
+send(msg.chat_id_, msg.id_,"📮┇تم اضافه عدد نقاط : "..text:match("^اضف نقاط (%d+)$").." ")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_=msg.chat_id_,message_id_=tonumber(msg.reply_to_message_id_)},reply, nil)
 return false
@@ -6069,14 +6066,14 @@ if sendok == 0 then
 send(msg.chat_id_, msg.id_,'👤┇لا يوجد مشتركين وهميين')   
 else
 local ok = #pv - sendok
-send(msg.chat_id_, msg.id_,'*👥┇عدد المشتركين الان ←{ '..#pv..' }\n⚠┇تم العثور على ←{ '..sendok..' } مشترك قام بحظر البوت\n☑┇اصبح عدد المشتركين الان ←{ '..ok..' } مشترك *')   
+send(msg.chat_id_, msg.id_,'*👥┇عدد المشتركين الان ←{ '..#pv..' }\n⚠️┇تم العثور على ←{ '..sendok..' } مشترك قام بحظر البوت\n✅┇اصبح عدد المشتركين الان ←{ '..ok..' } مشترك *')   
 end
 end
 end,nil)
 end,nil)
 end
 return false
-elseif text == "تنظيف الكروبات" and Dev_Hadaf(msg) then
+elseif text == "تنظيف القروبات" and Dev_Hadaf(msg) then
 local group = redis:smembers(bot_id..'Hadaf:ChekBotAdd')  
 local w = 0
 local q = 0
@@ -6123,20 +6120,20 @@ end
 elseif text == "اطردني" or text == "طردني" then
 if not redis:get(bot_id.."Hadaf:Cheking:Kick:Me:Group"..msg.chat_id_) then
 if Rank_Checking(msg.sender_user_id_, msg.chat_id_) == true then
-send(msg.chat_id_, msg.id_, "\n⚠┇ عذرا لا استطيع طرد ( "..Get_Rank(msg.sender_user_id_,msg.chat_id_).." )")
+send(msg.chat_id_, msg.id_, "\n⚠️┇ عذرًا لا استطيع طرد ( "..Get_Rank(msg.sender_user_id_,msg.chat_id_).." )")
 return false
 end
 tdcli_function({ID="ChangeChatMemberStatus",chat_id_=msg.chat_id_,user_id_=msg.sender_user_id_,status_={ID="ChatMemberStatusKicked"},},function(arg,data) 
 if (data and data.code_ and data.code_ == 400 and data.message_ == "CHAT_ADMIN_REQUIRED") then 
-send(msg.chat_id_, msg.id_,"⚠┇ ليس لدي صلاحية حظر المستخدمين يرجى تفعيلها !") 
+send(msg.chat_id_, msg.id_,"⚠️┇ ليس لدي صلاحية حظر المستخدمين يرجى تفعيلها !") 
 return false  
 end
 if (data and data.code_ and data.code_ == 3) then 
-send(msg.chat_id_, msg.id_,"⚠┇ البوت ليس ادمن يرجى ترقيتي !") 
+send(msg.chat_id_, msg.id_,"⚠️┇ أنا ليس ادمن يرجى ترقيتي !") 
 return false  
 end
 if data and data.code_ and data.code_ == 400 and data.message_ == "USER_ADMIN_INVALID" then 
-send(msg.chat_id_, msg.id_,"⚠┇ عذرا لا استطيع طرد ادمنية المجموعه") 
+send(msg.chat_id_, msg.id_,"⚠️┇ عذرًا لا استطيع طرد ادمنية المجموعه") 
 return false  
 end
 if data and data.ID and data.ID == "Ok" then
@@ -6146,10 +6143,10 @@ return false
 end
 end,nil)   
 else
-send(msg.chat_id_, msg.id_,"⚠┇ امر اطردني تم تعطيله من قبل المدراء ") 
+send(msg.chat_id_, msg.id_,"⚠️┇ امر اطردني تم تعطيله من قبل المدراء ") 
 end
-elseif text and text:match("^رفع القيود @(.*)") and Owner(msg) then 
-local username = text:match("^رفع القيود @(.*)") 
+elseif text and text:match("^الغاء القيود @(.*)") and Owner(msg) then 
+local username = text:match("^الغاء القيود @(.*)") 
 function Function_Status(extra, result, success)
 if result.id_ then
 if Dev_Hadaf(msg) then
@@ -6167,7 +6164,7 @@ send(msg.chat_id_, msg.id_,"📫┇ المعرف غلط")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Status, nil)
-elseif text == "رفع القيود" and Owner(msg) then
+elseif text == "الغاء القيود" and Owner(msg) then
 function Function_Status(extra, result, success)
 if Dev_Hadaf(msg) then
 redis:srem(bot_id.."Hadaf:Removal:User:Groups",result.sender_user_id_)
@@ -6200,7 +6197,7 @@ GBan = "محظور عام"
 else
 GBan = "غير محظور عام"
 end
-send(msg.chat_id_, msg.id_,"💢┇ الحظر العام ← "..GBan.."\n〽┇ الحظر ← "..Ban.."\n🔖┇ الكتم ← "..Muted)
+send(msg.chat_id_, msg.id_,"💢┇ الحظر العام ← "..GBan.."\n⚠️️┇ الحظر ← "..Ban.."\n🔖┇ الكتم ← "..Muted)
 else
 send(msg.chat_id_, msg.id_,"📫┇ المعرف غلط")
 end
@@ -6223,7 +6220,7 @@ GBan = "محظور عام"
 else
 GBan = "غير محظور عام"
 end
-send(msg.chat_id_, msg.id_,"💢┇ الحظر العام ← "..GBan.."\n〽┇ الحظر ← "..Ban.."\n🔖┇ الكتم ← "..Muted)
+send(msg.chat_id_, msg.id_,"💢┇ الحظر العام ← "..GBan.."\n⚠️️┇ الحظر ← "..Ban.."\n🔖┇ الكتم ← "..Muted)
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_Status, nil)
 elseif text ==("رفع الادمنيه") and Owner(msg) then
@@ -6278,7 +6275,7 @@ end
 end
 tdcli_function ({ID = "GetUser",user_id_ = owner_id},function(arg,b) 
 if b.first_name_ == false then
-send(msg.chat_id_, msg.id_,"⚠┇حساب المنشئ محذوف")
+send(msg.chat_id_, msg.id_,"⚠️┇حساب المنشئ محذوف")
 return false  
 end
 local UserName = (b.username_ or "i3mrz")
@@ -6286,9 +6283,9 @@ send(msg.chat_id_, msg.id_,"🚸┇تم ترقية منشئ المجموعه ←
 redis:sadd(bot_id.."Hadaf:President:Group"..msg.chat_id_,b.id_)
 end,nil)   
 end,nil)   
-elseif text and text:match("^تعين عدد الاعضاء (%d+)$") and Dev_Hadaf(msg) then
-redis:set(bot_id..'Hadaf:Num:Add:Bot',text:match("تعين عدد الاعضاء (%d+)$") ) 
-send(msg.chat_id_, msg.id_,'*☑┇ تم تعيين عدد اعضاء تفعيل البوت اكثر من : '..text:match("تعين عدد الاعضاء (%d+)$")..' عضو *')
+elseif text and text:match("^تعيين عدد الاعضاء (%d+)$") and Dev_Hadaf(msg) then
+redis:set(bot_id..'Hadaf:Num:Add:Bot',text:match("تعيين عدد الاعضاء (%d+)$") ) 
+send(msg.chat_id_, msg.id_,'*✅┇ تم تعيين عدد اعضاء تفعيل البوت اكثر من : '..text:match("تعيين عدد الاعضاء (%d+)$")..' عضو *')
 elseif text =='الاحصائيات' and DeveloperBot(msg) then 
 send(msg.chat_id_, msg.id_,'*📋┇عدد احصائيات البوت الكامله \n━━━━━━━━━━━━━\n📮┇عدد المجموعات : '..(redis:scard(bot_id..'Hadaf:ChekBotAdd') or 0)..'\n👤┇عدد المشتركين : '..(redis:scard(bot_id..'Hadaf:Num:User:Pv') or 0)..'*')
 elseif text == 'المطور' or text == 'مطور' then
@@ -6300,7 +6297,7 @@ send(msg.chat_id_, msg.id_,'['..UserName_Dev..']')
 end
 elseif text == 'حذف كليشه المطور' and Dev_Hadaf(msg) then
 redis:del(bot_id..'Hadaf:Texting:DevHadaf')
-send(msg.chat_id_, msg.id_,'☑┇ تم حذف كليشه المطور')
+send(msg.chat_id_, msg.id_,'✅┇ تم حذف كليشه المطور')
 end
 end
 
@@ -6332,9 +6329,9 @@ if NewCmmd then
 redis:del(bot_id.."Hadaf:Get:Reides:Commands:Group"..msg.chat_id_..":"..text)
 redis:del(bot_id.."Hadaf:Command:Reids:Group:New"..msg.chat_id_)
 redis:srem(bot_id.."Hadaf:Command:List:Group"..msg.chat_id_,text)
-send(msg.chat_id_, msg.id_,"☑┇تم ازالة هاذا ← { "..text.." }")  
+send(msg.chat_id_, msg.id_,"✅┇تم ازالة هذا ← { "..text.." }")  
 else
-send(msg.chat_id_, msg.id_,"⚠┇لا يوجد امر بهاذا الاسم")  
+send(msg.chat_id_, msg.id_,"⚠️┇لا يوجد امر بهذا الاسم")  
 end
 redis:del(bot_id.."Hadaf:Command:Reids:Group:Del"..msg.chat_id_..":"..msg.sender_user_id_)
 return false
@@ -6342,7 +6339,7 @@ end
 ------------------------------------------------------------------------------------------------------------
 if text and redis:get(bot_id.."Hadaf:Command:Reids:Group"..msg.chat_id_..":"..msg.sender_user_id_) == "true" then
 redis:set(bot_id.."Hadaf:Command:Reids:Group:New"..msg.chat_id_,text)
-send(msg.chat_id_, msg.id_,"〽┇ارسل الامر الجديد ليتم وضعه مكان القديم")  
+send(msg.chat_id_, msg.id_,"⚠️️┇ارسل الامر الجديد ليتم وضعه مكان القديم")  
 redis:del(bot_id.."Hadaf:Command:Reids:Group"..msg.chat_id_..":"..msg.sender_user_id_)
 redis:set(bot_id.."Hadaf:Command:Reids:Group:End"..msg.chat_id_..":"..msg.sender_user_id_,"true1") 
 return false
@@ -6352,7 +6349,7 @@ if text and redis:get(bot_id.."Hadaf:Command:Reids:Group:End"..msg.chat_id_..":"
 local NewCmd = redis:get(bot_id.."Hadaf:Command:Reids:Group:New"..msg.chat_id_)
 redis:set(bot_id.."Hadaf:Get:Reides:Commands:Group"..msg.chat_id_..":"..text,NewCmd)
 redis:sadd(bot_id.."Hadaf:Command:List:Group"..msg.chat_id_,text)
-send(msg.chat_id_, msg.id_,"☑┇تم حفظ الامر باسم ← { "..text..' }')  
+send(msg.chat_id_, msg.id_,"✅┇تم حفظ الامر باسم ← { "..text..' }')  
 redis:del(bot_id.."Hadaf:Command:Reids:Group:End"..msg.chat_id_..":"..msg.sender_user_id_)
 return false
 end
@@ -6427,8 +6424,8 @@ end
 end     
 end
 end
-if text and text:match('^'..(redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "سكر")..' ') then
-data.message_.content_.text_ = data.message_.content_.text_:gsub('^'..(redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "سكر")..' ','')
+if text and text:match('^'..(redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "هدف")..' ') then
+data.message_.content_.text_ = data.message_.content_.text_:gsub('^'..(redis:get(bot_id.."Hadaf:Redis:Name:Bot") or "هدف")..' ','')
 end
 if text then
 local NewCmmd = redis:get(bot_id.."Hadaf:Get:Reides:Commands:Group"..msg.chat_id_..":"..data.message_.content_.text_)
@@ -6444,7 +6441,7 @@ local textedit = result.content_.text_
 redis:incr(bot_id..'Hadaf:Num:Message:Edit'..result.chat_id_..result.sender_user_id_)
 if redis:get(bot_id.."Hadaf:Lock:edit"..msg.chat_id_) and not textedit and not PresidentGroup(result) then
 Delete_Message(result.chat_id_,{[0] = data.message_id_}) 
-Send_Options(result,result.sender_user_id_,"reply","⚠┇قام بالتعديل على الميديا")  
+Send_Options(result,result.sender_user_id_,"reply","⚠️┇قام بالتعديل على الوسائط")  
 end
 if not Vips(result) then
 ------------------------------------------------------------------------
@@ -6507,7 +6504,7 @@ elseif textedit then
 local Text_Filter = redis:get(bot_id.."Hadaf:Filter:Reply2"..textedit..result.chat_id_)   
 if Text_Filter then    
 Delete_Message(result.chat_id_, {[0] = data.message_id_})     
-Send_Options(result,result.sender_user_id_,"reply","⚠┇"..Text_Filter)  
+Send_Options(result,result.sender_user_id_,"reply","⚠️┇"..Text_Filter)  
 return false
 end
 end
