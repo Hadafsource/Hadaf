@@ -4769,7 +4769,7 @@ for k,v in pairs(list) do
 if redis:get(bot_id.."Hadaf:Add:Rd:Manager:Gif"..v..msg.chat_id_) then
 db = "متحركه 🎭"
 elseif redis:get(bot_id.."Hadaf:Add:Rd:Manager:Vico"..v..msg.chat_id_) then
-db = "بصمه 📢"
+db = "صوت 📢"
 elseif redis:get(bot_id.."Hadaf:Add:Rd:Manager:Stekrs"..v..msg.chat_id_) then
 db = "ملصق 🃏"
 elseif redis:get(bot_id.."Hadaf:Add:Rd:Manager:Text"..v..msg.chat_id_) then
@@ -4816,7 +4816,7 @@ for k,v in pairs(list) do
 if redis:get(bot_id.."Hadaf:Add:Rd:Sudo:Gif"..v) then
 db = "متحركه 🎭"
 elseif redis:get(bot_id.."Hadaf:Add:Rd:Sudo:vico"..v) then
-db = "بصمه 📢"
+db = "صوت 📢"
 elseif redis:get(bot_id.."Hadaf:Add:Rd:Sudo:stekr"..v) then
 db = "ملصق 🃏"
 elseif redis:get(bot_id.."Hadaf:Add:Rd:Sudo:Text"..v) then
@@ -5043,8 +5043,6 @@ local Duaa = {
 }
 DuaaText = math.random(#Duaa)
 send(msg.chat_id_, msg.id_,Duaa[DuaaText]) 
-
-
 
 elseif text == "تغيير اسم البوت" and Dev_Hadaf(msg) or text == "تغيير اسم البوت" and Dev_Hadaf(msg) then 
 redis:setex(bot_id.."Hadaf:Change:Name:Bot"..msg.sender_user_id_,300,true) 
@@ -5446,7 +5444,7 @@ lsend(msg.chat_id_, msg.id_,[[
 ]])
 return false  
 end 
-if text == 'ايدي' and tonumber(msg.reply_to_message_id_) == 0 and not redis:get(bot_id..'Hadaf:Lock:Id:Photo'..msg.chat_id_) then
+if text == 'ايدي' and tonumber(msg.reply_to_message_id_) == 0 and not redis:get(bot_id..'Hadaf:Lock:Id:Photo'..msg.chat_id_) or text == 'ايديي' and tonumber(msg.reply_to_message_id_) == 0 and not redis:get(bot_id..'Hadaf:Lock:Id:Photo'..msg.chat_id_) or text == 'id' and tonumber(msg.reply_to_message_id_) == 0 and not redis:get(bot_id..'Hadaf:Lock:Id:Photo'..msg.chat_id_) or text == 'Id' and tonumber(msg.reply_to_message_id_) == 0 and not redis:get(bot_id..'Hadaf:Lock:Id:Photo'..msg.chat_id_) then
 tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = msg.sender_user_id_,offset_ = 0,limit_ = 1},function(extra,taha,success) 
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
 if data.username_ then
@@ -5789,7 +5787,7 @@ name = string.gsub(name,"📅","📆📆📆📆📆📆📅📆📆")
 send(msg.chat_id_, msg.id_,"🔰┇اسرع واحد يرسل المختلف ~ {"..name.."}")
 return false
 end
-elseif text == "امثله" then
+elseif text == "امثله" or text == "امثلة" then
 if redis:get(bot_id.."Hadaf:Lock:Game:Group"..msg.chat_id_) then
 mthal = {"جوز","ضراطه","الحبل","الحافي","شقره","بيدك","سلايه","النخله","الخيل","حداد","المبلل","يركص","قرد","العنب","العمه","الخبز","بالحصاد","شهر","شكه","يكحله",};
 name = mthal[math.random(#mthal)]
@@ -6603,3 +6601,13 @@ end,nil)
 end
 end
 end
+
+
+
+
+
+
+
+
+
+
